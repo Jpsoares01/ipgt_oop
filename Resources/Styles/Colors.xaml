@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!-- Colors -->
+    <Color x:Key="ColorPrimary">#788ABF</Color>
+    <Color x:Key="ColorSecondary">#9AA7CF</Color>
+    
+    <!-- Pallet for app and cards -->
+    <Color x:Key="ColorWindow">#BCC5DF</Color>
+    <Color x:Key="ColorCard">#FFFFFF</Color>
+
+    <!-- Brushes -->
+    <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource ColorPrimary}" />
+    <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource ColorSecondary}" />
+
+    <!-- App and card background Brushes -->
+    <SolidColorBrush x:Key="WindowBackgroundBrush" Color="{StaticResource ColorWindow}" />
+    <SolidColorBrush x:Key="CardBackgroundBrush" Color="{StaticResource ColorCard}" />
+    
+
+</ResourceDictionary>
