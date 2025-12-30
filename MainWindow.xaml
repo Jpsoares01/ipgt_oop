@@ -16,5 +16,73 @@
             BorderThickness="3"
             Background="{StaticResource WindowBackgroundBrush}">
 
+        <Border Width="350"
+                Height="400"
+                CornerRadius="20"
+                Background="{StaticResource CardBackgroundBrush}">
+            <StackPanel>
+                <!-- O programa só lê SVG se instalarmos uma biblioteca (Svg.Wpf) --> 
+                <Image Source="/Resources/Images/Logotipo_Bank_Colors.svg"></Image>
+                
+                <!-- Fonte nao funciona? -->
+                <TextBlock FontFamily="\Resources\Fonts\MontSerrat\Montserrat-BlackItalic.ttf"
+                           FontSize="30"
+                           HorizontalAlignment="Center"
+                           Margin="0,10,0,0">
+                    Welcome Back
+                </TextBlock>
+
+                <TextBlock FontFamily="\Resources\Fonts\MontSerrat\Montserrat-BlackItalic.ttf"
+                           HorizontalAlignment="Center"
+                           Margin="0,10,0,0">
+                    Enter your credencials to continue
+                </TextBlock>
+                
+                <!-- Borda e Botões-->
+
+                <Border Height="30"
+                        Width="250"
+                        CornerRadius="3"
+                        Background="{StaticResource WindowBackgroundBrush}"
+                        Margin="0,10,0,0">
+
+                    <Grid>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Button Width="120"
+                                Height="25"
+                                Grid.Column="0"
+                                BorderThickness="2"
+                            > 
+                            Manual Entery
+                        </Button>
+                        
+                        <Button Width="120"                                
+                                Height="25"
+                                Grid.Column="1"
+                                BorderThickness="2"
+    >
+                            Manual Entery
+                        </Button>
+                    </Grid>
+                    
+                </Border>
+
+                <!-- Card Number-->
+
+                <TextBlock Margin="20,0,0,0">
+                    Card Number</TextBlock>
+                
+
+            </StackPanel>
+           
+        </Border>
+
+
     </Border>
+
 </Window>
