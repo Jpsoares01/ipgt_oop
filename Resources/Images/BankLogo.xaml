@@ -2,7 +2,7 @@
                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
     
-    <DrawingGroup x:Key="Logotipo_Bank_Colors">
+    <DrawingGroup x:Key="BankLogoColors">
         <DrawingGroup.ClipGeometry>
             <RectangleGeometry Rect="0.0,0.0,1108.0,462.0"/>
         </DrawingGroup.ClipGeometry>
@@ -62,7 +62,7 @@
             </GeometryDrawing>
         </DrawingGroup>
     </DrawingGroup>
-    
-    <DrawingImage Drawing="{StaticResource Logotipo_Bank_Colors}" 
-                  x:Key="Logotipo_Bank"/>
+
+    <DrawingImage Drawing="{StaticResource BankLogoColors}" 
+                  x:Key="BankLogo"/>
 </ResourceDictionary>
