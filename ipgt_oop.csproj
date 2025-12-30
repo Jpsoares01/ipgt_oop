@@ -27,7 +27,6 @@
     <None Remove="Resources\Fonts\MontSerrat\Montserrat-SemiBoldItalic.ttf" />
     <None Remove="Resources\Fonts\MontSerrat\Montserrat-Thin.ttf" />
     <None Remove="Resources\Fonts\MontSerrat\Montserrat-ThinItalic.ttf" />
-    <None Remove="Resources\Images\Logotipo_Bank_Colors.svg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -48,7 +47,13 @@
     <Resource Include="Resources\Fonts\MontSerrat\Montserrat-SemiBoldItalic.ttf" />
     <Resource Include="Resources\Fonts\MontSerrat\Montserrat-Thin.ttf" />
     <Resource Include="Resources\Fonts\MontSerrat\Montserrat-ThinItalic.ttf" />
-    <Resource Include="Resources\Images\Logotipo_Bank_Colors.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Resources\Images\Logotipo_Bank_Colors.xaml">
+      <Generator></Generator>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Page>
   </ItemGroup>
 
 </Project>
