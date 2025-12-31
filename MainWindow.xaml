@@ -4,85 +4,37 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ipgt_oop"
+        xmlns:viewModel="clr-namespace:ipgt_oop.MVVM.ViewModels"
         mc:Ignorable="d"
-        Height="600" Width="920"
+        Height="900" Width="1380"
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen">
 
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+
+
     <Border CornerRadius="25"
             BorderThickness="3"
-            Background="{StaticResource WindowBackgroundBrush}">
+            Background="{StaticResource AppBackgroundBrush}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
 
-        <Border Width="350"
-                Height="400"
-                CornerRadius="20"
-                Background="{StaticResource CardBackgroundBrush}">
-            <StackPanel>
-                <!-- O programa só lê SVG se instalarmos uma biblioteca (Svg.Wpf) --> 
-                <Image Source="/Resources/Images/Logotipo_Bank_Colors.svg"></Image>
-                
-                <!-- Fonte nao funciona? -->
-                <TextBlock FontFamily="\Resources\Fonts\MontSerrat\Montserrat-BlackItalic.ttf"
-                           FontSize="30"
-                           HorizontalAlignment="Center"
-                           Margin="0,10,0,0">
-                    Welcome Back
-                </TextBlock>
+            <ContentControl Grid.Row="1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        HorizontalContentAlignment="Stretch"
+                        VerticalContentAlignment="Stretch"
+                        Content="{Binding CurrentView}"/>
 
-                <TextBlock FontFamily="\Resources\Fonts\MontSerrat\Montserrat-BlackItalic.ttf"
-                           HorizontalAlignment="Center"
-                           Margin="0,10,0,0">
-                    Enter your credencials to continue
-                </TextBlock>
-                
-                <!-- Borda e Botões-->
-
-                <Border Height="30"
-                        Width="250"
-                        CornerRadius="3"
-                        Background="{StaticResource WindowBackgroundBrush}"
-                        Margin="0,10,0,0">
-
-                    <Grid>
-                        
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        
-                        <Button Width="120"
-                                Height="25"
-                                Grid.Column="0"
-                                BorderThickness="2"
-                            > 
-                            Manual Entery
-                        </Button>
-                        
-                        <Button Width="120"                                
-                                Height="25"
-                                Grid.Column="1"
-                                BorderThickness="2"
-    >
-                            Manual Entery
-                        </Button>
-                    </Grid>
-                    
-                </Border>
-
-                <!-- Card Number-->
-
-                <TextBlock Margin="20,0,0,0">
-                    Card Number</TextBlock>
-                
-
-            </StackPanel>
-           
-        </Border>
-
-
+        </Grid>
     </Border>
 
 </Window>

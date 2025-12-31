@@ -2,19 +2,27 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     
     <!-- Colors -->
-    <Color x:Key="ColorPrimary">#788ABF</Color>
-    <Color x:Key="ColorSecondary">#9AA7CF</Color>
-    
+    <!-- Background Colors -->
+    <Color x:Key="BackgroundStop1">#FFFFFFFF</Color>
+    <Color x:Key="BackgroundStop2">#FFE3F5EB</Color>
+    <Color x:Key="BackgroundStop3">#FFD5F0E0</Color>
+    <Color x:Key="BackgroundStop4">#FFC4E9D4</Color>
+    <Color x:Key="BackgroundStop5">#FF86D3A7</Color>
+
     <!-- Pallet for app and cards -->
-    <Color x:Key="ColorWindow">#BCC5DF</Color>
     <Color x:Key="ColorCard">#FFFFFF</Color>
 
     <!-- Brushes -->
-    <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource ColorPrimary}" />
-    <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource ColorSecondary}" />
+    <LinearGradientBrush x:Key="AppBackgroundBrush" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="{StaticResource BackgroundStop1}" Offset="0.0"/>
+        <GradientStop Color="{StaticResource BackgroundStop2}" Offset="0.25"/>
+        <GradientStop Color="{StaticResource BackgroundStop3}" Offset="0.5"/>
+        <GradientStop Color="{StaticResource BackgroundStop4}" Offset="0.75"/>
+        <GradientStop Color="{StaticResource BackgroundStop5}" Offset="1.0"/>
+    </LinearGradientBrush>
 
-    <!-- App and card background Brushes -->
-    <SolidColorBrush x:Key="WindowBackgroundBrush" Color="{StaticResource ColorWindow}" />
+
+    <!-- Card background Brushes -->
     <SolidColorBrush x:Key="CardBackgroundBrush" Color="{StaticResource ColorCard}" />
     
 
