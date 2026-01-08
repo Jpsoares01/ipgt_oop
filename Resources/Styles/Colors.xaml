@@ -9,9 +9,12 @@
     <Color x:Key="BackgroundStop4">#FFC4E9D4</Color>
     <Color x:Key="BackgroundStop5">#FF86D3A7</Color>
 
-    <!-- Pallet for app and cards -->
-    <Color x:Key="ColorCard">#FFFFFF</Color>
+    <!-- Pallet for labels -->
+    <Color x:Key="BorderColor">#B9BEC6</Color>
 
+    <!-- Other-->
+    <Color x:Key="BaseWhite">#FFFFFF</Color>
+    
     <!-- Brushes -->
     <LinearGradientBrush x:Key="AppBackgroundBrush" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="{StaticResource BackgroundStop1}" Offset="0.0"/>
@@ -23,7 +26,13 @@
 
 
     <!-- Card background Brushes -->
-    <SolidColorBrush x:Key="CardBackgroundBrush" Color="{StaticResource ColorCard}" />
+    <SolidColorBrush x:Key="CardBackgroundBrush" Color="{StaticResource BaseWhite}" />
     
+    <!-- SideBar Brushes-->
+    <SolidColorBrush x:Key="SideBarBackgroundBrush" Color="{StaticResource BaseWhite}" />
+    
+    <!-- Labels border Brushes -->
+    <SolidColorBrush x:Key="LabelBorderdBrush" Color="{StaticResource BorderColor}" />
+
 
 </ResourceDictionary>

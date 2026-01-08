@@ -81,5 +81,24 @@
         <Setter Property="Foreground" Value="#727D8C"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
     </Style>
+    
+    
+    <!-- Others -->
+    
+    <Style x:Key="BodyTextBox" TargetType="TextBox">
+        <Setter Property="FontFamily" Value="{StaticResource MontserratFont}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="#B8BEC5"/>
+        <Setter Property="FontWeight" Value="Regular"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="BodyPasswordBox" TargetType="PasswordBox">
+        <Setter Property="FontFamily" Value="{StaticResource MontserratFont}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="#B8BEC5"/>
+        <Setter Property="FontWeight" Value="Regular"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
 
 </ResourceDictionary>

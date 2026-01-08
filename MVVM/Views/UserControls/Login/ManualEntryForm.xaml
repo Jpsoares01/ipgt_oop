@@ -5,69 +5,87 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ipgt_oop.MVVM.Views.UserControls.Login"
              mc:Ignorable="d">
-    <Grid>
-        <Border Height="220"
+    
+    <StackPanel Height="220"
                 Width="458">
 
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-
-                <Grid Grid.Row="0"
-                      Margin="24,0,0,0">
-
-                    <TextBlock Text="Card Number"
-                               Style="{StaticResource Caption}"/>
+        <Grid HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <TextBlock Grid.Row="0" 
+                       Text="Card Number"
+                       Style="{StaticResource Caption}"
+                       Margin="0,0,0,4"/>
 
 
-                    <Border CornerRadius="8"
-                        BorderBrush="#B9BEC6"
+            <Border Grid.Row="1"
+                    CornerRadius="8"
+                    BorderBrush="{StaticResource LabelBorderdBrush}"
+                    BorderThickness="1"
+                    Background="Transparent"
+                    Width="410"
+                    Height="41"
+                    HorizontalAlignment="Left">
+
+            <TextBox x:Name="CardNumber"
+                     Style="{StaticResource BodyTextBox}"
+                     Background="Transparent"
+                     BorderThickness="0"
+                     Padding="4"/>
+            </Border>
+        </Grid>
+
+        <Grid HorizontalAlignment="Center"
+              Margin="0,18,0,18">
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" 
+                       Text="Password"
+                       Style="{StaticResource Caption}"
+                       Margin="0,0,0,4"/>
+
+            <Grid Grid.Row="1">
+                <Border Grid.ColumnSpan="2"
+                        CornerRadius="8"
+                        BorderBrush="{StaticResource LabelBorderdBrush}"
                         BorderThickness="1"
                         Background="Transparent"
                         Width="410"
                         Height="41"
-                        HorizontalAlignment="Left"
-                        Margin="0,4,0,0">
+                        HorizontalAlignment="Left">
 
-                        <TextBox x:Name="InputTextBox"
-                             Background="Transparent"
-                             BorderThickness="0"
-                             Padding="4"/>
-                    </Border>
-                </Grid>
+                    <Grid>
 
-                <Grid Grid.Row="1"
-                      Margin="24,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="34"/>
+                        </Grid.ColumnDefinitions>
 
-                    <TextBlock Text="Password"
-                               Style="{StaticResource Caption}"/>
+                        <PasswordBox x:Name="Password"
+                                     Style="{StaticResource BodyPasswordBox}"
+                                     Background="Transparent"
+                                     BorderThickness="0"
+                                     Padding="4"/>
 
-
-                    <Border CornerRadius="8"
-                        BorderBrush="#B9BEC6"
-                        BorderThickness="1"
-                        Background="Transparent"
-                        Width="410"
-                        Height="41"
-                        HorizontalAlignment="Left"
-                        Margin="0,4,0,0">
-
-                        <TextBox x:Name="PasswordTextBox"
-                             Background="Transparent"
-                             BorderThickness="0"
-                             Padding="4"/>
-                    </Border>
-                </Grid>
-
-                <Button Grid.Row="2"
-                        Style="{StaticResource GeneralButton}"
-                        Width="410"
-                        Height="48"
-                        Content="Sign In"/>
+                        <Image Grid.Column="1"
+                               Width="22"
+                               Source="{StaticResource PasswordEye}"/>
+                    </Grid>
+                </Border>
             </Grid>
-        </Border>
-    </Grid>
+        </Grid>
+
+        <Button Style="{StaticResource GeneralButton}"
+                Width="410"
+                Height="48"
+                Content="Sign In"/>
+
+    </StackPanel>
 </UserControl>

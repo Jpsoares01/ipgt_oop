@@ -6,8 +6,9 @@
              xmlns:local="clr-namespace:ipgt_oop.MVVM.Views"
              xmlns:view="clr-namespace:ipgt_oop.MVVM.Views.UserControls.Login"
              mc:Ignorable="d">
+    
     <UserControl.Resources>
-
+        
         <DataTemplate x:Key="ManualEntryTemplate">
             <view:ManualEntryForm />
         </DataTemplate>
@@ -21,22 +22,23 @@
     <Grid>
         <Border Width="458"
                 Height="550"
-                CornerRadius="12"
                 Background="{StaticResource CardBackgroundBrush}">
 
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="185"/>
-                    <RowDefinition Height="94"/>
+                    <RowDefinition Height="96"/>
                     <RowDefinition/>
                     <RowDefinition Height="62"/>
                 </Grid.RowDefinitions>
 
                 <StackPanel HorizontalAlignment="Center"
                             VerticalAlignment="Center">
+                    
                     <Viewbox Width="162" 
                              Height="67"
                              Margin="0,24,0,0">
+                        
                         <Image Source="{StaticResource BankLogo}"/>
                     </Viewbox>
 
@@ -101,8 +103,8 @@
                 </Border>
 
                 <ContentControl Grid.Row="2"
-                                HorizontalAlignment="Stretch"
-                                VerticalAlignment="Stretch">
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
                     <ContentControl.Style>
                         
                         <Style TargetType="ContentControl">
@@ -131,7 +133,8 @@
                            VerticalAlignment="Center">
                     Don't have an account?
                     
-                    <Hyperlink TextDecorations="None">
+                    <Hyperlink Command="{Binding DataContext.ShowRegistryCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                               TextDecorations="None">
                         Create
                     </Hyperlink>
                 </TextBlock>

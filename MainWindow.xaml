@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ipgt_oop"
         xmlns:viewModel="clr-namespace:ipgt_oop.MVVM.ViewModels"
+        xmlns:view="clr-namespace:ipgt_oop.MVVM.Views"
         mc:Ignorable="d"
-        Height="900" Width="1380"
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="Transparent"
@@ -17,22 +17,25 @@
         <viewModel:MainViewModel/>
     </Window.DataContext>
 
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
+            <view:LoginView/>
+        </DataTemplate>
 
-    <Border CornerRadius="25"
-            BorderThickness="3"
-            Background="{StaticResource AppBackgroundBrush}">
-        <Grid>
+        <DataTemplate DataType="{x:Type viewModel:RegistryViewModel}">
+            <view:RegistryView/>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Border CornerRadius="20" Background="White" Width="458" Height="620">
+        <Grid ClipToBounds="True">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
             <ContentControl Grid.Row="1"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        HorizontalContentAlignment="Stretch"
-                        VerticalContentAlignment="Stretch"
-                        Content="{Binding CurrentView}"/>
+                            Content="{Binding CurrentView}"/>
 
         </Grid>
     </Border>
