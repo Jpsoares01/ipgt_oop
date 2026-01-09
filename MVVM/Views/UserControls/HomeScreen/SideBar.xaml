@@ -17,19 +17,19 @@
         <Image Source="{StaticResource BankLogo}" Width="137" Height="57"/>
 
         <StackPanel Grid.Row="1">
-            
-            <Button Width="202"
-                    Height="46"
-                    Content="Button 1"
-                    Style="{StaticResource SideBarButton}"
-                    Margin="0,16,0,0"/>
-            
-            <Button Width="202" Height="46" Content="Button 2" Style="{StaticResource SideBarButton}" Margin="0,16,0,0"/>
-            <Button Width="202" Height="46" Content="Button 3" Style="{StaticResource SideBarButton}" Margin="0,16,0,0"/>
-            <Button Width="202" Height="46" Content="Button 4" Style="{StaticResource SideBarButton}" Margin="0,16,0,0"/>
-            <Button Width="202" Height="46" Content="Button 5" Style="{StaticResource SideBarButton}" Margin="0,16,0,0"/>
-            <Button Width="202" Height="46" Content="Button 6" Style="{StaticResource SideBarButton}" Margin="0,16,0,0"/>
-            <Button Width="202" Height="46" Content="Button 7" Style="{StaticResource SideBarButton}" Margin="0,16,0,0"/>
+
+            <RadioButton Width="175"
+                          Height="42"
+                          Content="Dashboard"
+                          Style="{StaticResource SideBarButton}"
+                          Margin="0,16,0,0"/>
+
+            <RadioButton Width="175" Height="42" Content="Transfer" Style="{StaticResource SideBarButton}" Margin="0,16,0,0"/>
+            <RadioButton Width="175" Height="42" Content="Deposit" Style="{StaticResource SideBarButton}" Margin="0,16,0,0"/>
+            <RadioButton Width="175" Height="42" Content="Withdraw" Style="{StaticResource SideBarButton}" Margin="0,16,0,0"/>
+            <RadioButton Width="175" Height="42" Content="Pay Services" Style="{StaticResource SideBarButton}" Margin="0,16,0,0"/>
+            <RadioButton Width="175" Height="42" Content="History" Style="{StaticResource SideBarButton}" Margin="0,16,0,0"/>
+            <RadioButton Width="175" Height="42" Content="Settings" Style="{StaticResource SideBarButton}" Margin="0,16,0,0"/>
         </StackPanel>
     </Grid>
     
