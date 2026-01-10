@@ -14,9 +14,9 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0"
-                    Margin="0,0,0,16">
+                    Margin="0,42,0,64">
             <TextBlock Text="Transaction History" 
-                       Style="{StaticResource H2Black}"/>
+                       Style="{StaticResource H2Black}" Margin="0,0,0,8"/>
             <TextBlock Text="View all your transactions" 
                        Style="{StaticResource BodyRegular}"/>
         </StackPanel>
@@ -83,7 +83,7 @@
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
                             <Button Content="Previous" 
                                     Style="{StaticResource GeneralButton}" 
-                                    Margin="0,0,20,0" 
+                                    Margin="0,0,17,0" 
                                     Background="#E9E9E9"
                                     Foreground="#4769AF"
                                     BorderBrush="#000000"

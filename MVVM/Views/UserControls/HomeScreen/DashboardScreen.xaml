@@ -11,13 +11,12 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0">
+        <StackPanel Grid.Row="0"
+                    Margin="0,42,0,64">
             <TextBlock Text="Dashboard" 
-                       Style="{StaticResource H2Black}"
-                       Margin="0,0,0,16"/>
+                       Style="{StaticResource H2Black}" Margin="0,0,0,8"/>
             <TextBlock Text="Welcome back, here's your financial overview" 
-                       Style="{StaticResource BodyRegular}"
-                       Margin="0,0,0,16"/>
+                       Style="{StaticResource BodyRegular}"/>
         </StackPanel>
         
         <Grid Grid.Row="1">
@@ -90,7 +89,7 @@
 
             <Border Grid.Column="1"
                     Background="#FFFFFF"
-                    Margin="15,0,8,0">
+                    Margin="24,18,0,18">
                 
             </Border>
             

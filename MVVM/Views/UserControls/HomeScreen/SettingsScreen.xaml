@@ -13,13 +13,12 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <StackPanel Grid.Row="0">
+            <StackPanel Grid.Row="0"
+                        Margin="0,42,0,64">
                 <TextBlock Text="Settings" 
-                   Style="{StaticResource H2Black}"
-                   Margin="0,0,0,16"/>
+                   Style="{StaticResource H2Black}" Margin="0,0,0,8"/>
                 <TextBlock Text="Menage yout account preferences" 
-                   Style="{StaticResource BodyRegular}"
-                   Margin="0,0,0,16"/>
+                   Style="{StaticResource BodyRegular}"/>
             </StackPanel>
 
             <StackPanel>

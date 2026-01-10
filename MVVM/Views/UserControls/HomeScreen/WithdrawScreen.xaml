@@ -12,27 +12,27 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0"
-      Margin="0,0,0,16">
+                    Margin="0,42,0,64">
             <TextBlock Text="Withdraw Funds" 
- Style="{StaticResource H2Black}"/>
+                       Style="{StaticResource H2Black}" Margin="0,0,0,8"/>
             <TextBlock Text="Withdraw money from your account" 
- Style="{StaticResource BodyRegular}"/>
+                       Style="{StaticResource BodyRegular}"/>
         </StackPanel>
 
         <Border  Grid.Row="1"
-          Margin="0,0,0,16"
+          Margin="0,0,0,0"
           Width="954"
           Height="369"
           Background ="{StaticResource CardBackgroundBrush}"
           CornerRadius="15"
-          Padding="16">
+          Padding="32">
 
             <StackPanel>
                 <TextBlock  Text="Select Card" 
                      Style="{StaticResource Caption}"
-                     Margin="0,0,0,8"/>
+                     Margin="0,0,0,4"/>
                 <ComboBox Style="{StaticResource GeneralComboBoxStyle}"
-                   Margin="-32,0,0,24"
+                   Margin="0,0,0,32"
                    Width="890">
                 </ComboBox>
 
@@ -41,7 +41,7 @@
 
                 <TextBlock Text="Amount to Withdraw" 
                     Style="{StaticResource Caption}"
-                    Margin="0,0,0,8"/>
+                    Margin="0,0,0,4"/>
 
                 <Border  CornerRadius="8"
                   BorderBrush="{StaticResource LabelBorderdBrush}"
@@ -65,7 +65,7 @@
                 <!--TEXTO do saldo disponivel-->
 
                 <TextBlock HorizontalAlignment="Right"
-                    Margin="0,0,35,35"
+                    Margin="0,32,0,32"
                     Style="{StaticResource Caption}">
                     <TextBlock.Text>
                         <Binding Path="SaldoDisponivel" StringFormat="Available: {0:N2}" />
