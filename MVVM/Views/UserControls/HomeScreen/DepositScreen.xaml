@@ -35,6 +35,9 @@
                 <ComboBox Style="{StaticResource GeneralComboBoxStyle}"
                           Margin="-32,0,0,24"
                           Width="890">
+                    <ComboBoxItem Content="Home" />
+                    <ComboBoxItem Content="Settings" />
+                    <ComboBoxItem Content="About" />
                 </ComboBox>
 
 

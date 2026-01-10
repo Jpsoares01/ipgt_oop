@@ -4,11 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 
-namespace ipgt_oop.MVVM.ViewModels
+namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
 {
-    internal class RegistryViewModel : ObservableObject
+    class DashboardScreenViewModel : ObservableObject
     {
     }
 }

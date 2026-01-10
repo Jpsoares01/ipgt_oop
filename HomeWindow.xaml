@@ -5,6 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ipgt_oop"
         xmlns:controls="clr-namespace:ipgt_oop.MVVM.Views.UserControls.HomeScreen"
+        xmlns:viewModel="clr-namespace:ipgt_oop.MVVM.ViewModels"
+        xmlns:vm="clr-namespace:ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen"
+        xmlns:view="clr-namespace:ipgt_oop.MVVM.Views.UserControls.HomeScreen"
         mc:Ignorable="d"
         Title="HomeWindow" 
         WindowStyle="None"
@@ -14,7 +17,30 @@
         WindowStartupLocation="CenterScreen"
         Height="900"
         Width="1380">
-    
+
+    <Window.DataContext>
+        <viewModel:HomeViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:DashboardScreenViewModel}">
+            <view:DashboardScreen/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type vm:TransferScreenViewModel}">
+            <view:TransferScreen/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:DepositScreenViewModel}">
+            <view:DepositScreen/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:WithdrawScreenViewModel}">
+            <view:WithdrawScreen/>
+        </DataTemplate>
+
+    </Window.Resources>
+
     <Border Background="{StaticResource AppBackgroundBrush}" 
             CornerRadius="25">
         <Grid>
@@ -32,8 +58,13 @@
                     Grid.Row="1"
                     Background="{StaticResource SideBarBackgroundBrush}" 
                     CornerRadius="0,0,0,25">
-                <controls:SideBar/>
+                <controls:SideBar DataContext="{Binding SideBarViewModel}"/>
             </Border>
+
+            <ContentControl Grid.Column="1"
+                            Grid.Row="1"
+                            HorizontalAlignment="Center"
+                            Content="{Binding CurrentView}" />
 
 
         </Grid>

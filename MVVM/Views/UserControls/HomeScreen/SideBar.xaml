@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ipgt_oop.MVVM.Views.UserControls.HomeScreen"
+             xmlns:viewmodel="clr-namespace:ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen"
              mc:Ignorable="d">
 
     <Grid>
@@ -22,17 +23,29 @@
                           Height="42"
                           Content="Dashboard"
                           Style="{StaticResource SideBarButton}"
-                          Margin="0,16,0,0"/>
+                          Margin="0,16,0,0"
+                          IsChecked="True"
+                          Command="{Binding SelectCommand}"
+                          CommandParameter="Dashboard"/>
 
-            <RadioButton Width="175" Height="42" Content="Transfer" Style="{StaticResource SideBarButton}" Margin="0,16,0,0"/>
-            <RadioButton Width="175" Height="42" Content="Deposit" Style="{StaticResource SideBarButton}" Margin="0,16,0,0"/>
-            <RadioButton Width="175" Height="42" Content="Withdraw" Style="{StaticResource SideBarButton}" Margin="0,16,0,0"/>
+            <RadioButton Width="175" Height="42" Content="Transfer" Style="{StaticResource SideBarButton}" 
+                         Margin="0,16,0,0"
+                         Command="{Binding SelectCommand}"
+                         CommandParameter="Transfer"/>
+            
+            <RadioButton Width="175" Height="42" Content="Deposit" Style="{StaticResource SideBarButton}" 
+                         Margin="0,16,0,0"
+                         Command="{Binding SelectCommand}"
+                         CommandParameter="Deposit"/>
+            
+            <RadioButton Width="175" Height="42" Content="Withdraw" Style="{StaticResource SideBarButton}" 
+                         Margin="0,16,0,0"
+                         Command="{Binding SelectCommand}"
+                         CommandParameter="Withdraw"/>
+            
             <RadioButton Width="175" Height="42" Content="Pay Services" Style="{StaticResource SideBarButton}" Margin="0,16,0,0"/>
             <RadioButton Width="175" Height="42" Content="History" Style="{StaticResource SideBarButton}" Margin="0,16,0,0"/>
             <RadioButton Width="175" Height="42" Content="Settings" Style="{StaticResource SideBarButton}" Margin="0,16,0,0"/>
         </StackPanel>
     </Grid>
-    
-    
-
 </UserControl>
