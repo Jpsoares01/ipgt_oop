@@ -13,6 +13,7 @@
                 <ResourceDictionary Source="/Resources/Styles/Buttons/SideBarButtons.xaml"/>
                 <ResourceDictionary Source="/Resources/Styles/Colors.xaml"/>
                 <ResourceDictionary Source="/Resources/Styles/FontStyles.xaml"/>
+                <ResourceDictionary Source="/Resources/Styles/ListStyles.xaml"/>
                 <ResourceDictionary Source="/Resources/Images/BankLogo.xaml"/>
                 <ResourceDictionary Source="/Resources/Images/PasswordEye.xaml"/>
 
