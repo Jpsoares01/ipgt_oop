@@ -19,6 +19,13 @@
         <Setter Property="FontWeight" Value="Bold"/>
     </Style>
 
+    <Style x:Key="H2Black" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource MontserratFont}"/>
+        <Setter Property="FontSize" Value="40"/>
+        <Setter Property="Foreground" Value="#000000"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+
     <Style x:Key="H3" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="{StaticResource MontserratFont}"/>
         <Setter Property="FontSize" Value="32"/>
