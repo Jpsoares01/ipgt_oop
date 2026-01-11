@@ -28,6 +28,8 @@
          Background ="{StaticResource CardBackgroundBrush}"
          CornerRadius="15"
          Padding="16">
+            
+            
 
 
         </Border>
@@ -36,12 +38,16 @@
             
         
         <Border  Grid.Row="2"
-                 Margin="0,0,0,16"
+                 Margin="0,0,0,0"
                  Width="954"
                  Height="583"
                  Background ="{StaticResource CardBackgroundBrush}"
                  CornerRadius="15"
-                 Padding="16">
+                 Padding="0">
+            <Border.Clip>
+                <RectangleGeometry Rect="0,0,954,583" RadiusX="15" RadiusY="15"/>
+            </Border.Clip>
+
 
             <Grid>
                 <Grid.RowDefinitions>
@@ -49,29 +55,29 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
+                    <ListView Grid.Row="0" 
+                              ItemsSource="{Binding ListaTransacoes}" 
+                              BorderThickness="0" 
+                              SelectionChanged="ListView_SelectionChanged"
+                              Margin="-5,0,0,0" Cursor="">
+                        <ListView.View>
+                            <GridView>
 
-                <ListView Grid.Row="0" 
-                          ItemsSource="{Binding ListaTransacoes}" 
-                          BorderThickness="0" 
-                          SelectionChanged="ListView_SelectionChanged"
-                          Margin="0,0,0,0" Cursor="">
-                    <ListView.View>
-                        <GridView>
+                                <GridViewColumn Header="Description" Width="192" DisplayMemberBinding="{Binding Descricao}"/>
 
-                            <GridViewColumn Header="Description" Width="190" DisplayMemberBinding="{Binding Descricao}"/>
+                                <GridViewColumn Header="Type" Width="192" DisplayMemberBinding="{Binding type}"/>
 
-                            <GridViewColumn Header="Type" Width="190" DisplayMemberBinding="{Binding type}"/>
+                                <GridViewColumn Header="Date; Time" Width="192" 
+                                            DisplayMemberBinding="{Binding Data, StringFormat='MMM dd, yyyy HH:mm'}"/>
 
-                            <GridViewColumn Header="Date; Time" Width="190" 
-                                        DisplayMemberBinding="{Binding Data, StringFormat='MMM dd, yyyy HH:mm'}"/>
+                                <GridViewColumn Header="Amount" Width="192" DisplayMemberBinding="{Binding Amount}"/>
 
-                            <GridViewColumn Header="Amount" Width="190" DisplayMemberBinding="{Binding Amount}"/>
+                                <GridViewColumn Header="Balance" Width="192" DisplayMemberBinding="{Binding Saldo}"/>
 
-                            <GridViewColumn Header="Balance" Width="190" DisplayMemberBinding="{Binding Saldo}"/>
-
-                        </GridView>
-                    </ListView.View>
-                </ListView>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                
 
                 <Border Grid.Row="1"
                         CornerRadius="20">
@@ -79,8 +85,14 @@
                             Background="#E9E9E9"
                             Height="72"
                             Width="954"              >
-                        <TextBlock Text="Showing results" VerticalAlignment="Center"/>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <TextBlock Text="Showing results" 
+                                   Style="{StaticResource Caption}" 
+                                   Margin="24,0,0,0"
+                                   VerticalAlignment="Center"/>
+                        
+                        <StackPanel Orientation="Horizontal" 
+                                    HorizontalAlignment="Right" 
+                                    VerticalAlignment="Center">
                             <Button Content="Previous" 
                                     Style="{StaticResource GeneralButton}" 
                                     Margin="0,0,17,0" 
@@ -88,13 +100,15 @@
                                     Foreground="#4769AF"
                                     BorderBrush="#000000"
                                     BorderThickness="1"
-                                    
-                                    Click="Button_Click"/>
+                                    Height="40"
+                                    Width="107"/>
                             <Button Content="Next" 
                                     Style="{StaticResource GeneralButton}" 
-                                    Margin="0,0,50,0"
+                                    Margin="0,0,24,0"
                                     BorderBrush="#000000"
-                                    BorderThickness="1"/>
+                                    BorderThickness="1"
+                                    Height="40"
+                                    Width="66"/>
                         </StackPanel>
                     </Grid>
                 </Border>
