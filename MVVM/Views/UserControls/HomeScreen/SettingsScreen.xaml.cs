@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace ipgt_oop.MVVM.Views.UserControls.HomeScreen
         public SettingsScreen()
         {
             InitializeComponent();
+            DataContext = new SettingsScreenViewModel();
         }
     }
 }

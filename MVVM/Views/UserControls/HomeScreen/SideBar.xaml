@@ -43,9 +43,20 @@
                          Command="{Binding SelectCommand}"
                          CommandParameter="Withdraw"/>
             
-            <RadioButton Width="175" Height="42" Content="Pay Services" Style="{StaticResource SideBarButton}" Margin="0,16,0,0"/>
-            <RadioButton Width="175" Height="42" Content="History" Style="{StaticResource SideBarButton}" Margin="0,16,0,0"/>
-            <RadioButton Width="175" Height="42" Content="Settings" Style="{StaticResource SideBarButton}" Margin="0,16,0,0"/>
+            <RadioButton Width="175" Height="42" Content="Pay Services" Style="{StaticResource SideBarButton}" 
+                         Margin="0,16,0,0"
+                         Command="{Binding SelectCommand}"
+                         CommandParameter="PayServices"/>
+            
+            <RadioButton Width="175" Height="42" Content="History" Style="{StaticResource SideBarButton}" 
+                         Margin="0,16,0,0"
+                         Command="{Binding SelectCommand}"
+                         CommandParameter="Transaction"/>
+            
+            <RadioButton Width="175" Height="42" Content="Settings" Style="{StaticResource SideBarButton}" 
+                         Margin="0,16,0,0"
+                         Command="{Binding SelectCommand}"
+                         CommandParameter="Settings"/>
         </StackPanel>
     </Grid>
 </UserControl>

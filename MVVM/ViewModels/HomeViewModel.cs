@@ -21,6 +21,10 @@ namespace ipgt_oop.MVVM.ViewModels
         public TransferScreenViewModel TransferVM { get; set; }
         public DepositScreenViewModel DepositVM { get; set; }
         public WithdrawScreenViewModel WithdrawVM { get; set; }
+        public PayServicesScreenViewModel PayServicesVM { get; set; }
+
+        public TransactionScreenViewModel TransactionVM { get; set; }
+        public SettingsScreenViewModel SettingsVM { get; set; }
 
         private object _currentView;
         public object CurrentView
@@ -41,6 +45,9 @@ namespace ipgt_oop.MVVM.ViewModels
             DepositVM = new DepositScreenViewModel();
             TransferVM = new TransferScreenViewModel();
             WithdrawVM = new WithdrawScreenViewModel();
+            PayServicesVM = new PayServicesScreenViewModel();
+            TransactionVM = new TransactionScreenViewModel();
+            SettingsVM = new SettingsScreenViewModel();
 
 
             CurrentView = DashboardVM;
@@ -74,6 +81,18 @@ namespace ipgt_oop.MVVM.ViewModels
 
                 case "Withdraw":
                     CurrentView = WithdrawVM;
+                    break;
+
+                case "PayServices":
+                    CurrentView = PayServicesVM;
+                    break;
+
+                case "Transaction":
+                    CurrentView = TransactionVM;
+                    break;
+
+                case "Settings":
+                    CurrentView = SettingsVM;
                     break;
             }
         }

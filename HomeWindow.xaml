@@ -39,6 +39,18 @@
             <view:WithdrawScreen/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type vm:PayServicesScreenViewModel}">
+            <view:PayServicesScreen/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:TransactionScreenViewModel}">
+            <view:TransactionScreen/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:SettingsScreenViewModel}">
+            <view:SettingsScreen/>
+        </DataTemplate>
+
     </Window.Resources>
 
     <Border Background="{StaticResource AppBackgroundBrush}" 
