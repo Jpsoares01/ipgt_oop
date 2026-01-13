@@ -27,6 +27,9 @@ namespace ipgt_oop.MVVM.Views.UserControls.HomeScreen
             DataContext = new DepositScreenViewModel();
         }
 
-        
+        private void cmbDepositSelectCard_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
