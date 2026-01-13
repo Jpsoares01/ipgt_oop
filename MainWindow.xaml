@@ -35,6 +35,7 @@
             </Grid.RowDefinitions>
 
             <ContentControl Grid.Row="1"
+                            HorizontalAlignment="Center"
                             Content="{Binding CurrentView}"/>
 
         </Grid>
