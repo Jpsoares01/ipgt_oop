@@ -20,15 +20,15 @@
         </StackPanel>
         
         <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="692"/>
-                <ColumnDefinition Width="238"/>
-            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-            <Border Grid.Column="0" 
+            <Border Grid.Row="0" 
                     Background="#0DA64F" 
                     CornerRadius="12"
-                    Margin="0,0,15,0"> 
+                    Margin="0,0,0,46"> 
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -36,19 +36,31 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Grid.Row="0"
-                    Text="Total Balance" 
-                    Style="{StaticResource BodyRegular}"
-                    Margin="8,0,0,16"
-                    Foreground="#FFFFFF"/>
-                    
+                        <Grid Grid.Row="0"
+                                    Margin="59,16,59,0">
+
+                            <TextBlock HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       Text="Total Balance" 
+                                       Style="{StaticResource BodyRegular}"                        
+                                       Foreground="#FFFFFF"/>
+
+                            <ComboBox Style="{StaticResource GeneralComboBoxStyle}"
+                                      HorizontalAlignment="Right"
+                                      VerticalAlignment="Center"
+                                      Width="185"/>
+
+
+
+                        </Grid>
+                        
                     
                     <!-- Text provisorio, colocar variavel. Ex: Text="{Binding Balance}" -->
                     <TextBlock Grid.Row="1"
-                    Text="$1,504.38"
-                    Style="{StaticResource H1}"
-                    Margin="8,0,0,16"
-                    Foreground="#FFFFFF"/>
+                               Text="{Binding Balance}"
+                               Style="{StaticResource H1}"
+                               Margin="59,0,59,36"
+                               Foreground="#FFFFFF"/>
 
                     <Grid Grid.Row="2">
                         <Grid.ColumnDefinitions>
@@ -56,13 +68,12 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <Button Grid.Column="0" 
+                        <Button x:Name="btnDashboardDeposit"
+                                Grid.Column="0" 
                                 Style="{StaticResource GeneralButton}" 
                                 Background="#26AF61"                     
-                                Margin="8,0,8,16"
-                                Height ="45"
-                                
->
+                                Margin="59,0,42,16"
+                                Height ="45">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="↓"/>
                                 <TextBlock Text="Deposit" 
@@ -71,10 +82,11 @@
                             </StackPanel>
                         </Button>
 
-                        <Button Grid.Column="2"
+                        <Button x:Name="btnDashboardTransfer"
+                                Grid.Column="1"
                                 Style="{StaticResource GeneralButton}" 
                                 Background="#FFFFFF"
-                                Margin="8,0,8,16"
+                                Margin="42,0,59,16"
                                 Height ="45">
                             
                             <StackPanel Orientation="Horizontal">
@@ -87,9 +99,11 @@
             </Border>
 
 
-            <Border Grid.Column="1"
+            <Border Grid.Row="1"
                     Background="#FFFFFF"
-                    Margin="24,18,0,18">
+                    Margin="0,0,0,0"
+                    Height="469"
+                    Width="954">
                 
             </Border>
             

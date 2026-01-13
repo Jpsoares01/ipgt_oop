@@ -32,9 +32,10 @@
                 <TextBlock  Text="Select Card" 
                             Style="{StaticResource Caption}"
                             Margin="0,0,0,4"/>
-                <ComboBox Style="{StaticResource GeneralComboBoxStyle}"
+                <ComboBox x:Name="DepositcmbSelectCard"
+                          Style="{StaticResource GeneralComboBoxStyle}"
                           Margin="0,0,0,32"
-                          Width="890">
+                          Width="890" SelectionChanged="cmbSelectCard_SelectionChanged">
                     <ComboBoxItem Content="Home" />
                     <ComboBoxItem Content="Settings" />
                     <ComboBoxItem Content="About" />
@@ -72,7 +73,8 @@
                     </TextBlock.Text>
                 </TextBlock>
 
-                <Button Style="{StaticResource GeneralButton}"
+                <Button x:Name="btnConfirmDeposit"
+                        Style="{StaticResource GeneralButton}"
                         Height="48"
                         Width="890"
                         HorizontalAlignment="Left"

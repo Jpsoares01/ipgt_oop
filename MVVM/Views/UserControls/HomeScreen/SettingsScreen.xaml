@@ -46,13 +46,22 @@
 
             <StackPanel Grid.Row="2">
 
-                <Button Content="Change Password"
+                <Button x:Name="btnSettingsCreateCard"
+                        Content="Create New Card"
                         Style="{StaticResource GeneralButton}"
                         Margin="0,0,0,24"
                         Height="48"
                         Width="314"/>
-                
-                <Button Content="Delete Account"
+
+                <Button x:Name="btnSettingsChangePass"
+                        Content="Change Password"
+                        Style="{StaticResource GeneralButton}"
+                        Margin="0,0,0,24"
+                        Height="48"
+                        Width="314"/>
+
+                <Button x:Name="btnSettingsDeleteAccount"
+                        Content="Delete Account"
                         Style="{StaticResource GeneralButton}"
                         Margin="0,0,0,0"
                         Height="48"

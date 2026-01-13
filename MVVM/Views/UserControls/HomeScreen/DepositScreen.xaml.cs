@@ -26,5 +26,7 @@ namespace ipgt_oop.MVVM.Views.UserControls.HomeScreen
             InitializeComponent();
             DataContext = new DepositScreenViewModel();
         }
+
+        
     }
 }

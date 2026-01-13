@@ -31,7 +31,8 @@
                 <TextBlock  Text="Select Card" 
                      Style="{StaticResource Caption}"
                      Margin="0,0,0,4"/>
-                <ComboBox Style="{StaticResource GeneralComboBoxStyle}"
+                <ComboBox x:Name="cmbWithdrawSelectCard"
+                    Style="{StaticResource GeneralComboBoxStyle}"
                    Margin="0,0,0,32"
                    Width="890">
                 </ComboBox>
@@ -52,7 +53,7 @@
                   HorizontalAlignment="Left"
                   Margin="0,0,0,10">
 
-                    <TextBox x:Name="AmountWithdraw"
+                    <TextBox x:Name="WithdrawAmount"
                        Style="{StaticResource BodyTextBox}"
                        Background="Transparent"
                        BorderThickness="0"
@@ -72,11 +73,12 @@
                     </TextBlock.Text>
                 </TextBlock>
 
-                <Button Style="{StaticResource GeneralButton}"
-                 Height="48"
-                 Width="890"
-                 HorizontalAlignment="Left"
-                 Content="Confirm Withdraw"/>
+                <Button x:Name="btnConfirmWithdraw"
+                        Style="{StaticResource GeneralButton}"
+                        Height="48"
+                        Width="890"
+                        HorizontalAlignment="Left"
+                        Content="Confirm Withdraw"/>
 
             </StackPanel>
 

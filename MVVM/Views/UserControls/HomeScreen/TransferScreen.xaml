@@ -31,7 +31,8 @@
                 <TextBlock Text="Select Card" 
                            Style="{StaticResource Caption}"
                            Margin="0,0,0,4"/>
-                <ComboBox Style="{StaticResource GeneralComboBoxStyle}"
+                <ComboBox x:Name="cmbTransferSelectCard"
+                          Style="{StaticResource GeneralComboBoxStyle}"
                           Margin="0,0,0,16"
                           Width="890">
                 </ComboBox>
@@ -52,7 +53,7 @@
                          HorizontalAlignment="Left"
                          Margin="0,0,0,16">
 
-                    <TextBox x:Name="RecipientName"
+                    <TextBox x:Name="TransferRecipientName"
                              Style="{StaticResource BodyTextBox}"
                              Background="Transparent"
                              BorderThickness="0"
@@ -74,7 +75,7 @@
                           HorizontalAlignment="Left"
                           Margin="0,0,0,16">
 
-                    <TextBox x:Name="AccountNumber"
+                    <TextBox x:Name="TransferAccountNumber"
                                Style="{StaticResource BodyTextBox}"
                                Background="Transparent"
                                BorderThickness="0"
@@ -95,7 +96,7 @@
                           HorizontalAlignment="Left"
                           Margin="0,0,0,0">
 
-                    <TextBox x:Name="Amount"
+                    <TextBox x:Name="TransferAmount"
                                Style="{StaticResource BodyTextBox}"
                                Background="Transparent"
                                BorderThickness="0"
@@ -112,7 +113,8 @@
                     </TextBlock.Text>
                 </TextBlock>
 
-                <Button Style="{StaticResource GeneralButton}"
+                <Button x:Name="btnTransferSendMoney"
+                        Style="{StaticResource GeneralButton}"
                         Height="48"
                         Width="890"
                         HorizontalAlignment="Left"
