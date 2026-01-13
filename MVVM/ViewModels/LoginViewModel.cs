@@ -1,5 +1,5 @@
 ﻿using ipgt_oop.Core;
-using ipgt_oop.Core;
+using ipgt_oop.MVVM.ViewModels.UserControls.Login;
 using System;
 using System.Collections.Generic;
 using System.Linq;

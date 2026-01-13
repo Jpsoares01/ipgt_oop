@@ -73,7 +73,8 @@
         <Button Style="{StaticResource GeneralButton}"
                 Width="410"
                 Height="48"
-                Content="Sign In"/>
+                Content="Sign In"
+                Command="{Binding OpenHomeWindowCommand}"/>
 
     </StackPanel>
 </UserControl>

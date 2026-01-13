@@ -1,4 +1,5 @@
 ﻿using ipgt_oop.Core;
+using ipgt_oop.MVVM.ViewModels.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,8 +29,10 @@ namespace ipgt_oop.MVVM.ViewModels
         public ICommand ShowLoginCommand { get; }
         public ICommand ShowRegistryCommand { get; }
 
+
         public MainViewModel()
         {
+            
             LoginVM = new LoginViewModel();
             RegistryVM = new RegistryViewModel();
 
@@ -39,5 +42,6 @@ namespace ipgt_oop.MVVM.ViewModels
             ShowRegistryCommand = new RelayCommand(o => CurrentView = RegistryVM, o => true);
 
         }
+
     }
 }

@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using ipgt_oop.MVVM.ViewModels;
+using ipgt_oop.MVVM.ViewModels.UserControls.Login;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +21,7 @@ namespace ipgt_oop
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainViewModel();
         }
     }
 }
