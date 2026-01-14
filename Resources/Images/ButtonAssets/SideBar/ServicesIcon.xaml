@@ -30,5 +30,5 @@
             </GeometryDrawing>
         </DrawingGroup>
     </DrawingGroup>
-    <DrawingImage Drawing="{StaticResource Icon_Sidebar_Services_xaml}" x:Key="di_Icon_Sidebar_Services_xaml"/>
+    <DrawingImage Drawing="{StaticResource Icon_Sidebar_Services_xaml}" x:Key="ServicesIcon"/>
 </ResourceDictionary>
