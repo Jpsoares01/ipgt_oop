@@ -54,14 +54,16 @@
       <Generator></Generator>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Page>
-    <Page Update="Resources\Images\PasswordEye.xaml">
+    <Page Update="Resources\Images\ButtonAssets\PasswordEye.xaml">
       <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Page>
+    <Page Update="Resources\Images\ButtonAssets\PasswordEyeCrossed.xaml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Page>
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="MVVM\Models\" />
-    <Folder Include="Resources\Images\ButtonAssets\" />
   </ItemGroup>
 
 </Project>

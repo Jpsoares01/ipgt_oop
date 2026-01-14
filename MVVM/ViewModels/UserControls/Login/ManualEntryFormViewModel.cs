@@ -13,7 +13,6 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.Login
     internal class ManualEntryFormViewModel : ObservableObject
     {
         public ICommand OpenHomeWindowCommand { get; }
-        private HomeWindow _HomeWindow;
 
         public event EventHandler RequestHomeWindow;
 
