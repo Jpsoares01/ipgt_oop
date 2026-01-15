@@ -46,8 +46,8 @@
                         </Border>
 
                         <TextBlock Text="Electricity" 
-               Style="{StaticResource H3}"
-               Margin="0,13,0,0"/>
+                                   Style="{StaticResource H3}"
+                                   Margin="0,13,0,0"/>
                     </StackPanel>
 
                 </Button>

@@ -27,7 +27,89 @@
          Height="109"
          Background ="{StaticResource CardBackgroundBrush}"
          CornerRadius="15"
-         Padding="16">
+         Padding="24">
+
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+
+                    <TextBlock  Text="Search"
+                                Style="{StaticResource Caption}"
+                                Margin="0,-13,0,0"/>
+
+                    <Border  CornerRadius="8"
+                             BorderBrush="{StaticResource LabelBorderdBrush}"
+                             BorderThickness="1"
+                             Width="332"
+                             Height="40">
+                        
+
+                        <Grid>
+
+                            <Button Style="{StaticResource GeneralButton}"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    Height="40"
+                                    Width="50"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent">
+
+                                <Border Width="24" Height="24">
+                                    <Border.Background>
+                                        <ImageBrush ImageSource="{StaticResource ServicesIcon}"/>
+                                    </Border.Background>
+                                </Border>
+
+                            </Button>
+
+                            <TextBox x:Name="TransactionTxtSearch"
+                                     Style="{StaticResource BodyTextBox}"
+                                     Width="280"
+                                     HorizontalAlignment="Right"
+                                     BorderBrush="Transparent"
+                                     BorderThickness="0"/>
+
+
+                        </Grid>
+                        
+                    </Border>
+                </Grid>
+
+                <Grid Grid.Column="1"
+                      Margin="168,0,0,0">
+
+                    <TextBlock  Text="Period"
+                                Style="{StaticResource Caption}"
+                                Margin="0,-13,0,0"/>
+                    <ComboBox x:Name="cmbTransactionPeriod"
+                               Style="{StaticResource GeneralComboBoxStyle}"
+                               Width="192"
+                              Height="40">
+                    </ComboBox>
+
+                </Grid>
+
+                <Grid Grid.Column="2"
+                      Margin="22,0,0,0">
+
+                    <TextBlock  Text="Operation Type"
+                                Style="{StaticResource Caption}"
+                                Margin="0,-13,0,0"/>
+                    <ComboBox x:Name="cmbTransactionOperationType"
+                              Style="{StaticResource GeneralComboBoxStyle}"
+                              Width="192"
+                              Height="40">
+                    </ComboBox>
+
+                </Grid>
+
+            </Grid>
 
 
 
