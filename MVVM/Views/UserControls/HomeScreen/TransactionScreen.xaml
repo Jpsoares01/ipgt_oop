@@ -28,15 +28,15 @@
          Background ="{StaticResource CardBackgroundBrush}"
          CornerRadius="15"
          Padding="16">
-            
-            
+
+
 
 
         </Border>
-        
-        
-            
-        
+
+
+
+
         <Border  Grid.Row="2"
                  Margin="0,0,0,0"
                  Width="954"
@@ -51,35 +51,36 @@
 
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="405*"/>
+                    <RowDefinition Height="106*"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                    <ListView Grid.Row="0" 
+                <ListView Grid.Row="0" 
                               ItemsSource="{Binding ListaTransacoes}" 
                               BorderThickness="0" 
                               SelectionChanged="ListView_SelectionChanged"
-                              Margin="-5,0,0,0" Cursor="">
-                        <ListView.View>
-                            <GridView>
+                              Margin="-5,0,0,0" Cursor="" Grid.RowSpan="2">
+                    <ListView.View>
+                        <GridView>
 
-                                <GridViewColumn Header="Description" Width="192" DisplayMemberBinding="{Binding Descricao}"/>
+                            <GridViewColumn Header="Description" Width="192" DisplayMemberBinding="{Binding Descricao}"/>
 
-                                <GridViewColumn Header="Type" Width="192" DisplayMemberBinding="{Binding type}"/>
+                            <GridViewColumn Header="Type" Width="192" DisplayMemberBinding="{Binding type}"/>
 
-                                <GridViewColumn Header="Date; Time" Width="192" 
+                            <GridViewColumn Header="Date; Time" Width="192" 
                                             DisplayMemberBinding="{Binding Data, StringFormat='MMM dd, yyyy HH:mm'}"/>
 
-                                <GridViewColumn Header="Amount" Width="192" DisplayMemberBinding="{Binding Amount}"/>
+                            <GridViewColumn Header="Amount" Width="192" DisplayMemberBinding="{Binding Amount}"/>
 
-                                <GridViewColumn Header="Balance" Width="192" DisplayMemberBinding="{Binding Saldo}"/>
+                            <GridViewColumn Header="Balance" Width="192" DisplayMemberBinding="{Binding Saldo}"/>
 
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
-                
+                        </GridView>
+                    </ListView.View>
+                </ListView>
 
-                <Border Grid.Row="1"
+
+                <Border Grid.Row="2"
                         CornerRadius="20">
                     <Grid Margin="0,0,0,0"
                             Background="#E9E9E9"
@@ -89,7 +90,7 @@
                                    Style="{StaticResource Caption}" 
                                    Margin="24,0,0,0"
                                    VerticalAlignment="Center"/>
-                        
+
                         <StackPanel Orientation="Horizontal" 
                                     HorizontalAlignment="Right" 
                                     VerticalAlignment="Center">
@@ -118,6 +119,6 @@
             </Grid>
         </Border>
 
-        
+
     </Grid>
 </UserControl>
