@@ -12,6 +12,14 @@
         <ResourceDictionary Source="/Resources/Images/ButtonAssets/SideBar/DepositIcon.xaml"/>
         <ResourceDictionary Source="/Resources/Images/ButtonAssets/SideBar/HistoryIcon.xaml"/>
         <ResourceDictionary Source="/Resources/Images/ButtonAssets/SideBar/DashboardIcon.xaml"/>
+
+        <ResourceDictionary Source="/Resources/Images/ButtonAssets/Services/ElectricityIcon.xaml"/>
+        <ResourceDictionary Source="/Resources/Images/ButtonAssets/Services/InternetIcon.xaml"/>
+        <ResourceDictionary Source="/Resources/Images/ButtonAssets/Services/PhoneIcon.xaml"/>
+        <ResourceDictionary Source="/Resources/Images/ButtonAssets/Services/GasIcon.xaml"/>
+        <ResourceDictionary Source="/Resources/Images/ButtonAssets/Services/InsuranceIcon.xaml"/>
+        <ResourceDictionary Source="/Resources/Images/ButtonAssets/Services/TvIcon.xaml"/>
+        <ResourceDictionary Source="/Resources/Images/ButtonAssets/Services/OtherServicesIcon.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>
