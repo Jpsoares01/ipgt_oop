@@ -4,7 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ipgt_oop.MVVM.Views"
+             
+             xmlns:vm="clr-namespace:ipgt_oop.MVVM.ViewModels"
+             
              mc:Ignorable="d">
+
+    <UserControl.DataContext>
+        <vm:RegistryViewModel />
+    </UserControl.DataContext>
+
+
     <Grid>
         <Border CornerRadius="12"
                 Background="{StaticResource CardBackgroundBrush}">
@@ -62,7 +71,10 @@
                                Style="{StaticResource Caption}"
                                Margin="0,18,0,0"/>
 
-                    <ComboBox Grid.Row="1"
+                    <ComboBox ItemsSource="{Binding BankList}"
+                              DisplayMemberPath="name"
+                              SelectedValuePath="id"
+                              Grid.Row="1"
                               Width="410"
                               Height="41"
                               Margin="0,4,0,0"/>
