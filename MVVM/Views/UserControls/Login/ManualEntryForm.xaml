@@ -6,8 +6,7 @@
              xmlns:local="clr-namespace:ipgt_oop.MVVM.Views.UserControls.Login"
              mc:Ignorable="d">
     
-    <StackPanel Height="220"
-                Width="458">
+    <StackPanel >
 
         <Grid HorizontalAlignment="Center">
             <Grid.RowDefinitions>
@@ -16,7 +15,7 @@
             </Grid.RowDefinitions>
             
             <TextBlock Grid.Row="0" 
-                       Text="Card Number"
+                       Text="Username"
                        Style="{StaticResource Caption}"
                        Margin="0,0,0,4"/>
 

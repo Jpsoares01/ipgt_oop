@@ -20,13 +20,11 @@
     </UserControl.Resources>
 
     <Grid>
-        <Border Width="458"
-                Height="550"
-                Background="{StaticResource CardBackgroundBrush}">
+        <Border Background="{StaticResource CardBackgroundBrush}">
 
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="185"/>
+                    <RowDefinition Height="225"/>
                     <RowDefinition Height="96"/>
                     <RowDefinition/>
                     <RowDefinition Height="62"/>
