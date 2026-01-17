@@ -53,10 +53,31 @@ namespace ipgt_oop.MVVM.Views.UserControls.Login
                 }
             }
 
-            private void CloseWindow()
+        private void CloseWindow()
+        {
+            Window parentWindow = Window.GetWindow(this);
+            parentWindow?.Close();
+        }
+
+        // function to change the password visibility
+        private void TogglePassword_Click(object sender, RoutedEventArgs e)
+        {
+            if (PasswordBox.Visibility == Visibility.Visible)
             {
-                Window parentWindow = Window.GetWindow(this);
-                parentWindow?.Close();
+                PasswordTextBox.Text = PasswordBox.Password;
+                PasswordBox.Visibility = Visibility.Collapsed;
+                PasswordTextBox.Visibility = Visibility.Visible;
+
+                PasswordButtonImage.Source = (ImageSource)FindResource("PasswordEye");
             }
+            else
+            {
+                PasswordBox.Password = PasswordTextBox.Text;
+                PasswordTextBox.Visibility = Visibility.Collapsed;
+                PasswordBox.Visibility = Visibility.Visible;
+
+                PasswordButtonImage.Source = (ImageSource)FindResource("PasswordEyeCrossed");
+            }
+        }
     }
 }
