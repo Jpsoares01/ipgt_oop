@@ -3,6 +3,11 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/Resources/Images/BankLogo.xaml"/>
+        <ResourceDictionary Source="/Resources/Images/CheckIcon.xaml"/>
+        <ResourceDictionary Source="/Resources/Images/CloseIcon.xaml"/>
+        <ResourceDictionary Source="/Resources/Images/SearchIcon.xaml"/>
+        
+        
         <ResourceDictionary Source="/Resources/Images/ButtonAssets/PasswordEye.xaml"/>
         <ResourceDictionary Source="/Resources/Images/ButtonAssets/PasswordEyeCrossed.xaml"/>
         <ResourceDictionary Source="/Resources/Images/ButtonAssets/SideBar/WithdrawIcon.xaml"/>
@@ -21,6 +26,8 @@
         <ResourceDictionary Source="/Resources/Images/ButtonAssets/Services/InsuranceIcon.xaml"/>
         <ResourceDictionary Source="/Resources/Images/ButtonAssets/Services/TvIcon.xaml"/>
         <ResourceDictionary Source="/Resources/Images/ButtonAssets/Services/OtherServicesIcon.xaml"/>
+        
+        
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>
