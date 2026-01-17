@@ -20,7 +20,7 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.Login
         {
             OpenHomeWindowCommand = new RelayCommand(
                 o => RequestHomeWindow?.Invoke(this, EventArgs.Empty),
-                o => true                                          
+                o => true
                 );
         }
     }

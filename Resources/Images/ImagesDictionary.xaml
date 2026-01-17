@@ -10,6 +10,9 @@
         
         <ResourceDictionary Source="/Resources/Images/ButtonAssets/PasswordEye.xaml"/>
         <ResourceDictionary Source="/Resources/Images/ButtonAssets/PasswordEyeCrossed.xaml"/>
+        <ResourceDictionary Source="/Resources/Images/ButtonAssets/TransferArrow.xaml"/>
+        <ResourceDictionary Source="/Resources/Images/ButtonAssets/DepositArrow.xaml"/>
+                            
         <ResourceDictionary Source="/Resources/Images/ButtonAssets/SideBar/WithdrawIcon.xaml"/>
         <ResourceDictionary Source="/Resources/Images/ButtonAssets/SideBar/TransferIcon.xaml"/>
         <ResourceDictionary Source="/Resources/Images/ButtonAssets/SideBar/SettingsIcon.xaml"/>

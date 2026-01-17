@@ -47,23 +47,39 @@
                         Width="410"
                         Height="41"
                         HorizontalAlignment="Left">
-                    
-                    <Grid>
 
+                    <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
                             <ColumnDefinition Width="34"/>
                         </Grid.ColumnDefinitions>
-                        
-                        <PasswordBox x:Name="Password"
+
+                        <!-- PasswordBox-->
+                        <PasswordBox x:Name="PasswordBox"
                                      Style="{StaticResource BodyPasswordBox}"
                                      Background="Transparent"
                                      BorderThickness="0"
-                                     Padding="4"/>
+                                     Padding="4"
+                                     Visibility="Visible"/>
 
-                        <Image Grid.Column="1"
-                               Width="22"
-                               Source="{StaticResource PasswordEye}"/>
+                        <!-- TextBox-->
+
+                        <TextBox x:Name="PasswordTextBox"
+                                 Style="{StaticResource BodyTextBox}"
+                                 Background="Transparent"
+                                 BorderThickness="0"
+                                 Padding="4"
+                                 Visibility="Collapsed"/>
+
+                        <Button Grid.Column="1" 
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Click="TogglePassword_Click">
+
+                            <Image x:Name="PasswordButtonImage"
+                                   Width="22"
+                                   Source="{StaticResource PasswordEyeCrossed}"/>
+                        </Button>
                     </Grid>
                 </Border>
             </Grid>
