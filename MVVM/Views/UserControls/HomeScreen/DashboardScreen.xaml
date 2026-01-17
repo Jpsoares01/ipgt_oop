@@ -9,6 +9,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0"
@@ -28,7 +29,8 @@
             <Border Grid.Row="0" 
                     Background="#0DA64F" 
                     CornerRadius="12"
-                    Margin="0,0,0,46"> 
+                    Margin="0,0,0,46"
+                    Width="954"> 
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -99,11 +101,11 @@
             </Border>
 
 
-            <Border Grid.Row="1"
+            <Border Grid.Row="2"
                     Background="#FFFFFF"
                     Margin="0,0,0,0"
-                    Height="469"
-                    Width="954">
+                    Height="300"
+                    Width="300">
                 
             </Border>
             
