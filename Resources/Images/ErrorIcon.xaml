@@ -20,5 +20,5 @@
             </GeometryDrawing>
         </DrawingGroup>
     </DrawingGroup>
-    <DrawingImage Drawing="{StaticResource closeIcon_xaml}" x:Key="CloseIcon"/>
+    <DrawingImage Drawing="{StaticResource closeIcon_xaml}" x:Key="ErrorIcon"/>
 </ResourceDictionary>

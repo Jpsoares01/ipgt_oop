@@ -19,10 +19,12 @@
             <Border Width="62" 
                         Height="62" 
                         CornerRadius="15"
-                        Background="#F8968D"
                         Margin="0,0,0,16">
+                    <Border.Background>
+                        <ImageBrush ImageSource="{StaticResource ErrorIcon }"/>
+                    </Border.Background>
 
-            </Border>
+                </Border>
 
             <TextBlock Text="Error!"
                         Style="{StaticResource H2Black}"

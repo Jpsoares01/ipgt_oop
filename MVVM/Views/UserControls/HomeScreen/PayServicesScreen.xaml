@@ -41,7 +41,7 @@
 
                         <Border Width="64" Height="64" CornerRadius="20" >
                             <Border.Background>
-                                <ImageBrush ImageSource="{StaticResource ServicesIcon}"/>
+                                <ImageBrush ImageSource="{StaticResource ElectricityIcon}"/>
                             </Border.Background>
                         </Border>
 
@@ -57,11 +57,11 @@
 
                         <Border Width="64" Height="64" CornerRadius="20" >
                             <Border.Background>
-                                <ImageBrush ImageSource="{StaticResource ServicesIcon}"/>
+                                <ImageBrush ImageSource="{StaticResource WaterIcon}"/>
                             </Border.Background>
                         </Border>
 
-                        <TextBlock Text="Electricity" 
+                        <TextBlock Text="Water" 
                Style="{StaticResource H3}"
                Margin="0,13,0,0"/>
                     </StackPanel>
@@ -72,11 +72,11 @@
 
                         <Border Width="64" Height="64" CornerRadius="20" >
                             <Border.Background>
-                                <ImageBrush ImageSource="{StaticResource ServicesIcon}"/>
+                                <ImageBrush ImageSource="{StaticResource InternetIcon}"/>
                             </Border.Background>
                         </Border>
 
-                        <TextBlock Text="Electricity" 
+                        <TextBlock Text="Internet" 
                Style="{StaticResource H3}"
                Margin="0,13,0,0"/>
                     </StackPanel>
@@ -87,11 +87,11 @@
 
                         <Border Width="64" Height="64" CornerRadius="20" >
                             <Border.Background>
-                                <ImageBrush ImageSource="{StaticResource ServicesIcon}"/>
+                                <ImageBrush ImageSource="{StaticResource PhoneIcon}"/>
                             </Border.Background>
                         </Border>
 
-                        <TextBlock Text="Electricity" 
+                        <TextBlock Text="Phone" 
                                    Style="{StaticResource H3}"
                                    Margin="0,13,0,0"/>
                     </StackPanel>
@@ -102,11 +102,11 @@
 
                         <Border Width="64" Height="64" CornerRadius="20" >
                             <Border.Background>
-                                <ImageBrush ImageSource="{StaticResource ServicesIcon}"/>
+                                <ImageBrush ImageSource="{StaticResource GasIcon}"/>
                             </Border.Background>
                         </Border>
 
-                        <TextBlock Text="Electricity" 
+                        <TextBlock Text="Gas" 
                Style="{StaticResource H3}"
                Margin="0,13,0,0"/>
                     </StackPanel>
@@ -117,11 +117,11 @@
 
                         <Border Width="64" Height="64" CornerRadius="20" >
                             <Border.Background>
-                                <ImageBrush ImageSource="{StaticResource ServicesIcon}"/>
+                                <ImageBrush ImageSource="{StaticResource InsuranceIcon}"/>
                             </Border.Background>
                         </Border>
 
-                        <TextBlock Text="Electricity" 
+                        <TextBlock Text="Insurance" 
                Style="{StaticResource H3}"
                Margin="0,13,0,0"/>
                     </StackPanel>
@@ -132,13 +132,14 @@
 
                         <Border Width="64" Height="64" CornerRadius="20" >
                             <Border.Background>
-                                <ImageBrush ImageSource="{StaticResource ServicesIcon}"/>
+                                <ImageBrush ImageSource="{StaticResource TvIcon}"/>
                             </Border.Background>
                         </Border>
 
-                        <TextBlock Text="Electricity" 
+                        <TextBlock Text="Tv" 
                Style="{StaticResource H3}"
-               Margin="0,13,0,0"/>
+               Margin="0,13,0,0"
+                                   HorizontalAlignment="Center"/>
                     </StackPanel>
                 </Button>
 
@@ -147,11 +148,11 @@
 
                         <Border Width="64" Height="64" CornerRadius="20" >
                             <Border.Background>
-                                <ImageBrush ImageSource="{StaticResource ServicesIcon}"/>
+                                <ImageBrush ImageSource="{StaticResource OtherServicesIcon}"/>
                             </Border.Background>
                         </Border>
 
-                        <TextBlock Text="Electricity" 
+                        <TextBlock Text="Other" 
                Style="{StaticResource H3}"
                Margin="0,13,0,0"/>
                     </StackPanel>

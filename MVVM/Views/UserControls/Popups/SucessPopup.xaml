@@ -19,10 +19,13 @@
                  <Border Width="62" 
                          Height="62" 
                          CornerRadius="15"
-                         Background="#A3D3B8"
                          Margin="0,0,0,16">
-                     
-                 </Border>
+
+                    <Border.Background>
+                        <ImageBrush ImageSource="{StaticResource CheckIcon }"/>
+                    </Border.Background>
+
+                </Border>
 
                     <TextBlock Text="Success!"
                            Style="{StaticResource H2Black}"

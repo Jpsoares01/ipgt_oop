@@ -10,6 +10,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
@@ -35,6 +36,7 @@
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
 
                 <Grid Grid.Column="0">
@@ -48,7 +50,7 @@
                              BorderThickness="1"
                              Width="332"
                              Height="40">
-                        
+
 
                         <Grid>
 
@@ -62,7 +64,7 @@
 
                                 <Border Width="24" Height="24">
                                     <Border.Background>
-                                        <ImageBrush ImageSource="{StaticResource ServicesIcon}"/>
+                                        <ImageBrush ImageSource="{StaticResource SearchIcon}"/>
                                     </Border.Background>
                                 </Border>
 
@@ -77,7 +79,7 @@
 
 
                         </Grid>
-                        
+
                     </Border>
                 </Grid>
 
@@ -111,68 +113,61 @@
 
             </Grid>
 
-
-
-
         </Border>
 
 
 
 
-        <Border  Grid.Row="2"
-                 Margin="0,0,0,0"
-                 Width="954"
-                 Height="583"
-                 Background ="{StaticResource CardBackgroundBrush}"
-                 CornerRadius="15"
-                 Padding="0">
-            <Border.Clip>
-                <RectangleGeometry Rect="0,0,954,583" RadiusX="15" RadiusY="15"/>
-            </Border.Clip>
+        <Grid Grid.Row="2">
 
+            <Border>
+                <Border.Clip>
 
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="405*"/>
-                    <RowDefinition Height="106*"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
+                    <RectangleGeometry Rect="2,1,952,350" RadiusX="15" RadiusY="15"/>
 
-                <ListView Grid.Row="0" 
-                              ItemsSource="{Binding ListaTransacoes}" 
-                              BorderThickness="0" 
-                              SelectionChanged="ListView_SelectionChanged"
-                              Margin="-5,0,0,0" Cursor="" Grid.RowSpan="2">
+                </Border.Clip>
+                
+                <ListView     ItemsSource="{Binding ListaTransacoes}" 
+                                  BorderThickness="0" 
+                          
+                                  SelectionChanged="ListView_SelectionChanged"
+                                  Margin="0,0,0,0"                                                            
+                                  Height="310">
                     <ListView.View>
                         <GridView>
 
-                            <GridViewColumn Header="Description" Width="192" DisplayMemberBinding="{Binding Descricao}"/>
+                            <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Descricao}"/>
 
-                            <GridViewColumn Header="Type" Width="192" DisplayMemberBinding="{Binding type}"/>
+                            <GridViewColumn Header="Type" DisplayMemberBinding="{Binding type}"/>
 
-                            <GridViewColumn Header="Date; Time" Width="192" 
-                                            DisplayMemberBinding="{Binding Data, StringFormat='MMM dd, yyyy HH:mm'}"/>
+                            <GridViewColumn Header="Date; Time" DisplayMemberBinding="{Binding Data, StringFormat='MMM dd, yyyy HH:mm'}"/>
 
-                            <GridViewColumn Header="Amount" Width="192" DisplayMemberBinding="{Binding Amount}"/>
+                            <GridViewColumn Header="Amount" DisplayMemberBinding="{Binding Amount}"/>
 
-                            <GridViewColumn Header="Balance" Width="192" DisplayMemberBinding="{Binding Saldo}"/>
+                            <GridViewColumn Header="Balance" DisplayMemberBinding="{Binding Saldo}"/>
 
                         </GridView>
                     </ListView.View>
                 </ListView>
+                
+            </Border>
+        </Grid>
+        
+        
 
-
-                <Border Grid.Row="2"
-                        CornerRadius="20">
-                    <Grid Margin="0,0,0,0"
-                            Background="#E9E9E9"
-                            Height="72"
-                            Width="954"              >
+        <Border Grid.Row="3"
+              Margin="0,0,0,0"
+              Background="#E9E9E9"
+              Height="72"
+              Width="952"
+                CornerRadius="0,0,16,16">
+            <Grid>
+            
                         <TextBlock Text="Showing results" 
                                    Style="{StaticResource Caption}" 
                                    Margin="24,0,0,0"
                                    VerticalAlignment="Center"/>
-
+            
                         <StackPanel Orientation="Horizontal" 
                                     HorizontalAlignment="Right" 
                                     VerticalAlignment="Center">
@@ -195,12 +190,11 @@
                                     Height="40"
                                     Width="66"/>
                         </StackPanel>
-                    </Grid>
-                </Border>
-
             </Grid>
+
         </Border>
+   
+</Grid>
+        
 
-
-    </Grid>
 </UserControl>
