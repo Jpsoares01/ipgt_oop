@@ -20,15 +20,13 @@
                  CornerRadius="15"
                  Padding="16">
 
-<!--
-            <TextBlock Text="Amount" 
-             Style="{StaticResource Caption}"
-             Margin="0,0,0,4"/>
--->
-
-
-
             <StackPanel>
+                <TextBlock Text="{Binding NomeDaCategoria, StringFormat='Pay {0} Bill'}"
+                           Style="{StaticResource H2}"
+                           Foreground="Black"
+                           Margin="0,0,0,46"/>
+                
+                
                     <TextBlock Text="Select Card" 
                         Style="{StaticResource Caption}"
                         Margin="0,0,0,4"/>
