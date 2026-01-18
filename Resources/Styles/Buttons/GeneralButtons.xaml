@@ -35,6 +35,9 @@
     <SolidColorBrush x:Key="GeneralButtonColor">#4769AF</SolidColorBrush>
     <SolidColorBrush x:Key="GeneralButtonFontColor">#FFFFFF</SolidColorBrush>
 
+    <SolidColorBrush x:Key="GeneralButtonHoverColor" Color="#3258A6"/>
+    <SolidColorBrush x:Key="GeneralButtonPressedColor" Color="#1F3C77"/>
+
     <Style x:Key="GeneralButton" TargetType="Button">
         <Setter Property="Background" Value="{StaticResource GeneralButtonColor}"/>
         <Setter Property="BorderThickness" Value="0"/>
@@ -49,20 +52,35 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border Background="{TemplateBinding Background}"
+                    <Border x:Name="buttonBorder"
+                            Background="{TemplateBinding Background}"
                             CornerRadius="12"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
-
+                        
                         <ContentPresenter Content="{TemplateBinding Content}"
                                           ContentTemplate="{TemplateBinding ContentTemplate}"
                                           HorizontalAlignment="Center"
                                           VerticalAlignment="Center"/>
                     </Border>
+                    <ControlTemplate.Triggers>
+                        
+                        <!-- Hover  -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="buttonBorder" Property="Background" Value="{StaticResource GeneralButtonHoverColor}"/>
+                        </Trigger>
+                        
+                        <!-- Pressed -->
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="buttonBorder" Property="Background" Value="{StaticResource GeneralButtonPressedColor}"/>
+                        </Trigger>
+                        
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
+
 
 
     <ControlTemplate x:Key="ComboBoxToggleButton" TargetType="{x:Type ToggleButton}">

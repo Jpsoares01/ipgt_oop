@@ -62,6 +62,7 @@
 
                 <Grid HorizontalAlignment="Center"
                       Margin="0,18,0,18">
+
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
@@ -81,75 +82,107 @@
                                 Width="410"
                                 Height="41"
                                 HorizontalAlignment="Left">
+
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
                                     <ColumnDefinition Width="34"/>
                                 </Grid.ColumnDefinitions>
 
-                                <PasswordBox x:Name="Password"
+                                <!-- PasswordBox-->
+                                <PasswordBox x:Name="PasswordBox"
                                              Style="{StaticResource BodyPasswordBox}"
                                              Background="Transparent"
                                              BorderThickness="0"
-                                             Padding="4"/>
+                                             Padding="4"
+                                             Visibility="Visible"/>
 
-                                <Button Grid.Column="1"
+                                <!-- TextBox-->
+
+                                <TextBox x:Name="PasswordTextBox"
+                                         Style="{StaticResource BodyTextBox}"
+                                         Background="Transparent"
+                                         BorderThickness="0"
+                                         Padding="4"
+                                         Visibility="Collapsed"/>
+
+                                <Button Grid.Column="1" 
                                         Background="Transparent"
-                                        BorderThickness="0">
+                                        BorderThickness="0"
+                                        Click="TogglePassword_Click">
 
-                                    <Image Width="22"
-                                           Source="{StaticResource PasswordEye}"/>
-
+                                    <Image x:Name="PasswordButtonImage"
+                                           Width="22"
+                                           Source="{StaticResource PasswordEyeCrossed}"/>
                                 </Button>
 
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </Grid>
+
+
+                <Grid HorizontalAlignment="Center"
+                      Margin="0,0,0,18">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" 
+                               Text="Password"
+                               Style="{StaticResource Caption}"
+                               Margin="0,0,0,4"/>
+
+                    <Grid Grid.Row="1">
+                        <Border Grid.ColumnSpan="2"
+                                CornerRadius="8"
+                                BorderBrush="{StaticResource LabelBorderdBrush}"
+                                BorderThickness="1"
+                                Background="Transparent"
+                                Width="410"
+                                Height="41"
+                                HorizontalAlignment="Left">
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="34"/>
+                                </Grid.ColumnDefinitions>
+
+                                <!-- PasswordBox-->
+                                <PasswordBox x:Name="ConfPasswordBox"
+                                             Style="{StaticResource BodyPasswordBox}"
+                                             Background="Transparent"
+                                             BorderThickness="0"
+                                             Padding="4"
+                                             Visibility="Visible"/>
+
+                                <!-- TextBox-->
+
+                                <TextBox x:Name="ConfPasswordTextBox"
+                                         Style="{StaticResource BodyTextBox}"
+                                         Background="Transparent"
+                                         BorderThickness="0"
+                                         Padding="4"
+                                         Visibility="Collapsed"/>
+
+                                <Button Grid.Column="1" 
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        Click="ToggleConfPassword_Click">
+
+                                    <Image x:Name="ConfPasswordButtonImage"
+                                           Width="22"
+                                           Source="{StaticResource PasswordEyeCrossed}"/>
+                                </Button>
 
                             </Grid>
                         </Border>
                     </Grid>
                 </Grid>
                 
-                
-                <TextBlock Grid.Row="0" 
-                           Text="Password"
-                           Style="{StaticResource Caption}"
-                           Margin="0,0,0,4"/>
-                
-                <Grid HorizontalAlignment="Center" 
-                      Margin="0,0,0,18">
-
-                    
-                    
-                    <Border CornerRadius="8"
-                            BorderBrush="{StaticResource LabelBorderdBrush}"
-                            BorderThickness="1"
-                            Background="Transparent"
-                            Width="410"
-                            Height="41"
-                            HorizontalAlignment="Left">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition Width="34"/>
-                            </Grid.ColumnDefinitions>
-
-                            <PasswordBox x:Name="Password2"
-                                         Style="{StaticResource BodyPasswordBox}"
-                                         Background="Transparent"
-                                         BorderThickness="0"
-                                         Padding="4"/>
-
-                            <Button Grid.Column="1"
-                                    Background="Transparent"
-                                    BorderThickness="0">
-
-                                <Image Width="22"
-                                 Source="{StaticResource PasswordEye}"/>
-
-                            </Button>
-                        </Grid>
-                    </Border>
-                </Grid>
-
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>

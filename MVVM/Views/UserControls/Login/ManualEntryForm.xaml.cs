@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using YourApp.Helpers;
 
 namespace ipgt_oop.MVVM.Views.UserControls.Login
 {
@@ -31,8 +32,6 @@ namespace ipgt_oop.MVVM.Views.UserControls.Login
             InitializeComponent();
             var vm = new ManualEntryFormViewModel();
             DataContext = vm;
-
-            // DataContext = new ManualEntryFormViewModel();
 
             vm.RequestHomeWindow += OpenHomeWindow;
 
@@ -67,22 +66,12 @@ namespace ipgt_oop.MVVM.Views.UserControls.Login
         // function to change the password visibility
         private void TogglePassword_Click(object sender, RoutedEventArgs e)
         {
-            if (PasswordBox.Visibility == Visibility.Visible)
-            {
-                PasswordTextBox.Text = PasswordBox.Password;
-                PasswordBox.Visibility = Visibility.Collapsed;
-                PasswordTextBox.Visibility = Visibility.Visible;
-
-                PasswordButtonImage.Source = (ImageSource)FindResource("PasswordEye");
-            }
-            else
-            {
-                PasswordBox.Password = PasswordTextBox.Text;
-                PasswordTextBox.Visibility = Visibility.Collapsed;
-                PasswordBox.Visibility = Visibility.Visible;
-
-                PasswordButtonImage.Source = (ImageSource)FindResource("PasswordEyeCrossed");
-            }
+            PasswordHelper.TogglePasswordVisibility(
+                PasswordBox,
+                PasswordTextBox,
+                PasswordButtonImage,
+                (ImageSource)FindResource("PasswordEye"),
+                (ImageSource)FindResource("PasswordEyeCrossed"));
         }
     }
 }

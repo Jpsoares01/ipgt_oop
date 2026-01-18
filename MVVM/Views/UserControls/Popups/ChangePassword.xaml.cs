@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using YourApp.Helpers;
 
 namespace ipgt_oop.MVVM.Views.UserControls.Popups
 {
@@ -22,6 +23,26 @@ namespace ipgt_oop.MVVM.Views.UserControls.Popups
         public ChangePassword()
         {
             InitializeComponent();
+        }
+
+        private void TogglePassword_Click(object sender, RoutedEventArgs e)
+        {
+            PasswordHelper.TogglePasswordVisibility(
+                PasswordBox,
+                PasswordTextBox,
+                PasswordButtonImage,
+                (ImageSource)FindResource("PasswordEye"),
+                (ImageSource)FindResource("PasswordEyeCrossed"));
+        }
+
+        private void ToggleConfPassword_Click(object sender, RoutedEventArgs e)
+        {
+            PasswordHelper.TogglePasswordVisibility(
+                ConfPasswordBox,
+                ConfPasswordTextBox,
+                ConfPasswordButtonImage,
+                (ImageSource)FindResource("PasswordEye"),
+                (ImageSource)FindResource("PasswordEyeCrossed"));
         }
     }
 }
