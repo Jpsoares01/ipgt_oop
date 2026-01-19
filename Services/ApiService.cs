@@ -40,7 +40,29 @@ namespace ipgt_oop.Services
                 return new List<Bank>();
             }
 
+        }
+
+        public async Task<bool> LoginAsync(string username, string password)
+        {
+            try
+            {
+                var auth = new Auth
+                {
+                    username = username,
+                    password = password
+                };
+
+                //Envia para api
+                var response = await _client.PostAsJsonAsync("multibanco/auth/login", auth);
+                //coloco isto?
+                return response.IsSuccessStatusCode;
+
             }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
         
 

@@ -1,5 +1,6 @@
 ﻿using ipgt_oop.Core;
 using ipgt_oop.MVVM.ViewModels.UserControls.Login;
+using ipgt_oop.MVVM.Views.UserControls.Popups;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -35,7 +36,19 @@ namespace ipgt_oop.MVVM.Views.UserControls.Login
 
             vm.RequestHomeWindow += OpenHomeWindow;
 
+            // NOVA LÓGIC Ligar o evento do Popup
+            vm.RequestPopup += ShowMyPopup;
+
         }
+
+        private void ShowMyPopup(object sender, string mensagemErro)
+        {
+            
+            var popup = new ErrorPopup(mensagemErro);
+
+            popup.ShowDialog();
+        }
+
 
         private void OpenHomeWindow(object sender, EventArgs e)
         {
@@ -72,6 +85,16 @@ namespace ipgt_oop.MVVM.Views.UserControls.Login
                 PasswordButtonImage,
                 (ImageSource)FindResource("PasswordEye"),
                 (ImageSource)FindResource("PasswordEyeCrossed"));
+        }
+
+
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            
+            if (this.DataContext is ManualEntryFormViewModel vm)
+            {
+                vm.Password = PasswordBox.Password;
+            }
         }
     }
 }

@@ -26,18 +26,21 @@
 
                 </Border>
 
-            <TextBlock Text="Error!"
+            <TextBlock  Text="Error!"
                         Style="{StaticResource H2Black}"
                         HorizontalAlignment="Center"
                         Margin="0,0,0,4"/>
 
-            <TextBlock Text="Amount Incorrect!"
+            <TextBlock x:Name="TxtMessage"
+                        Text="Mensagem de erro"
                         Style="{StaticResource BodyRegular}"
                         TextAlignment="Center"
                         TextWrapping="Wrap"
                         Margin="0,0,0,24"/>
 
-            <Button Content="Back Dashboard"
+            <Button IsDefault="True"
+                    Content="Back Dashboard"
+                    Click="CloseButton_Click"
                     Style="{StaticResource GeneralButton}"
                     Width="242"
                     Height="48"/>
