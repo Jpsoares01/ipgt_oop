@@ -29,7 +29,7 @@
         </Grid>
 
         <Grid HorizontalAlignment="Center"
-              Margin="0,18,0,18">
+              Margin="0,18,0,66">
             
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -75,9 +75,8 @@
                                  Padding="4"
                                  Visibility="Collapsed"/>
 
-                        <Button Grid.Column="1" 
-                                Background="Transparent"
-                                BorderThickness="0"
+                        <Button Grid.Column="1"
+                                Style="{StaticResource IconButton}"
                                 Click="TogglePassword_Click">
 
                             <Image x:Name="PasswordButtonImage"

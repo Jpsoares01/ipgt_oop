@@ -21,12 +21,13 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="225"/>
-                    <RowDefinition/>
+                    <RowDefinition Height="386"/>
                     <RowDefinition Height="62"/>
                 </Grid.RowDefinitions>
 
                 <StackPanel HorizontalAlignment="Center"
                             VerticalAlignment="Center">
+                    
                     <Viewbox Width="162" 
                              Height="67"
                              Margin="0,24,0,0">
@@ -46,9 +47,9 @@
 
                 <StackPanel Grid.Row="1"
                             Width="410"
-                            Margin="0,18,0,0">
+                            Margin="0,8,0,0">
 
-                    <TextBlock Text="Full Name"
+                    <TextBlock Text="Username"
                                Style="{StaticResource Caption}"/>
 
                     <Border CornerRadius="8"
@@ -103,7 +104,7 @@
                     </Border>
 
                     <Grid HorizontalAlignment="Center"
-                          Margin="0,18,0,0">
+                          Margin="0,18,0,18">
 
                         <Grid.RowDefinitions>
                             <RowDefinition/>
@@ -126,21 +127,39 @@
                                     HorizontalAlignment="Left">
 
                                 <Grid>
-
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition/>
                                         <ColumnDefinition Width="34"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <PasswordBox x:Name="Password"
+                                    <!-- PasswordBox-->
+                                    <PasswordBox x:Name="PasswordBox"
+                                                 PasswordChanged="PasswordBox_PasswordChanged"
                                                  Style="{StaticResource BodyPasswordBox}"
                                                  Background="Transparent"
                                                  BorderThickness="0"
-                                                 Padding="4"/>
+                                                 Padding="4"
+                                                 Visibility="Visible"/>
 
-                                    <Image Grid.Column="1"
-                                           Width="22"
-                                           Source="{StaticResource PasswordEye}"/>
+                                    <!-- TextBox-->
+
+                                    <TextBox x:Name="PasswordTextBox"
+                                             Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"
+                                             Style="{StaticResource BodyTextBox}"
+                                             Background="Transparent"
+                                             BorderThickness="0"
+                                             Padding="4"
+                                             Visibility="Collapsed"/>
+
+                                    <Button Grid.Column="1"
+                                            Style="{StaticResource IconButton}"
+                                            Click="TogglePassword_Click">
+
+                                        <Image x:Name="PasswordButtonImage"
+                                               Width="22"
+                                               Source="{StaticResource PasswordEyeCrossed}"/>
+                                    </Button>
+
                                 </Grid>
                             </Border>
                         </Grid>
@@ -152,7 +171,7 @@
                             Width="410"
                             Height="48"
                             Content="Sign In"
-                            Margin="0,18,0,0"
+                            Margin="0,0,0,0"
                             Command="{Binding CreateClientCommand}"
                             CommandParameter="{Binding ElementName=Password}"/>
 

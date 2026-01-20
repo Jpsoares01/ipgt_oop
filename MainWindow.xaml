@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:ipgt_oop"
         xmlns:viewModel="clr-namespace:ipgt_oop.MVVM.ViewModels"
         xmlns:view="clr-namespace:ipgt_oop.MVVM.Views"
+        xmlns:ucg="clr-namespace:ipgt_oop.MVVM.Views.UserControls.General"
         mc:Ignorable="d"
         WindowStyle="None"
         ResizeMode="NoResize"
@@ -37,13 +38,17 @@
         
         <Grid ClipToBounds="True">
             <Grid.RowDefinitions>
-                <RowDefinition Height="40"/>
+                <RowDefinition Height="58"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <ContentControl Grid.Row="1"
+            <ContentControl Grid.RowSpan="2"
                             HorizontalAlignment="Center"
                             Content="{Binding CurrentView}"/>
+
+            <ucg:TitleBarView Grid.Row="0"
+                              HorizontalAlignment="Right"
+                              x:Name="TitleBar" />
         </Grid>
     </Border>
 

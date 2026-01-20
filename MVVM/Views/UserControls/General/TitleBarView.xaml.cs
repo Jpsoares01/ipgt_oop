@@ -1,5 +1,4 @@
-﻿using ipgt_oop.MVVM.ViewModels;
-using ipgt_oop.MVVM.ViewModels.UserControls.General;
+﻿using ipgt_oop.MVVM.ViewModels.UserControls.General;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,23 +11,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ipgt_oop
+namespace ipgt_oop.MVVM.Views.UserControls.General
 {
     /// <summary>
-    /// Interaction logic for HomeWindow.xaml
+    /// Interaction logic for TitleBarView.xaml
     /// </summary>
-    public partial class HomeWindow : Window
+    public partial class TitleBarView : UserControl
     {
-        public HomeWindow()
+        public TitleBarView()
         {
             InitializeComponent();
-
-            if (TitleBar.DataContext is TitleBarViewModel vm)
-            {
-                vm.CloseRequested += (_, _) => Close();
-            }
+            DataContext = new TitleBarViewModel();
         }
     }
 }

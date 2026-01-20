@@ -8,6 +8,7 @@
         xmlns:viewModel="clr-namespace:ipgt_oop.MVVM.ViewModels"
         xmlns:vm="clr-namespace:ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen"
         xmlns:view="clr-namespace:ipgt_oop.MVVM.Views.UserControls.HomeScreen"
+        xmlns:ucg="clr-namespace:ipgt_oop.MVVM.Views.UserControls.General"
         mc:Ignorable="d"
         Title="HomeWindow" 
         WindowStyle="None"
@@ -59,29 +60,33 @@
             BorderBrush="Black">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="40"/>
+                <RowDefinition Height="58"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="382"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
             <Border Grid.Column="0" 
-                    Grid.Row="1"
-                    Background="{StaticResource SideBarBackgroundBrush}" 
+                    Grid.RowSpan="2"
+                    Background="{StaticResource SideBarBackgroundBrush}"
                     CornerRadius="0,0,0,25">
+
                 <controls:SideBar DataContext="{Binding SideBarViewModel}"/>
+
             </Border>
 
             <ContentControl Grid.Column="1"
-                            Grid.Row="1"
+                            Grid.RowSpan="2"
                             HorizontalAlignment="Center"
                             Content="{Binding CurrentView}" />
 
-
+            <ucg:TitleBarView Grid.Row="0"
+                              Grid.Column="1"
+                              HorizontalAlignment="Right"
+                              x:Name="TitleBar" />
         </Grid>
-        
     </Border>
 </Window>

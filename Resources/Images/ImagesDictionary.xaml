@@ -6,8 +6,9 @@
         <ResourceDictionary Source="/Resources/Images/CheckIcon.xaml"/>
         <ResourceDictionary Source="/Resources/Images/ErrorIcon.xaml"/>
         <ResourceDictionary Source="/Resources/Images/SearchIcon.xaml"/>
-        
-        
+
+        <ResourceDictionary Source="/Resources/Images/WindowAssets/CloseIcon.xaml"/>
+
         <ResourceDictionary Source="/Resources/Images/ButtonAssets/PasswordEye.xaml"/>
         <ResourceDictionary Source="/Resources/Images/ButtonAssets/PasswordEyeCrossed.xaml"/>
         <ResourceDictionary Source="/Resources/Images/ButtonAssets/TransferArrow.xaml"/>

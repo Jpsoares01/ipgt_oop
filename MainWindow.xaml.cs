@@ -1,4 +1,5 @@
 ﻿using ipgt_oop.MVVM.ViewModels;
+using ipgt_oop.MVVM.ViewModels.UserControls.General;
 using ipgt_oop.MVVM.ViewModels.UserControls.Login;
 using System.Text;
 using System.Windows;
@@ -22,6 +23,11 @@ namespace ipgt_oop
         {
             InitializeComponent();
             DataContext = new MainViewModel();
+
+            if (TitleBar.DataContext is TitleBarViewModel vm)
+            {
+                vm.CloseRequested += (_, _) => Close();
+            }
         }
     }
 }
