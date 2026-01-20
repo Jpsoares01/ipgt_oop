@@ -64,11 +64,19 @@ namespace ipgt_oop.MVVM.Views.UserControls.Login
         private void TogglePassword_Click(object sender, RoutedEventArgs e)
         {
             PasswordHelper.TogglePasswordVisibility(
-                PasswordBox,
+                QuickPassBox,
                 PasswordTextBox,
                 PasswordButtonImage,
                 (ImageSource)FindResource("PasswordEye"),
                 (ImageSource)FindResource("PasswordEyeCrossed"));
+        }
+
+        private void QuickPassBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (this.DataContext is QuickSelectFormViewModel vm)
+            {
+                vm.Password = ((PasswordBox)sender).Password;
+            }
         }
     }
 }

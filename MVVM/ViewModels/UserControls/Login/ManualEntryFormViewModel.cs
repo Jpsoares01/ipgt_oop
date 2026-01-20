@@ -10,6 +10,7 @@ using System.Windows.Input;
 
 using ipgt_oop.MVVM.Models;
 using ipgt_oop.Services;
+using ipgt_oop.Helpers;
 
 namespace ipgt_oop.MVVM.ViewModels.UserControls.Login
 {
@@ -38,12 +39,7 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.Login
 
         public ManualEntryFormViewModel() 
         {
-            /*OpenHomeWindowCommand = new RelayCommand(
-                o => RequestHomeWindow?.Invoke(this, EventArgs.Empty),
-                o => true
-                );*/
-
-            OpenHomeWindowCommand = new RelayCommand(o => FazerLogin(),o => true);
+           OpenHomeWindowCommand = new RelayCommand(o => FazerLogin(),o => true);
         }
 
         // para pop up
@@ -64,6 +60,8 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.Login
 
             if (loginSucesso)
             {
+                // Guarda o user localmente para o futuro
+                Helpers.UserStore.SaveUsername(Username);
                 RequestHomeWindow?.Invoke(this, EventArgs.Empty);
             }
             else
@@ -72,6 +70,7 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.Login
                 RequestPopup?.Invoke(this, "Utilizador ou Password incorretos!");
                
             }
+
         }
 
 

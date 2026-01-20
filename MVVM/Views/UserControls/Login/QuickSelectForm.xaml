@@ -22,7 +22,10 @@
 
             <ComboBox Grid.Row="1"
                       Width="410"
-                      Height="41"/>
+                      Height="41"
+                      ItemsSource="{Binding SavedUsers}" 
+                      Style="{StaticResource GeneralComboBoxStyle}"
+                      SelectedItem="{Binding SelectedUser}"/>
         </Grid>
 
         <Grid HorizontalAlignment="Center"
@@ -55,7 +58,8 @@
                         </Grid.ColumnDefinitions>
 
                         <!-- PasswordBox-->
-                        <PasswordBox x:Name="PasswordBox"
+                        <PasswordBox x:Name="QuickPassBox" 
+                                     PasswordChanged="QuickPassBox_PasswordChanged"
                                      Style="{StaticResource BodyPasswordBox}"
                                      Background="Transparent"
                                      BorderThickness="0"
@@ -89,7 +93,7 @@
                 Width="410"
                 Height="48"
                 Content="Sign In"
-                Command="{Binding OpenHomeWindowCommand}"/>
+                Command="{Binding QuickLoginCommand}"/>
 
     </StackPanel>
 </UserControl>
