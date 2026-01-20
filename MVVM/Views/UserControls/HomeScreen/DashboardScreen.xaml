@@ -48,6 +48,8 @@
                                        Foreground="#FFFFFF"/>
 
                             <ComboBox Style="{StaticResource GeneralComboBoxStyle}"
+                                      ItemsSource="{Binding ListaCartoes}"
+                                      DisplayMemberPath="number"
                                       HorizontalAlignment="Right"
                                       VerticalAlignment="Center"
                                       Width="185"/>

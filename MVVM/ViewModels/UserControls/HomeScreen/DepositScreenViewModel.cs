@@ -13,8 +13,6 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
 {
     class DepositScreenViewModel : ObservableObject
     {
-
-        
         public ObservableCollection<Card> ListaCartoes { get; set; }
 
         public DepositScreenViewModel()
@@ -42,5 +40,5 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
             }
         }
 
-        }
+    }
 }
