@@ -35,7 +35,7 @@ namespace ipgt_oop.Services
                 var resposta = await _client.PutAsJsonAsync("multibanco/transaction", transacao);
 
                 return resposta.IsSuccessStatusCode;
-            }
+                            }
             catch (Exception ex)
             {
                 System.Windows.MessageBox.Show($"Erro na transação: {ex.Message}");
