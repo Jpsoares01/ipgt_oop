@@ -20,9 +20,14 @@ namespace ipgt_oop.MVVM.Views.UserControls.Popups
     /// </summary>
     public partial class SucessPopup : Window
     {
-        public SucessPopup()
+        public SucessPopup(string mensagem)
         {
             InitializeComponent();
+            TxtSuccessMessage.Text = mensagem;
+        }
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using ipgt_oop.Core;
 using ipgt_oop.MVVM.ViewModels.UserControls.Login;
+using ipgt_oop.MVVM.Views.UserControls.Popups;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -15,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using YourApp.Helpers;
 
 namespace ipgt_oop.MVVM.Views.UserControls.Login
 {
@@ -32,11 +34,21 @@ namespace ipgt_oop.MVVM.Views.UserControls.Login
             var vm = new ManualEntryFormViewModel();
             DataContext = vm;
 
-            // DataContext = new ManualEntryFormViewModel();
-
             vm.RequestHomeWindow += OpenHomeWindow;
 
+            // NOVA LÓGIC Ligar o evento do Popup
+            vm.RequestPopup += ShowMyPopup;
+
         }
+
+        private void ShowMyPopup(object sender, string mensagemErro)
+        {
+            
+            var popup = new ErrorPopup(mensagemErro);
+
+            popup.ShowDialog();
+        }
+
 
         private void OpenHomeWindow(object sender, EventArgs e)
         {
@@ -67,21 +79,21 @@ namespace ipgt_oop.MVVM.Views.UserControls.Login
         // function to change the password visibility
         private void TogglePassword_Click(object sender, RoutedEventArgs e)
         {
-            if (PasswordBox.Visibility == Visibility.Visible)
-            {
-                PasswordTextBox.Text = PasswordBox.Password;
-                PasswordBox.Visibility = Visibility.Collapsed;
-                PasswordTextBox.Visibility = Visibility.Visible;
+            PasswordHelper.TogglePasswordVisibility(
+                PasswordBox,
+                PasswordTextBox,
+                PasswordButtonImage,
+                (ImageSource)FindResource("PasswordEye"),
+                (ImageSource)FindResource("PasswordEyeCrossed"));
+        }
 
-                PasswordButtonImage.Source = (ImageSource)FindResource("PasswordEye");
-            }
-            else
-            {
-                PasswordBox.Password = PasswordTextBox.Text;
-                PasswordTextBox.Visibility = Visibility.Collapsed;
-                PasswordBox.Visibility = Visibility.Visible;
 
-                PasswordButtonImage.Source = (ImageSource)FindResource("PasswordEyeCrossed");
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            
+            if (this.DataContext is ManualEntryFormViewModel vm)
+            {
+                vm.Password = PasswordBox.Password;
             }
         }
     }

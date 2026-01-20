@@ -20,9 +20,19 @@ namespace ipgt_oop.MVVM.Views.UserControls.Popups
     /// </summary>
     public partial class ErrorPopup : Window
     {
-        public ErrorPopup()
+        public ErrorPopup(string mensagem)
         {
             InitializeComponent();
+            TxtMessage.Text = mensagem;
         }
+
+        // Evento para o botão fechar o popup
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+
     }
-}
+    }
+

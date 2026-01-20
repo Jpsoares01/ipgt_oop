@@ -48,7 +48,7 @@
                             Width="410"
                             Margin="0,18,0,0">
 
-                    <TextBlock Text="Username"
+                    <TextBlock Text="Full Name"
                                Style="{StaticResource Caption}"/>
 
                     <Border CornerRadius="8"
@@ -146,8 +146,8 @@
                         </Grid>
                     </Grid>
 
-                    <Button Grid.Row="2"
-                            x:Name="btnRegistrySignIn"
+                    <Button x:Name="btnRegistrySignIn"
+                            Grid.Row="2"
                             Style="{StaticResource GeneralButton}"
                             Width="410"
                             Height="48"

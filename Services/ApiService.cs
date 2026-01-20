@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Net.Http.Headers;
 
 namespace ipgt_oop.Services
 {
@@ -42,6 +43,44 @@ namespace ipgt_oop.Services
 
         }
 
+        public async Task<bool> LoginAsync(string username, string password)
+        {
+            try
+            {
+                var auth = new Auth
+                {
+                    username = username,
+                    password = password
+                };
+
+                //Envia para api
+                var response = await _client.PostAsJsonAsync("multibanco/auth/login", auth);
+
+                // token
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var dadosResponse = await response.Content.ReadFromJsonAsync<LoginResponse>();
+
+
+                    if (dadosResponse != null && !string.IsNullOrEmpty(dadosResponse.token))
+                    {
+                        _client.DefaultRequestHeaders.Authorization = 
+                            new AuthenticationHeaderValue("Bearer", dadosResponse.token);
+
+                        return true;
+                    }
+                }
+                return false;
+
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        
         public async Task CreateClient(string username, string password, int bankId, string cardNumber)
         {
             string url = BaseUrl + "multibanco/client";

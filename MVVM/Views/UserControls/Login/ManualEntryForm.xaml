@@ -30,6 +30,7 @@
                     HorizontalAlignment="Left">
 
             <TextBox x:Name="CardNumber"
+                     Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
                      Style="{StaticResource BodyTextBox}"
                      Background="Transparent"
                      BorderThickness="0"
@@ -68,6 +69,7 @@
                         
                         <!-- PasswordBox-->
                         <PasswordBox x:Name="PasswordBox"
+                                     PasswordChanged="PasswordBox_PasswordChanged"
                                      Style="{StaticResource BodyPasswordBox}"
                                      Background="Transparent"
                                      BorderThickness="0"
@@ -77,6 +79,7 @@
                         <!-- TextBox-->
 
                         <TextBox x:Name="PasswordTextBox"
+                                 Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"
                                      Style="{StaticResource BodyTextBox}"
                                      Background="Transparent"
                                      BorderThickness="0"
