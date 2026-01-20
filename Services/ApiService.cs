@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Net.Http.Headers;
 
 namespace ipgt_oop.Services
 {
@@ -31,7 +32,6 @@ namespace ipgt_oop.Services
             try 
             {
                 var lista = await _client.GetFromJsonAsync<List<Bank>>("api/Bank");
-
                 return lista ?? new List<Bank>();
             }
 
@@ -54,8 +54,23 @@ namespace ipgt_oop.Services
 
                 //Envia para api
                 var response = await _client.PostAsJsonAsync("multibanco/auth/login", auth);
-                //coloco isto?
-                return response.IsSuccessStatusCode;
+
+                // token
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var dadosResponse = await response.Content.ReadFromJsonAsync<LoginResponse>();
+
+
+                    if (dadosResponse != null && !string.IsNullOrEmpty(dadosResponse.token))
+                    {
+                        _client.DefaultRequestHeaders.Authorization = 
+                            new AuthenticationHeaderValue("Bearer", dadosResponse.token);
+
+                        return true;
+                    }
+                }
+                return false;
 
             }
             catch (Exception)
