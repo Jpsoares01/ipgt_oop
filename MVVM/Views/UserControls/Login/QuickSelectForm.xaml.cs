@@ -1,4 +1,5 @@
 ﻿using ipgt_oop.MVVM.ViewModels.UserControls.Login;
+using ipgt_oop.MVVM.Views.UserControls.Popups;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,17 @@ namespace ipgt_oop.MVVM.Views.UserControls.Login
             DataContext = vm;
 
             vm.RequestHomeWindow += OpenHomeWindow;
+
+            // NOVA LÓGIC Ligar o evento do Popup
+            vm.RequestPopup += ShowMyPopup;
+        }
+
+        private void ShowMyPopup(object sender, string mensagemErro)
+        {
+
+            var popup = new ErrorPopup(mensagemErro);
+
+            popup.ShowDialog();
         }
 
         private void OpenHomeWindow(object sender, EventArgs e)

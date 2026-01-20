@@ -83,10 +83,12 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.Login
 
             if (loginSucesso)
             {
+                Console.WriteLine("PASS certa");
                 RequestHomeWindow?.Invoke(this, EventArgs.Empty);
             }
             else
             {
+                Console.WriteLine("PASS ERRADA");
                 RequestPopup?.Invoke(this, "Password incorreta ou erro de conexão.");
             }
         }
