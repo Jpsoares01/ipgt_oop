@@ -32,13 +32,13 @@
                 <TextBlock  Text="Select Card" 
                             Style="{StaticResource Caption}"
                             Margin="0,0,0,4"/>
-                <ComboBox x:Name="cmbDepositSelectCard"
-                          ItemsSource="{Binding ListaCartoes}"
+                
+                <ComboBox ItemsSource="{Binding ListaCartoes}"
                           DisplayMemberPath="number"
-                          SelectedValuePath="id"
+                          SelectedItem="{Binding SelectedCard}"
                           Style="{StaticResource GeneralComboBoxStyle}"
                           Margin="0,0,0,32"
-                          Width="890" SelectionChanged="cmbDepositSelectCard_SelectionChanged">                  
+                          Width="890">
                 </ComboBox>
 
 
@@ -55,7 +55,8 @@
                          HorizontalAlignment="Left"
                          Margin="0,0,0,10">
 
-                    <TextBox x:Name="AmountDeposit"
+                    <TextBox Text="{Binding Amount, UpdateSourceTrigger=PropertyChanged}"
+                             x:Name="AmountDeposit"
                              Style="{StaticResource BodyTextBox}"
                              Background="Transparent"
                              BorderThickness="0"
@@ -78,7 +79,8 @@
                         Height="48"
                         Width="890"
                         HorizontalAlignment="Left"
-                        Content="Confirm Deposit"/>
+                        Content="Confirm Deposit"
+                        Command="{Binding DepositarCommand}"/>
 
             </StackPanel>
 

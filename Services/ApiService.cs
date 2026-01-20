@@ -27,6 +27,23 @@ namespace ipgt_oop.Services
 
         // metodos api
 
+        public async Task<bool> RealizarTransacaoAsync(TransactionRequest transacao)
+        {
+            try
+            {
+                // Envia os dados usando PUT
+                var resposta = await _client.PutAsJsonAsync("multibanco/transaction", transacao);
+
+                return resposta.IsSuccessStatusCode;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show($"Erro na transação: {ex.Message}");
+                return false;
+            }
+        }
+
+
         public async Task<List<Card>> GetCardsAsync()
         {
             try
