@@ -27,6 +27,24 @@ namespace ipgt_oop.Services
 
         // metodos api
 
+        public async Task<List<Card>> GetCardsAsync()
+        {
+            try
+            {
+                
+                var lista = await _client.GetFromJsonAsync<List<Card>>("listAccountCards");
+
+                return lista ?? new List<Card>();
+            }
+            catch (Exception ex)
+            {
+                return new List<Card>();
+            }
+        }
+
+
+
+
         public async Task<List<Bank>> GetBanksAsync()
         {
             try 

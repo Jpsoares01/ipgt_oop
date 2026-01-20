@@ -33,12 +33,12 @@
                             Style="{StaticResource Caption}"
                             Margin="0,0,0,4"/>
                 <ComboBox x:Name="cmbDepositSelectCard"
+                          ItemsSource="{Binding ListaCartoes}"
+                          DisplayMemberPath="number"
+                          SelectedValuePath="id"
                           Style="{StaticResource GeneralComboBoxStyle}"
                           Margin="0,0,0,32"
-                          Width="890" SelectionChanged="cmbDepositSelectCard_SelectionChanged">
-                    <ComboBoxItem Content="Home" />
-                    <ComboBoxItem Content="Settings" />
-                    <ComboBoxItem Content="About" />
+                          Width="890" SelectionChanged="cmbDepositSelectCard_SelectionChanged">                  
                 </ComboBox>
 
 
