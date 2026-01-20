@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-using System.Collections.ObjectModel; 
+using System.Collections.ObjectModel;
+using System.Windows.Input;
 using ipgt_oop.MVVM.Models;           
 using ipgt_oop.Services;              
 
@@ -14,14 +15,48 @@ namespace ipgt_oop.MVVM.ViewModels
 {
     internal class RegistryViewModel : ObservableObject
     {
+        private string _userName;
+        public string Username 
+        { 
+            get => _userName;
+            set {_userName = value; OnPropertyChanged(); }
+        }
+        
+        private int _selectedBank;
+        public int SelectedBank
+        {
+            get => _selectedBank;
+            set {_selectedBank = value; OnPropertyChanged(); }
+        }
+        
+        private string _cardNumber;
+        public string CardNumber
+        {
+            get => _cardNumber;
+            set {_cardNumber = value; OnPropertyChanged(); }
+        }
+        
+        public ICommand CreateClientCommand { get; }
 
         public ObservableCollection<Bank> BankList { get; set; }
 
         public RegistryViewModel()
         {
             BankList = new ObservableCollection<Bank>();
-
+            //CreateClientCommand = new RelayCommand(CreateClient);
+            
+            CreateClientCommand = new RelayCommand(CreateClient, o => true);
+            
             LoadBanks();
+        }
+
+        public async void CreateClient(object parameter)
+        {
+            var passwordBox = parameter as System.Windows.Controls.PasswordBox;
+            string password = passwordBox?.Password;
+            
+            var api = new ApiService();
+            api.CreateClient(Username, password, _selectedBank, CardNumber);
         }
 
         private async void LoadBanks()
@@ -35,9 +70,5 @@ namespace ipgt_oop.MVVM.ViewModels
             }
 
         }
-
-
-
-
     }
 }

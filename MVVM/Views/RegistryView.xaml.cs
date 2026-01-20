@@ -24,7 +24,10 @@ namespace ipgt_oop.MVVM.Views
         public RegistryView()
         {
             InitializeComponent();
-            DataContext = new RegistryViewModel();
+            var em = new RegistryViewModel();
+            DataContext = em;
+
+            //DataContext = new RegistryViewModel();
         }
     }
 }

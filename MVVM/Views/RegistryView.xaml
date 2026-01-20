@@ -48,7 +48,7 @@
                             Width="410"
                             Margin="0,18,0,0">
 
-                    <TextBlock Text="Full Name"
+                    <TextBlock Text="Username"
                                Style="{StaticResource Caption}"/>
 
                     <Border CornerRadius="8"
@@ -60,7 +60,8 @@
                             HorizontalAlignment="Left"
                             Margin="0,4,0,0">
 
-                        <TextBox x:Name="FullName"
+                        <TextBox x:Name="Username"
+                                 Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
                                  Style="{StaticResource BodyTextBox}"
                                  Background="Transparent"
                                  BorderThickness="0"
@@ -73,6 +74,7 @@
 
                     <ComboBox ItemsSource="{Binding BankList}"
                               DisplayMemberPath="name"
+                              SelectedValue="{Binding SelectedBank}"
                               SelectedValuePath="id"
                               Grid.Row="1"
                               Width="410"
@@ -93,6 +95,7 @@
                             Margin="0,4,0,0">
 
                         <TextBox x:Name="CardNumber"
+                                 Text="{Binding CardNumber, UpdateSourceTrigger=PropertyChanged}"
                                  Style="{StaticResource BodyTextBox}"
                                  Background="Transparent"
                                  BorderThickness="0"
@@ -144,11 +147,14 @@
                     </Grid>
 
                     <Button Grid.Row="2"
+                            x:Name="btnRegistrySignIn"
                             Style="{StaticResource GeneralButton}"
                             Width="410"
                             Height="48"
                             Content="Sign In"
-                            Margin="0,18,0,0"/>
+                            Margin="0,18,0,0"
+                            Command="{Binding CreateClientCommand}"
+                            CommandParameter="{Binding ElementName=Password}"/>
 
                 </StackPanel>
 
