@@ -54,7 +54,9 @@
     </Window.Resources>
 
     <Border Background="{StaticResource AppBackgroundBrush}" 
-            CornerRadius="25">
+            CornerRadius="25"
+            BorderThickness="1"
+            BorderBrush="Black">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>

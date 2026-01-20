@@ -14,6 +14,7 @@
 
     <!-- Other-->
     <Color x:Key="BaseWhite">#FFFFFF</Color>
+    <Color x:Key="BaseBlack">#000000</Color>
     
     <!-- Brushes -->
     <LinearGradientBrush x:Key="AppBackgroundBrush" StartPoint="0,0" EndPoint="1,1">
@@ -27,6 +28,7 @@
 
     <!-- Card background Brushes -->
     <SolidColorBrush x:Key="CardBackgroundBrush" Color="{StaticResource BaseWhite}" />
+    <SolidColorBrush x:Key="CardBoarderBrush" Color="{StaticResource BaseBlack}" />
     
     <!-- SideBar Brushes-->
     <SolidColorBrush x:Key="SideBarBackgroundBrush" Color="{StaticResource BaseWhite}" />

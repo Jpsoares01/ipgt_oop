@@ -28,7 +28,13 @@
         </DataTemplate>
     </Window.Resources>
 
-    <Border CornerRadius="20" Background="White" Width="458" Height="714">
+    <Border CornerRadius="20"
+            Background="White"
+            Width="458"
+            Height="714"
+            BorderThickness="1"
+            BorderBrush="{StaticResource CardBoarderBrush}">
+        
         <Grid ClipToBounds="True">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>

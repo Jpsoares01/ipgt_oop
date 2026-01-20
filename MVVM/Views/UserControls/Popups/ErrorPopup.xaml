@@ -7,24 +7,27 @@
         WindowStyle="None"
         Background="Transparent">
 
-<Border Background="#80000000">
 
     <Border Width="314" Height="295"
             Background="{StaticResource CardBackgroundBrush}" 
             CornerRadius="15"
             VerticalAlignment="Center"
-            HorizontalAlignment="Center">
+            HorizontalAlignment="Center"
+            BorderThickness="1"
+            BorderBrush="{StaticResource CardBoarderBrush}">
+
         <StackPanel VerticalAlignment="Center">
 
             <Border Width="62" 
-                        Height="62" 
-                        CornerRadius="15"
-                        Margin="0,0,0,16">
-                    <Border.Background>
-                        <ImageBrush ImageSource="{StaticResource ErrorIcon }"/>
-                    </Border.Background>
+                    Height="62" 
+                    CornerRadius="15"
+                    Margin="0,0,0,16">
 
-                </Border>
+                <Border.Background>
+                    <ImageBrush ImageSource="{StaticResource ErrorIcon }"/>
+                </Border.Background>
+
+            </Border>
 
             <TextBlock  Text="Error!"
                         Style="{StaticResource H2Black}"
@@ -47,5 +50,4 @@
 
         </StackPanel>
     </Border>
-</Border>
 </Window>

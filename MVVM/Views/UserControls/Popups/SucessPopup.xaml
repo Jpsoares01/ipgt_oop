@@ -7,27 +7,29 @@
         WindowStyle="None"
         Background="Transparent">
 
-    <Border Background="#80000000">
 
-        <Border Width="314" Height="295"
-                Background="{StaticResource CardBackgroundBrush}" 
-                CornerRadius="15"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center">
-            <StackPanel VerticalAlignment="Center">
+    <Border Width="314" Height="295"
+            Background="{StaticResource CardBackgroundBrush}" 
+            CornerRadius="15"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            BorderThickness="1"
+            BorderBrush="{StaticResource CardBoarderBrush}">
+        
+        <StackPanel VerticalAlignment="Center">
 
-                 <Border Width="62" 
+            <Border Width="62" 
                          Height="62" 
                          CornerRadius="15"
                          Margin="0,0,0,16">
 
-                    <Border.Background>
-                        <ImageBrush ImageSource="{StaticResource CheckIcon }"/>
-                    </Border.Background>
+                <Border.Background>
+                    <ImageBrush ImageSource="{StaticResource CheckIcon }"/>
+                </Border.Background>
 
-                </Border>
+            </Border>
 
-                    <TextBlock Text="Success!"
+            <TextBlock Text="Success!"
                            Style="{StaticResource H2Black}"
                            HorizontalAlignment="Center"
                            Margin="0,0,0,4"/>
@@ -46,7 +48,6 @@
                         Width="242"
                         Height="48"/>
 
-            </StackPanel>
-        </Border>
+        </StackPanel>
     </Border>
 </Window>
