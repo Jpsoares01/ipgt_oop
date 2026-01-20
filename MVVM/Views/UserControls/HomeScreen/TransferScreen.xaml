@@ -33,7 +33,7 @@
                            Margin="0,0,0,4"/>
                 <ComboBox x:Name="cmbTransferSelectCard"
                           ItemsSource="{Binding ListaCartoes}"
-                          DisplayMemberPath="number"
+                          DisplayMemberPath="number"        
                           Style="{StaticResource GeneralComboBoxStyle}"
                           Margin="0,0,0,16"
                           Width="890">

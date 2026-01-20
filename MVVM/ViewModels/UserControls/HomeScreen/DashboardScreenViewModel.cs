@@ -13,6 +13,17 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
 {
     class DashboardScreenViewModel : ObservableObject
     {
+        private Card _selectedCard;
+        public Card SelectedCard
+        {
+            get => _selectedCard;
+            set {_selectedCard = value; OnPropertyChanged(nameof(SelectedCard)); OnPropertyChanged(nameof(Balance)); }
+        }
+
+        public string Balance => SelectedCard != null
+            ? SelectedCard.balance.ToString("C")
+            : "$0.00";
+        
         public ObservableCollection<Card> ListaCartoes { get; set; }
         public DashboardScreenViewModel()
         {

@@ -49,6 +49,7 @@
 
                             <ComboBox Style="{StaticResource GeneralComboBoxStyle}"
                                       ItemsSource="{Binding ListaCartoes}"
+                                      SelectedItem="{Binding SelectedCard}"
                                       DisplayMemberPath="number"
                                       HorizontalAlignment="Right"
                                       VerticalAlignment="Center"
