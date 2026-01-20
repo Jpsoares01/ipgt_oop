@@ -57,6 +57,7 @@
                         Width="314"/>
 
                 <Button x:Name="btnSettingsChangePass"
+                        Click="OpenPopup_click"
                         Content="Change Password"
                         Style="{StaticResource GeneralButton}"
                         Margin="0,0,0,24"

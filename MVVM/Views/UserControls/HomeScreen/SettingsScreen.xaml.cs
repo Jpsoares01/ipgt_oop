@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using ipgt_oop.MVVM.Views.UserControls.Popups;
 namespace ipgt_oop.MVVM.Views.UserControls.HomeScreen
 {
     /// <summary>
@@ -26,5 +27,20 @@ namespace ipgt_oop.MVVM.Views.UserControls.HomeScreen
             InitializeComponent();
             DataContext = new SettingsScreenViewModel();
         }
+
+        private void OpenPopup_click(object sender, RoutedEventArgs e)
+        {
+
+            ChangePassword popup = new ChangePassword();
+
+
+            popup.Owner = Application.Current.MainWindow;
+            popup.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+
+            popup.ShowDialog();
+        }
     }
-}
+
+    }
+    
+
