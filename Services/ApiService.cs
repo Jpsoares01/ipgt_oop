@@ -153,7 +153,7 @@ namespace ipgt_oop.Services
             }
         }
 
-        public async Task<bool> AddCard(int  bankId, string cardNumber)
+        public async Task<bool> AddCard(int bankId, string cardNumber)
         {
             string url = "multibanco/card/add";
 
@@ -178,6 +178,40 @@ namespace ipgt_oop.Services
 
                 return true;
                 // Aqui fazer o que der certo --  daqui vai pro ViewModel
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Exception: {e.Message}");
+                return false;
+            }
+        }
+        
+        public async Task<bool> ChangeClientPassword(string username, string password, string newPassword)
+        {
+            string url = "multibanco/client";
+
+            var payload = new
+            {
+                Username = username,
+                Password = password,
+                NewPassword = newPassword
+            };
+
+            try
+            {
+                HttpResponseMessage response = await _client.PutAsJsonAsync(url, payload);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    Console.WriteLine(response.StatusCode);
+                    Console.WriteLine(await response.Content.ReadAsStringAsync());
+                    return false;
+                    
+
+                }
+
+                return true;
+                
             }
             catch (Exception e)
             {

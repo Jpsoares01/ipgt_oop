@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ipgt_oop.MVVM.ViewModels.UserControls.Popups;
 using YourApp.Helpers;
 
 namespace ipgt_oop.MVVM.Views.UserControls.Popups
@@ -23,6 +24,7 @@ namespace ipgt_oop.MVVM.Views.UserControls.Popups
         public ChangePassword()
         {
             InitializeComponent();
+            DataContext = new ChangePasswordViewModel();
         }
 
         private void TogglePassword_Click(object sender, RoutedEventArgs e)
