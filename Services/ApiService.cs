@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Net.Http.Headers;
+using System.Text.Json;
 
 namespace ipgt_oop.Services
 {
@@ -257,6 +258,35 @@ namespace ipgt_oop.Services
                 return false;
             }
         }
-        
+
+        public async Task<List<TransactionDto>> GetTransactionsAsync()
+        {
+            try 
+            {
+                HttpResponseMessage response = await _client.GetAsync("multibanco/transaction");
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+
+                    var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                    var rawTransactions = JsonSerializer.Deserialize<List<TransactionDto>>(jsonResponse, options);
+
+                    
+                    return rawTransactions ?? new List<TransactionDto>();
+                    
+                }
+                else
+                {
+                    MessageBox.Show($"Error fetching data: {response.StatusCode}");
+                    return new List<TransactionDto>();
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+                return new List<TransactionDto>();
+            }
+        }
     }
 }

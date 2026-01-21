@@ -127,7 +127,7 @@
 
                 </Border.Clip>
                 
-                <ListView     ItemsSource="{Binding ListaTransacoes}" 
+                <ListView     ItemsSource="{Binding TransactionsList}" 
                                   BorderThickness="0" 
                           
                                   SelectionChanged="ListView_SelectionChanged"
@@ -136,15 +136,17 @@
                     <ListView.View>
                         <GridView>
 
-                            <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Descricao}"/>
+                            <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"/>
+                            
+                            <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}"/>
 
-                            <GridViewColumn Header="Type" DisplayMemberBinding="{Binding type}"/>
+                            <GridViewColumn Header="Type" DisplayMemberBinding="{Binding Type}"/>
 
                             <GridViewColumn Header="Date; Time" DisplayMemberBinding="{Binding Data, StringFormat='MMM dd, yyyy HH:mm'}"/>
 
                             <GridViewColumn Header="Amount" DisplayMemberBinding="{Binding Amount}"/>
 
-                            <GridViewColumn Header="Balance" DisplayMemberBinding="{Binding Saldo}"/>
+                            
 
                         </GridView>
                     </ListView.View>

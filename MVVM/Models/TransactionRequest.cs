@@ -17,6 +17,8 @@ namespace ipgt_oop.MVVM.Models
 
         public int entity { get; set; }
         public string reference { get; set; }
+        public string description { get; set; }
+        public DateTime date { get; set; }
 
     }
 }
