@@ -102,7 +102,7 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
 
             var cardList = await api.GetCardsAsync();
 
-            SelectedCard = cardList[0];
+
             ListaCartoes.Clear();
             foreach (var card in cardList)
             {
