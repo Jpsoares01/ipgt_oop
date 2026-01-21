@@ -107,10 +107,11 @@
                                             HorizontalAlignment="Left">
 
                                         <TextBox x:Name="CardNumber"
-                                                Style="{StaticResource BodyTextBox}"
-                                                Background="Transparent"
-                                                BorderThickness="0"
-                                                Padding="4"/>
+                                                 Text="{Binding CardNumber, UpdateSourceTrigger=PropertyChanged}"
+                                                 Style="{StaticResource BodyTextBox}"
+                                                 Background="Transparent"
+                                                 BorderThickness="0"
+                                                 Padding="4"/>
 
                                     </Border>
                                 </Grid>

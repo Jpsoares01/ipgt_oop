@@ -132,19 +132,52 @@ namespace ipgt_oop.Services
             {
                 HttpResponseMessage response = await _client.PostAsJsonAsync(url, payload);
                 
-                if (response.IsSuccessStatusCode)
+                if (!response.IsSuccessStatusCode)
                 {
-                    return true;
-                    // Aqui fazer o que der certo --  daqui vai pro ViewModel
+                    
+                    Console.WriteLine(response.StatusCode);
+                    Console.WriteLine(await response.Content.ReadAsStringAsync());
+                    return false;
+                    //Aqui fazer o que se der errado
                 
                 }
-                else
+                
+                return true;
+                // Aqui fazer o que der certo --  daqui vai pro ViewModel
+                
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Exception: {e.Message}");
+                return false;
+            }
+        }
+
+        public async Task<bool> AddCard(int  bankId, string cardNumber)
+        {
+            string url = "multibanco/card/add";
+
+            var payload = new
+            {
+                BankId = bankId,
+                CardNumber = cardNumber
+            };
+
+            try
+            {
+                HttpResponseMessage response = await _client.PostAsJsonAsync(url, payload);
+
+                if (!response.IsSuccessStatusCode)
                 {
                     Console.WriteLine(response.StatusCode);
                     Console.WriteLine(await response.Content.ReadAsStringAsync());
                     return false;
                     //Aqui fazer o que se der errado
+
                 }
+
+                return true;
+                // Aqui fazer o que der certo --  daqui vai pro ViewModel
             }
             catch (Exception e)
             {

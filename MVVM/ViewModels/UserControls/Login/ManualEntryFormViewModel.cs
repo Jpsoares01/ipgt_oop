@@ -57,9 +57,9 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.Login
 
 
             var api = new ApiService();
-            bool loginSucesso = await api.LoginAsync(Username, Password);
+            bool loginSuccess = await api.LoginAsync(Username, Password);
 
-            if (loginSucesso)
+            if (loginSuccess)
             {
                 // Guarda o user localmente para o futuro
                 Helpers.UserStore.SaveUsername(Username);
