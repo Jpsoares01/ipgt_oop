@@ -42,7 +42,9 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
         public ICommand DepositCommand { get; set; }
 
         // para pop up
-        public event EventHandler<string> RequestPopup;
+        public event EventHandler<string> RequestErrorPopup;
+
+        public event EventHandler<string> RequestSuccessPopup;
 
         public DepositScreenViewModel()
         {
@@ -58,14 +60,14 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
 
             if (SelectedCard == null)
             {
-                RequestPopup?.Invoke(this, "Select Card is Null!");
+                RequestErrorPopup?.Invoke(this, "Select Card is Null!");
                 return;
             }
 
             // 2. Verificar se o Valor falhou
             if (Amount <= 0)
             {
-                RequestPopup?.Invoke(this, "Amount must be >0!");
+                RequestErrorPopup?.Invoke(this, "Amount must be >0!");
                 return;
             }
 
@@ -86,13 +88,14 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
             if (success)
             {
                 // colocar popup
-                MessageBox.Show("Depósito realizado com sucesso! 💰");
+
+                RequestSuccessPopup?.Invoke(this, "Successful Deposit!");
                 Amount = 0; // Limpar o campo do valor
             }
             else
             {
                 // colocar pop up
-                RequestPopup?.Invoke(this, "Database Failed!");
+                RequestErrorPopup?.Invoke(this, "Database Failed!");
             }
         }
 

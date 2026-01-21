@@ -43,14 +43,15 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.Login
         }
 
         // para pop up
-        public event EventHandler<string> RequestPopup;
+        public event EventHandler<string> RequestErrorPopup;
+        public event EventHandler<string> RequestSuccessPopup;
 
         private async void FazerLogin()
         {
             if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Password))
             {
                 //colocar pop up
-                RequestPopup?.Invoke(this, "Preencha todos os campos!");
+                RequestErrorPopup?.Invoke(this, "Preencha todos os campos!");
                 return;
             }
 
@@ -67,8 +68,9 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.Login
             else
             {
                 // colocar pop up 
-                RequestPopup?.Invoke(this, "Utilizador ou Password incorretos!");
-               
+                RequestErrorPopup?.Invoke(this, "Utilizador ou Password incorretos!");
+
+
             }
 
         }

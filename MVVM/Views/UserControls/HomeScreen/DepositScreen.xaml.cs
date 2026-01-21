@@ -28,13 +28,21 @@ namespace ipgt_oop.MVVM.Views.UserControls.HomeScreen
 
             var vm = new DepositScreenViewModel();
 
-            vm.RequestPopup += ShowMyPopup;
+            vm.RequestErrorPopup += ShowErrorMyPopup;
+            vm.RequestSuccessPopup += ShowSucessMyPopup;
 
             DataContext = vm;
         }
-        private void ShowMyPopup(object sender, string mensagemErro)
+        private void ShowErrorMyPopup(object sender, string mensagemErro)
         {
             var popup = new ErrorPopup(mensagemErro);
+
+            popup.ShowDialog();
+        }
+
+        private void ShowSucessMyPopup(object sender, string mensagemErro)
+        {
+            var popup = new SucessPopup(mensagemErro);
 
             popup.ShowDialog();
         }

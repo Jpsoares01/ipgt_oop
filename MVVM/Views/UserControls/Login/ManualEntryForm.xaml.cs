@@ -37,14 +37,23 @@ namespace ipgt_oop.MVVM.Views.UserControls.Login
             vm.RequestHomeWindow += OpenHomeWindow;
 
             // NOVA LÓGIC Ligar o evento do Popup
-            vm.RequestPopup += ShowMyPopup;
+            vm.RequestErrorPopup += ShowMyErrorPopup;
+            vm.RequestSuccessPopup += ShowMySucessPopup;
 
         }
 
-        private void ShowMyPopup(object sender, string mensagemErro)
+        private void ShowMyErrorPopup(object sender, string mensagemErro)
         {
             
             var popup = new ErrorPopup(mensagemErro);
+
+            popup.ShowDialog();
+        }
+
+        private void ShowMySucessPopup(object sender, string mensagemErro)
+        {
+
+            var popup = new SucessPopup(mensagemErro);
 
             popup.ShowDialog();
         }
