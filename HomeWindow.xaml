@@ -72,7 +72,7 @@
             <Border Grid.Column="0" 
                     Grid.RowSpan="2"
                     Background="{StaticResource SideBarBackgroundBrush}"
-                    CornerRadius="0,0,0,25">
+                    CornerRadius="25,0,0,25">
 
                 <controls:SideBar DataContext="{Binding SideBarViewModel}"/>
 
