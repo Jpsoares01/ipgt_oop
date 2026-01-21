@@ -42,6 +42,30 @@ namespace ipgt_oop.Services
             }
         }
 
+        //Delete card
+        public async Task<bool> DeleteCardAsync(string numeroCartao)
+        {
+            try
+            {
+               
+                var request = new HttpRequestMessage(HttpMethod.Delete, "multibanco/card");
+
+                
+                request.Content = JsonContent.Create(new { cardNumber = numeroCartao });
+
+                
+                var response = await _client.SendAsync(request);
+
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+
+
 
         public async Task<List<Card>> GetCardsAsync()
         {

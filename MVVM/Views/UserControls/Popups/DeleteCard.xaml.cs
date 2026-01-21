@@ -1,4 +1,5 @@
-﻿using ipgt_oop.MVVM.ViewModels.UserControls.Login;
+using ipgt_oop.MVVM.ViewModels.UserControls.Login;
+using ipgt_oop.MVVM.ViewModels.UserControls.Popups;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,12 @@ namespace ipgt_oop.MVVM.Views.UserControls.Popups
         public DeleteCard()
         {
             InitializeComponent();
+
+            
+            var vm = new DeletecardViewModel();
+            this.DataContext = vm; 
+
+            vm.CloseAction = new Action(() => this.Close());
         }
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
@@ -39,7 +46,6 @@ namespace ipgt_oop.MVVM.Views.UserControls.Popups
                 (ImageSource)FindResource("PasswordEye"),
                 (ImageSource)FindResource("PasswordEyeCrossed"));
         }
-
 
         private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
         {
