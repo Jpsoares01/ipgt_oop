@@ -70,9 +70,7 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.Login
                 // colocar pop up 
                 RequestErrorPopup?.Invoke(this, "Utilizador ou Password incorretos!");
 
-
             }
-
         }
 
 

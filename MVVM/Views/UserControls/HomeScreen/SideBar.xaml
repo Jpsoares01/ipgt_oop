@@ -13,7 +13,7 @@
             <RowDefinition Height="169"/>
             <RowDefinition Height="450"/>
             <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
 
         <Image Source="{StaticResource BankLogo}" Width="137" Height="57"/>
@@ -66,19 +66,16 @@
                         HorizontalAlignment="Center"
                          x:Name="UserBar"/>
 
-        <StackPanel Grid.Row="3"
-                    Margin="0,0,0,13">
+        <Grid Grid.Row="3"
+              Margin="0,0,0,13">
 
             <Button Content="Sign Out"
-                    Style="{StaticResource GeneralButton}"
-                    Foreground="#F22D1B"
-                    Background="Transparent"
+                    Style="{StaticResource SignOutButton}"
                     Height="46"
-                    Width="179"/>
+                    Width="179"
+                    Command="{Binding OpenHomeWindowCommand}"/>
 
-
-
-        </StackPanel>
+        </Grid>
         
         
     </Grid>

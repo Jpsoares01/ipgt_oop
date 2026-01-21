@@ -51,29 +51,28 @@
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0" 
-                        Text="Select Bank"
-                        Style="{StaticResource Caption}"
-                        Margin="0,0,0,4"/>
+                                   Text="Select Bank"
+                                   Style="{StaticResource Caption}"
+                                   Margin="0,0,0,4"/>
 
                         <Border Grid.Row="1"
-                      CornerRadius="8"
-                      BorderBrush="{StaticResource LabelBorderdBrush}"
-                      HorizontalAlignment="Left">
+                                CornerRadius="8"
+                                BorderBrush="{StaticResource LabelBorderdBrush}"
+                                HorizontalAlignment="Left">
 
-                            <ComboBox 
-                            Grid.Row="1"
-                            Width="410"
-                            Height="41"
-                            ItemsSource="{Binding BankList}"
-                            DisplayMemberPath="name"
-                            SelectedItem="{Binding SelectedBank}"
-                            Style="{StaticResource GeneralComboBoxStyle}"/>
+                            <ComboBox Grid.Row="1"
+                                      Width="410"
+                                      Height="41"
+                                      ItemsSource="{Binding BankList}"
+                                      DisplayMemberPath="name"
+                                      SelectedItem="{Binding SelectedBank}"
+                                      Style="{StaticResource GeneralComboBoxStyle}"/>
 
                         </Border>
                     </Grid>
 
                     <Grid HorizontalAlignment="Center"
-                Margin="0,18,0,18">
+                          Margin="0,18,0,18">
 
                         <Grid.RowDefinitions>
                             <RowDefinition/>
@@ -86,17 +85,9 @@
                                    Margin="0,0,0,4"/>
 
                         <Grid Grid.Row="1">
-                            <Border Grid.ColumnSpan="2"
-                                     CornerRadius="8"
-                                     BorderBrush="{StaticResource LabelBorderdBrush}"
-                                     BorderThickness="1"
-                                     Background="Transparent"
-                                     Width="410"
-                                     Height="41"
-                                     HorizontalAlignment="Left">
 
-                                <Grid>
-                                    <Border Grid.Row="1"
+                            <Grid>
+                                <Border Grid.ColumnSpan="2"
                                             CornerRadius="8"
                                             BorderBrush="{StaticResource LabelBorderdBrush}"
                                             BorderThickness="1"
@@ -105,33 +96,43 @@
                                             Height="41"
                                             HorizontalAlignment="Left">
 
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="Auto"/>
-                                            </Grid.ColumnDefinitions>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="34"/>
+                                        </Grid.ColumnDefinitions>
 
-                                            <TextBox x:Name="PasswordTextBox"
-                                                     Grid.Column="0"
+                                        <!-- PasswordBox-->
+                                        <PasswordBox x:Name="PasswordBox"
+                                                         PasswordChanged="PasswordBox_PasswordChanged"
+                                                         Style="{StaticResource BodyPasswordBox}"
+                                                         Background="Transparent"
+                                                         BorderThickness="0"
+                                                         Padding="4"
+                                                         Visibility="Visible"/>
+
+                                        <!-- TextBox-->
+
+                                        <TextBox x:Name="PasswordTextBox"
+                                                     Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"
                                                      Style="{StaticResource BodyTextBox}"
                                                      Background="Transparent"
                                                      BorderThickness="0"
                                                      Padding="4"
                                                      Visibility="Collapsed"/>
 
-                                            <Button Grid.Column="1" 
-                                                    Background="Transparent"
-                                                    BorderThickness="0">
+                                        <Button Grid.Column="1"
+                                                    Style="{StaticResource IconButton}"
+                                                    Click="TogglePassword_Click">
 
-                                                <Image x:Name="PasswordButtonImage"
-                                                               Width="22"
-                                                               Source="{StaticResource PasswordEyeCrossed}"/>
-                                            </Button>
-                                        </Grid>
+                                            <Image x:Name="PasswordButtonImage"
+                                                       Width="22"
+                                                       Source="{StaticResource PasswordEyeCrossed}"/>
+                                        </Button>
 
-                                    </Border>
-                                </Grid>
-                            </Border>
+                                    </Grid>
+                                </Border>
+                            </Grid>
                         </Grid>
                     </Grid>
 

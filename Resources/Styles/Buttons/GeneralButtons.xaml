@@ -81,6 +81,57 @@
         </Setter>
     </Style>
 
+
+    <!-- Sign Out Button in the UI-->
+    <SolidColorBrush x:Key="SignOutButtonFontColor" Color="#F22D1B"/>
+    <SolidColorBrush x:Key="SignOutButtonFontHoverColor" Color="#F9968D"/>
+    <SolidColorBrush x:Key="SignOutButtonFontPressedColor" Color="#660A01"/>
+
+
+    <Style x:Key="SignOutButton" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="FontFamily" Value="{DynamicResource MontserratFont}"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="Foreground" Value="{StaticResource SignOutButtonFontColor}"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="buttonBorder"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="12"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+
+                        <ContentPresenter Content="{TemplateBinding Content}"
+                                      ContentTemplate="{TemplateBinding ContentTemplate}"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+
+                        <!-- Hover  -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="{StaticResource SignOutButtonFontHoverColor}"/>
+                        </Trigger>
+
+                        <!-- Pressed -->
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Foreground" Value="{StaticResource SignOutButtonFontPressedColor}"/>
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+
     <Style x:Key="IconButton" TargetType="Button">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
@@ -217,8 +268,6 @@
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Focusable" Value="False"/>
         <Setter Property="Foreground" Value="Transparent"/>
-        <Setter Property="Height" Value="160"/>
-        <Setter Property="Width" Value="180"/>
 
         <Setter Property="Template">
             <Setter.Value>
@@ -238,5 +287,4 @@
         </Setter>
 
     </Style>
-
 </ResourceDictionary>

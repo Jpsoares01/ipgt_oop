@@ -1,4 +1,5 @@
 ﻿using ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen;
+using ipgt_oop.MVVM.ViewModels.UserControls.Login;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,8 @@ namespace ipgt_oop.MVVM.Views.UserControls.HomeScreen
         public SideBar()
         {
             InitializeComponent();
-            DataContext = new SideBarViewModel();
+            var vm = new SideBarViewModel();
+            DataContext = vm;
         }
     }
 }

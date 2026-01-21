@@ -118,7 +118,6 @@ namespace ipgt_oop.MVVM.Views.UserControls.Popups
         {
             
             Window parentWindow = Window.GetWindow(this);
-            Console.WriteLine($"Closing Window: {parentWindow.Title} ({parentWindow.GetType().Name})");
             parentWindow?.Close();
         }
         
