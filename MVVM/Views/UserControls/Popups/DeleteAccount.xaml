@@ -215,6 +215,7 @@
 
                         <Button Grid.Column="2"
                                 Style="{StaticResource GeneralButton}"
+                                Background="Red"
                                 Width="193"
                                 Height="48"
                                 Content="Delete Account"

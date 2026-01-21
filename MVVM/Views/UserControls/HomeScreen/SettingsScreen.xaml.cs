@@ -63,6 +63,18 @@ namespace ipgt_oop.MVVM.Views.UserControls.HomeScreen
 
             popup.ShowDialog();
         }
+
+        private void OpenPopupDeleteCard_click(object sender, RoutedEventArgs e)
+        {
+
+            DeleteCard popup = new DeleteCard();
+
+
+            //popup.Owner = Application.Current.MainWindow;
+            popup.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+
+            popup.ShowDialog();
+        }
     }
 
     }
