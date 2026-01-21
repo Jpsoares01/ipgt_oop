@@ -23,5 +23,9 @@ namespace ipgt_oop.MVVM.Views.UserControls.Popups
         {
             InitializeComponent();
         }
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

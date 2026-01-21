@@ -66,6 +66,7 @@
                         Width="314"/>
 
                 <Button x:Name="btnSettingsDeleteAccount"
+                        Click="OpenPopupDeleteAccount_click"
                         Content="Delete Account"
                         Style="{StaticResource GeneralButton}"
                         Margin="0,0,0,0"

@@ -35,7 +35,9 @@
                 </Grid.ColumnDefinitions>
 
 
-                <Button Grid.Row="0" Grid.Column="0" Style="{StaticResource ServicesButton}">
+                <Button Grid.Row="0" Grid.Column="0" Style="{StaticResource ServicesButton}" 
+                        Command="{Binding OpenServicePayCommand}"
+                        CommandParameter="Electricity">
 
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
 
@@ -52,7 +54,9 @@
 
                 </Button>
 
-                <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource ServicesButton}">
+                <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource ServicesButton}"
+                        Command="{Binding OpenServicePayCommand}"
+                        CommandParameter="Water">
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
 
                         <Border Width="64" Height="64" CornerRadius="20" >
@@ -67,7 +71,9 @@
                     </StackPanel>
                 </Button>
 
-                <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource ServicesButton}">
+                <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource ServicesButton}"
+                        Command="{Binding OpenServicePayCommand}"
+                        CommandParameter="Internet">
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
 
                         <Border Width="64" Height="64" CornerRadius="20" >
@@ -82,7 +88,9 @@
                     </StackPanel>
                 </Button>
 
-                <Button Grid.Row="0" Grid.Column="3" Style="{StaticResource ServicesButton}">
+                <Button Grid.Row="0" Grid.Column="3" Style="{StaticResource ServicesButton}"
+                        Command="{Binding OpenServicePayCommand}"
+                        CommandParameter="Phone">
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
 
                         <Border Width="64" Height="64" CornerRadius="20" >
@@ -97,7 +105,9 @@
                     </StackPanel>
                 </Button>
 
-                <Button Grid.Row="1" Grid.Column="0" Style="{StaticResource ServicesButton}">
+                <Button Grid.Row="1" Grid.Column="0" Style="{StaticResource ServicesButton}"
+                        Command="{Binding OpenServicePayCommand}"
+                        CommandParameter="Gas">
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
 
                         <Border Width="64" Height="64" CornerRadius="20" >
@@ -112,7 +122,9 @@
                     </StackPanel>
                 </Button>
 
-                <Button Grid.Row="1" Grid.Column="1" Style="{StaticResource ServicesButton}">
+                <Button Grid.Row="1" Grid.Column="1" Style="{StaticResource ServicesButton}"
+                        Command="{Binding OpenServicePayCommand}"
+                        CommandParameter="Insurance">
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
 
                         <Border Width="64" Height="64" CornerRadius="20" >
@@ -127,7 +139,9 @@
                     </StackPanel>
                 </Button>
 
-                <Button Grid.Row="1" Grid.Column="2" Style="{StaticResource ServicesButton}">
+                <Button Grid.Row="1" Grid.Column="2" Style="{StaticResource ServicesButton}"
+                        Command="{Binding OpenServicePayCommand}"
+                        CommandParameter="TV">
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
 
                         <Border Width="64" Height="64" CornerRadius="20" >
@@ -143,7 +157,9 @@
                     </StackPanel>
                 </Button>
 
-                <Button Grid.Row="1" Grid.Column="3" Style="{StaticResource ServicesButton}">
+                <Button Grid.Row="1" Grid.Column="3" Style="{StaticResource ServicesButton}"
+                        Command="{Binding OpenServicePayCommand}"
+                        CommandParameter="Other">
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
 
                         <Border Width="64" Height="64" CornerRadius="20" >

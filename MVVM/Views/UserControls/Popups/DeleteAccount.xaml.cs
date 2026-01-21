@@ -44,5 +44,10 @@ namespace ipgt_oop.MVVM.Views.UserControls.Popups
                 (ImageSource)FindResource("PasswordEye"),
                 (ImageSource)FindResource("PasswordEyeCrossed"));
         }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

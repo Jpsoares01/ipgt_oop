@@ -51,6 +51,18 @@ namespace ipgt_oop.MVVM.Views.UserControls.HomeScreen
 
             popup.ShowDialog();
         }
+
+        private void OpenPopupDeleteAccount_click(object sender, RoutedEventArgs e)
+        {
+
+            DeleteAccount popup = new DeleteAccount();
+
+
+            //popup.Owner = Application.Current.MainWindow;
+            popup.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+
+            popup.ShowDialog();
+        }
     }
 
     }

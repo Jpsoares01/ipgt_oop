@@ -5,23 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ipgt_oop.MVVM.Views.UserControls.Popups"
         mc:Ignorable="d"
-                Title="ChangePasswordPopup"                
+                Title="ServicePayPopup"                
         WindowStyle="None"
-        Background="Transparent">
+        Background="Transparent"
+                ResizeMode="NoResize"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen">
     
-    <Grid>
         
 
             <Border 
                  Margin="0,0,0,0"
                  Width="635"
-                 Height="445"
+                 Height="450"
                  Background ="{StaticResource CardBackgroundBrush}"
                  CornerRadius="15"
-                 Padding="16">
+                 Padding="16"
+                 BorderThickness="1"
+                 BorderBrush="{StaticResource CardBoarderBrush}">
 
             <StackPanel>
-                <TextBlock Text="{Binding NomeDaCategoria, StringFormat='Pay {0} Bill'}"
+                <TextBlock Text="{Binding CatName, StringFormat='Pay {0} Bill'}"
                            Style="{StaticResource H2}"
                            Foreground="Black"
                            Margin="0,0,0,46"/>
@@ -97,7 +101,8 @@
                             Width="292"
                             Height="48"
                             Content="Cancel"
-                            Command="{Binding OpenHomeWindowCommand}"/>
+                            Command="{Binding OpenHomeWindowCommand}"
+                            Click="CloseButton_Click"/>
 
                     <Button Grid.Column="2"
                             Style="{StaticResource GeneralButton}"
@@ -113,5 +118,5 @@
 
             </Border>
             
-        </Grid>
+        
 </Window>
