@@ -35,10 +35,11 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
         {
             var api = new ApiService();
 
-            var cartoes = await api.GetCardsAsync();
+            var cardList = await api.GetCardsAsync();
 
+            SelectedCard = cardList[0];
             ListaCartoes.Clear();
-            foreach (var cartao in cartoes)
+            foreach (var cartao in cardList)
             {
                 ListaCartoes.Add(cartao);
             }

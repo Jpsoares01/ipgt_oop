@@ -46,25 +46,7 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
             WithdrawCommand = new RelayCommand(FazerLevantamento, o => true);
         }
         
-        private async void CarregarCartoes()
-        {
-            var api = new ApiService();
-
-            var cardList = await api.GetCardsAsync();
-
-
-            ListaCartoes.Clear();
-            foreach (var cartao in cardList)
-            {
-                ListaCartoes.Add(cartao);
-            }
-
-            if (ListaCartoes.Count == 0)
-            {
-                // colocar pop up
-                MessageBox.Show("Nenhum cartão encontrado!"); 
-            }
-        }
+        
         
         private async void FazerLevantamento(object obj)
         {
@@ -113,6 +95,27 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
             {
                 // colocar pop up
                 MessageBox.Show("Falha ao levantar. Tente novamente.");
+            }
+        }
+        
+        private async void CarregarCartoes()
+        {
+            var api = new ApiService();
+
+            var cardList = await api.GetCardsAsync();
+
+
+            SelectedCard = cardList[0];
+            ListaCartoes.Clear();
+            foreach (var cartao in cardList)
+            {
+                ListaCartoes.Add(cartao);
+            }
+
+            if (ListaCartoes.Count == 0)
+            {
+                // colocar pop up
+                MessageBox.Show("Nenhum cartão encontrado!"); 
             }
         }
     }

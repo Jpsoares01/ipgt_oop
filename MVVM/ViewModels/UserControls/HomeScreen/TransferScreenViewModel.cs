@@ -98,6 +98,7 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
 
             var cartoes = await api.GetCardsAsync();
 
+            SourceCard = cartoes[0];
             ListaCartoes.Clear();
             foreach (var cartao in cartoes)
             {
