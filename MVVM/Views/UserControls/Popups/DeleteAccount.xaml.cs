@@ -32,7 +32,7 @@ namespace ipgt_oop.MVVM.Views.UserControls.Popups
             
             vm.RequestErrorPopup += ShowErrorMyPopup;
             vm.RequestSuccessPopup += ShowSucessMyPopup;
-            vm.RequestHomeWindow += OpenHomeWindow;
+            vm.RequestHomeWindow += OpenMainWindow;
         }
         
         private void ShowErrorMyPopup(object sender, string mensagemErro)
@@ -92,7 +92,7 @@ namespace ipgt_oop.MVVM.Views.UserControls.Popups
             this.Close();
         }
         
-        private void OpenHomeWindow(object sender, EventArgs e)
+        private void OpenMainWindow(object sender, EventArgs e)
         {
             if (_mainWindow == null)
             {
@@ -109,7 +109,7 @@ namespace ipgt_oop.MVVM.Views.UserControls.Popups
                     _mainWindow.WindowState = WindowState.Normal;
 
                 _mainWindow.Activate();
-                CloseWindow();
+                CloseWindow();   
                 CloseHomeWindow();
                 
             }

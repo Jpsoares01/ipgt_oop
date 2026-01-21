@@ -68,19 +68,18 @@
                 <Button x:Name="btnSettingsDeleteAccount"
                         Click="OpenPopupDeleteAccount_click"
                         Content="Delete Account"
-                        Style="{StaticResource GeneralButton}"
+                        Style="{StaticResource RedGeneralButton}"
                         Margin="0,0,0,24"
                         Height="48"
-                        Width="314"
-                        Background="#F22D1B"/>
+                        Width="314"/>
+                
                 <Button x:Name="btnSettingsDeleteCard"
                         Click="OpenPopupDeleteCard_click"
                         Content="Delete Card"
-                        Style="{StaticResource GeneralButton}"
+                        Style="{StaticResource RedGeneralButton}"
                         Margin="0,0,0,0"
                         Height="48"
-                        Width="314"
-                        Background="#F22D1B"/>
+                        Width="314"/>
                 
 
 

@@ -29,7 +29,7 @@
                        VerticalAlignment="Center"
                        Margin="5,0,0,0"
                        Style="{StaticResource H6}"
-                       Text="joasjdo"/>
+                       Text="Username"/>
         </Grid>
 
     </Border>

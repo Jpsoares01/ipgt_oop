@@ -131,6 +131,7 @@
                                         </Button>
 
                                     </Grid>
+<<<<<<< Updated upstream
                                 </Border>
                             </Grid>
                         </Grid>
@@ -165,3 +166,38 @@
         </Grid>
     </Border>
 </Window>
+=======
+                                </Border>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="18"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <Button Grid.Column="0"
+                   Style="{StaticResource GeneralButton}"
+                   Width="193"
+                   Height="48"
+                   Content="Back"
+                   Command="{Binding OpenHomeWindowCommand}"
+                   Click="BtnBack_Click"/>
+
+                        <Button Grid.Column="2"
+                                Style="{StaticResource RedGeneralButton}"
+                                Width="193"
+                                Height="48"
+                                Content="Delete Card"
+                                Command="{Binding CreateCardCommand}"/>
+                    </Grid>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
+>>>>>>> Stashed changes

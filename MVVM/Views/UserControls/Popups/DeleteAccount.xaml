@@ -214,8 +214,7 @@
                                 Click="BtnBack_Click"/>
 
                         <Button Grid.Column="2"
-                                Style="{StaticResource GeneralButton}"
-                                Background="Red"
+                                Style="{StaticResource RedGeneralButton}"
                                 Width="193"
                                 Height="48"
                                 Content="Delete Account"
