@@ -100,7 +100,8 @@
                         Height="48"
                         Width="890"
                         HorizontalAlignment="Left"
-                        Content="Send Money"/>
+                        Content="Send Money"
+                        Command="{Binding TransferCommand}"/>
 
 
             </StackPanel>

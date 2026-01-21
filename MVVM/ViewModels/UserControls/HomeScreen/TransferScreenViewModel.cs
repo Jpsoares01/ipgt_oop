@@ -88,7 +88,7 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
             else
             {
                 // colocar pop up
-                MessageBox.Show("Falha ao transferir. Tente novamente.");
+                MessageBox.Show("Falha ao transferir. Tente novamente (Provavelmente Recipient Card Number dont exist).");
             }
         }
         
