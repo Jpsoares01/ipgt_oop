@@ -34,7 +34,12 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
                 OnPropertyChanged();
             }
         }
-        
+
+
+        public event EventHandler<string> RequestErrorPopup;
+
+        public event EventHandler<string> RequestSuccessPopup;
+
         public ICommand WithdrawCommand { get; set; }
         
         
@@ -53,21 +58,21 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
 
             if (SelectedCard == null)
             {
-                MessageBox.Show("ERRO: O programa acha que não escolheste cartão nenhum (SelectedCard está null)!");
+                RequestErrorPopup?.Invoke(this, "Chose a card!");
                 return;
             }
 
             // 2. Verificar se o Valor falhou
             if (Amount <= 0)
             {
-                MessageBox.Show($"ERRO: O programa acha que o valor é {Amount} (Zero, negativo)!");
+                RequestErrorPopup?.Invoke(this, "Amount must be >0");
                 return;
             }
             
             //3. Verificar se o valor a ser retirado a maior que a quantia no cartao
             if (Amount > SelectedCard.balance)
             {
-                MessageBox.Show($"ERRO: O valor é {Amount} é maior que o valor em seu cartao!");
+                RequestErrorPopup?.Invoke(this, "You dont have that much money!");
                 return;
             }
 
@@ -88,13 +93,13 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
             if (sucesso)
             {
                 // colocar popup
-                MessageBox.Show("Levantamento realizado com sucesso! 💰");
+                RequestSuccessPopup?.Invoke(this, "Sucessfull Withdraw!");
                 Amount = 0; // Limpar o campo do valor
             }
             else
             {
                 // colocar pop up
-                MessageBox.Show("Falha ao levantar. Tente novamente.");
+                RequestErrorPopup?.Invoke(this, "Database Error!");
             }
         }
         
@@ -115,7 +120,7 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
             if (ListaCartoes.Count == 0)
             {
                 // colocar pop up
-                MessageBox.Show("Nenhum cartão encontrado!"); 
+                RequestErrorPopup?.Invoke(this, "No card Found!");
             }
         }
     }

@@ -43,7 +43,6 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
 
         // para pop up
         public event EventHandler<string> RequestErrorPopup;
-
         public event EventHandler<string> RequestSuccessPopup;
 
         public DepositScreenViewModel()

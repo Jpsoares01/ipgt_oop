@@ -1,4 +1,5 @@
 ﻿using ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen;
+using ipgt_oop.MVVM.Views.UserControls.Popups;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,31 @@ namespace ipgt_oop.MVVM.Views.UserControls.HomeScreen
         public WithdrawScreen()
         {
             InitializeComponent();
-            DataContext = new WithdrawScreenViewModel();
+
+            var vm = new DepositScreenViewModel();
+
+            vm.RequestErrorPopup += ShowErrorMyPopup;
+            vm.RequestSuccessPopup += ShowSucessMyPopup;
+
+
+            DataContext = vm;
+
+
+
+        }
+
+        private void ShowErrorMyPopup(object sender, string mensagemErro)
+        {
+            var popup = new ErrorPopup(mensagemErro);
+
+            popup.ShowDialog();
+        }
+
+        private void ShowSucessMyPopup(object sender, string mensagemErro)
+        {
+            var popup = new SucessPopup(mensagemErro);
+
+            popup.ShowDialog();
         }
     }
 }
