@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Collections.ObjectModel;
+using System.Windows.Controls;
 using System.Windows.Input;
 using ipgt_oop.MVVM.Models;           
 using ipgt_oop.Services;              
@@ -35,6 +36,13 @@ namespace ipgt_oop.MVVM.ViewModels
             set {_cardNumber = value; OnPropertyChanged(); }
         }
         
+        private string _password;
+        public string Password
+        {
+            get => _password;
+            set => SetProperty(ref _password, value);
+        }
+        
         public ICommand CreateClientCommand { get; }
 
         public ObservableCollection<Bank> BankList { get; set; }
@@ -51,11 +59,12 @@ namespace ipgt_oop.MVVM.ViewModels
 
         public async void CreateClient(object parameter)
         {
-            var passwordBox = parameter as System.Windows.Controls.PasswordBox;
-            string password = passwordBox?.Password;
+            var passwordBox = parameter as PasswordBox;
+            
+            Console.WriteLine($"{Username} {Password} {_selectedBank} {CardNumber}");
             
             var api = new ApiService();
-            api.CreateClient(Username, password, _selectedBank, CardNumber);
+            api.CreateClient(Username, Password, _selectedBank, CardNumber);
         }
 
         private async void LoadBanks()

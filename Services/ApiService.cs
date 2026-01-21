@@ -35,7 +35,7 @@ namespace ipgt_oop.Services
                 var resposta = await _client.PutAsJsonAsync("multibanco/transaction", transacao);
 
                 return resposta.IsSuccessStatusCode;
-                            }
+            }
             catch (Exception ex)
             {
                 System.Windows.MessageBox.Show($"Erro na transação: {ex.Message}");
@@ -134,7 +134,6 @@ namespace ipgt_oop.Services
                 
                 if (response.IsSuccessStatusCode)
                 {
-                    Console.WriteLine("LEGAL");
                     // Aqui fazer o que der certo --  daqui vai pro ViewModel
                 
                 }
@@ -142,7 +141,6 @@ namespace ipgt_oop.Services
                 {
                     Console.WriteLine(response.StatusCode);
                     Console.WriteLine(await response.Content.ReadAsStringAsync());
-                    Console.WriteLine("NOT LEGAL");
                     //Aqui fazer o que se der errado
                 }
             }
