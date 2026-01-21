@@ -44,8 +44,9 @@ namespace ipgt_oop.MVVM.ViewModels
         }
         
         public ICommand CreateClientCommand { get; }
-
         public ObservableCollection<Bank> BankList { get; set; }
+        public event EventHandler<string> RequestErrorPopup;
+        public event EventHandler<string> RequestSuccessPopup;
 
         public RegistryViewModel()
         {
@@ -59,12 +60,24 @@ namespace ipgt_oop.MVVM.ViewModels
 
         public async void CreateClient(object parameter)
         {
-            var passwordBox = parameter as PasswordBox;
-            
+
+            if (CardNumber.Length != 0)
+            {
+                RequestErrorPopup?.Invoke(this, "Card Length must be 12");
+                return;
+            }
             
             var api = new ApiService();
-            api.CreateClient(Username, Password, _selectedBank, CardNumber);
-            bool sucess;
+            bool registrySuccess = await api.CreateClient(Username, Password, _selectedBank, CardNumber);
+
+            if (registrySuccess)
+            {
+                RequestSuccessPopup?.Invoke(this, "User created successfully");
+            }
+            else
+            {
+                RequestErrorPopup?.Invoke(this, "User creation failed");
+            }
         }
 
         private async void LoadBanks()

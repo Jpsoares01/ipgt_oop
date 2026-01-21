@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ipgt_oop.MVVM.Views.UserControls.Popups;
 using YourApp.Helpers;
 
 namespace ipgt_oop.MVVM.Views
@@ -26,8 +27,28 @@ namespace ipgt_oop.MVVM.Views
         public RegistryView()
         {
             InitializeComponent();
-            DataContext = new RegistryViewModel();
+            var vm =  new RegistryViewModel();
+            DataContext = vm;
             
+            vm.RequestErrorPopup += ShowMyErrorPopup;
+            vm.RequestSuccessPopup += ShowMySucessPopup;
+            
+        }
+        
+        private void ShowMyErrorPopup(object sender, string mensagemErro)
+        {
+            
+            var popup = new ErrorPopup(mensagemErro);
+
+            popup.ShowDialog();
+        }
+
+        private void ShowMySucessPopup(object sender, string mensagemErro)
+        {
+
+            var popup = new SucessPopup(mensagemErro);
+
+            popup.ShowDialog();
         }
 
         private void TogglePassword_Click(object sender, RoutedEventArgs e)
