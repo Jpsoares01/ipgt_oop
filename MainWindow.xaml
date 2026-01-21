@@ -48,7 +48,7 @@
 
             <ucg:TitleBarView Grid.Row="0"
                               HorizontalAlignment="Right"
-                              x:Name="TitleBar" />
+                              x:Name="TitleBar"/>
         </Grid>
     </Border>
 

@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ipgt_oop.MVVM.Views.UserControls.HomeScreen"
              xmlns:viewmodel="clr-namespace:ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen"
+             xmlns:vg="clr-namespace:ipgt_oop.MVVM.Views.UserControls.General"
              mc:Ignorable="d">
 
     <Grid>
@@ -59,29 +60,11 @@
                          CommandParameter="Settings"/>
         </StackPanel>
 
-     
 
-            <StackPanel Grid.Row="2"
-                        Orientation="Horizontal"
-                        Margin="0,280,0,34">
 
-                <Ellipse Width="69"
-                         Height="69">
-                    <Ellipse.Fill>
-                        <ImageBrush ImageSource="{Binding UserProfileImage}"
-                                    Stretch="UniformToFill">
-
-                        </ImageBrush>
-                    </Ellipse.Fill>
-
-                </Ellipse>
-
-                <TextBlock Text="{Binding UserName}"
-                           Style="{StaticResource H6}"
-                           VerticalAlignment="Center"
-                           Margin="15,0,0,0"/>
-
-            </StackPanel>
+        <vg:UserBarView Grid.Row="2"
+                        HorizontalAlignment="Center"
+                         x:Name="UserBar"/>
 
         <StackPanel Grid.Row="3"
                     Margin="0,0,0,13">
