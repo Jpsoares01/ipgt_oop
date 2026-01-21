@@ -27,8 +27,7 @@ namespace ipgt_oop.MVVM.Views
         {
             InitializeComponent();
             DataContext = new RegistryViewModel();
-
-            //DataContext = new RegistryViewModel();
+            
         }
 
         private void TogglePassword_Click(object sender, RoutedEventArgs e)

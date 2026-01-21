@@ -8,6 +8,8 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.Popups;
 public class ChangePasswordViewModel : ObservableObject
 {
     public ICommand ChangePasswordCommand { get; }
+    public event EventHandler<string> RequestErrorPopup;
+    public event EventHandler<string> RequestSuccessPopup;
     
     private string _username;
     public string Username
@@ -20,14 +22,14 @@ public class ChangePasswordViewModel : ObservableObject
     public string Password
     {
         get => _password;
-        set {_password = value; OnPropertyChanged(); }
+        set => SetProperty(ref _password, value);
     }
     
     private string _newPassword;
     public string NewPassword
     {
         get => _newPassword;
-        set {_newPassword = value; OnPropertyChanged(); }
+        set => SetProperty(ref _newPassword, value);
     }
 
     public ChangePasswordViewModel()
@@ -37,16 +39,18 @@ public class ChangePasswordViewModel : ObservableObject
 
     public async void ChangePassword()
     {
+        Console.WriteLine($"{Password} - {NewPassword}");
+        
         var api = new ApiService();
         bool changePasswordSuccess =  await api.ChangeClientPassword(Username, Password,  NewPassword);
 
         if (changePasswordSuccess)
         {
-            MessageBox.Show("Password changed successfully");
+            RequestSuccessPopup?.Invoke(this, "Password changed successfully");
         }
         else
         {
-            MessageBox.Show("Password change failed");
+            RequestErrorPopup?.Invoke(this, "Password change failed");
         }
     }
     
