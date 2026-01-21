@@ -96,15 +96,23 @@
                              HorizontalAlignment="Left">
 
                                 <Grid>
-                                    
-                                    <TextBox 
-                                        x:Name="CardNumberTextBox"
-                                        Text="{Binding CardNumber, UpdateSourceTrigger=PropertyChanged}"
-                                        Style="{StaticResource BodyTextBox}"
-                                        Background="Transparent"
-                                        BorderThickness="0"
-                                        Padding="4"
-                                        Visibility="Collapsed"/>
+
+                                    <Border Grid.Row="1"
+                                            CornerRadius="8"
+                                            BorderBrush="{StaticResource LabelBorderdBrush}"
+                                            BorderThickness="1"
+                                            Background="Transparent"
+                                            Width="410"
+                                            Height="41"
+                                            HorizontalAlignment="Left">
+
+                                        <TextBox x:Name="CardNumber"
+                                                Style="{StaticResource BodyTextBox}"
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Padding="4"/>
+
+                                    </Border>
                                 </Grid>
                             </Border>
                         </Grid>
