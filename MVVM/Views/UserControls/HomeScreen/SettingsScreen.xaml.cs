@@ -39,6 +39,18 @@ namespace ipgt_oop.MVVM.Views.UserControls.HomeScreen
 
             popup.ShowDialog();
         }
+
+        private void OpenPopupNewCard_click(object sender, RoutedEventArgs e)
+        {
+
+            CreateCard popup = new CreateCard();
+
+
+            popup.Owner = Application.Current.MainWindow;
+            popup.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+
+            popup.ShowDialog();
+        }
     }
 
     }
