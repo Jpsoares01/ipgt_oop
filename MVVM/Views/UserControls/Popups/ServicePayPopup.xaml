@@ -17,7 +17,7 @@
             <Border 
                  Margin="0,0,0,0"
                  Width="635"
-                 Height="450"
+                 Height="550"
                  Background ="{StaticResource CardBackgroundBrush}"
                  CornerRadius="15"
                  Padding="16"
@@ -35,15 +35,19 @@
                         Style="{StaticResource Caption}"
                         Margin="0,0,0,4"/>
                     <ComboBox x:Name="cmbServicesSelectCard"
-                       Style="{StaticResource GeneralComboBoxStyle}"
-                       Margin="0,0,0,16"
-                       Width="602">
+                              ItemsSource="{Binding ListaCartoes}"
+                              SelectedItem="{Binding SourceCard}"
+                              DisplayMemberPath="number"
+                              
+                        Style="{StaticResource GeneralComboBoxStyle}"
+                        Margin="0,0,0,16"
+                        Width="602">
                     </ComboBox>
 
 
 
 
-                    <TextBlock Text="Reference Number" 
+                    <TextBlock Text="Entity Number" 
                         Style="{StaticResource Caption}"
                         Margin="0,0,0,4"/>
 
@@ -56,16 +60,38 @@
                       HorizontalAlignment="Left"
                       Margin="0,0,0,16">
 
-                        <TextBox x:Name="ServicesReferenceNumber"
+                        <TextBox x:Name="ServicesEntityNumber"
+                                 Text="{Binding Entity, UpdateSourceTrigger=PropertyChanged}"
                           Style="{StaticResource BodyTextBox}"
                           Background="Transparent"
                           BorderThickness="0"
                           Padding="4"/>
                     </Border>
 
+            <TextBlock Text="Reference Number" 
+    Style="{StaticResource Caption}"
+    Margin="0,0,0,4"/>
+
+            <Border  CornerRadius="8"
+  BorderBrush="{StaticResource LabelBorderdBrush}"
+  BorderThickness="1"
+  Background="Transparent"
+  Width="602"
+  Height="41"
+  HorizontalAlignment="Left"
+  Margin="0,0,0,16">
+
+                <TextBox x:Name="ServicesReferenceNumber"
+                         Text="{Binding Reference, UpdateSourceTrigger=PropertyChanged}"
+      Style="{StaticResource BodyTextBox}"
+      Background="Transparent"
+      BorderThickness="0"
+      Padding="4"/>
+            </Border>
 
 
-                    <TextBlock Text="Amount" 
+
+            <TextBlock Text="Amount" 
                         Style="{StaticResource Caption}"
                         Margin="0,0,0,4"/>
 
@@ -79,6 +105,7 @@
                        Margin="0,0,0,36">
 
                         <TextBox x:Name="ServicesPayAmount"
+                                 Text="{Binding Amount, UpdateSourceTrigger=PropertyChanged}"
                             Style="{StaticResource BodyTextBox}"
                             Background="Transparent"
                             BorderThickness="0"
@@ -109,7 +136,7 @@
                             Width="292"
                             Height="48"
                             Content="Pay Now"
-                            Command="{Binding OpenHomeWindowCommand}"/>
+                            Command="{Binding PayCommand}"/>
 
                 </Grid>
 
