@@ -26,7 +26,7 @@ namespace ipgt_oop.MVVM.Views.UserControls.HomeScreen
         {
             InitializeComponent();
 
-            var vm = new DepositScreenViewModel();
+            var vm = new WithdrawScreenViewModel();
 
             vm.RequestErrorPopup += ShowErrorMyPopup;
             vm.RequestSuccessPopup += ShowSucessMyPopup;

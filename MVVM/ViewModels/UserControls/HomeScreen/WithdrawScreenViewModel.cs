@@ -48,12 +48,12 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
             ListaCartoes = new ObservableCollection<Card>();
             CarregarCartoes();
             
-            WithdrawCommand = new RelayCommand(FazerLevantamento, o => true);
+            WithdrawCommand = new RelayCommand(MakeWithdraw, o => true);
         }
         
         
         
-        private async void FazerLevantamento(object obj)
+        private async void MakeWithdraw(object obj)
         {
 
             if (SelectedCard == null)
