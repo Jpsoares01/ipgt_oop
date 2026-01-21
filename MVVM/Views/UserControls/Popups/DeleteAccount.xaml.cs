@@ -21,6 +21,8 @@ namespace ipgt_oop.MVVM.Views.UserControls.Popups
     /// </summary>
     public partial class DeleteAccount : Window
     {
+        private MainWindow _mainWindow;
+        
         public DeleteAccount()
         {
             InitializeComponent();
@@ -30,6 +32,7 @@ namespace ipgt_oop.MVVM.Views.UserControls.Popups
             
             vm.RequestErrorPopup += ShowErrorMyPopup;
             vm.RequestSuccessPopup += ShowSucessMyPopup;
+            vm.RequestHomeWindow += OpenHomeWindow;
         }
         
         private void ShowErrorMyPopup(object sender, string mensagemErro)
@@ -87,6 +90,45 @@ namespace ipgt_oop.MVVM.Views.UserControls.Popups
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+        
+        private void OpenHomeWindow(object sender, EventArgs e)
+        {
+            if (_mainWindow == null)
+            {
+                _mainWindow = new MainWindow();
+                _mainWindow.Closed += (s, e) => _mainWindow = null;
+                _mainWindow.Show();
+
+                CloseWindow();
+                CloseHomeWindow();
+            }
+            else
+            {
+                if (_mainWindow.WindowState == WindowState.Minimized)
+                    _mainWindow.WindowState = WindowState.Normal;
+
+                _mainWindow.Activate();
+                CloseWindow();
+                CloseHomeWindow();
+                
+            }
+        }
+        private void CloseWindow()
+        {
+            
+            Window parentWindow = Window.GetWindow(this);
+            Console.WriteLine($"Closing Window: {parentWindow.Title} ({parentWindow.GetType().Name})");
+            parentWindow?.Close();
+        }
+        
+        private void CloseHomeWindow()
+        {
+            var homeWindow = System.Windows.Application.Current.Windows
+                .OfType<HomeWindow>() 
+                .FirstOrDefault();
+
+            homeWindow?.Close();
         }
     }
 }

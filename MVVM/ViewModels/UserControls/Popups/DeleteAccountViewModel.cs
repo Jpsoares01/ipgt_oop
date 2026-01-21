@@ -10,6 +10,7 @@ public class DeleteAccountViewModel : ObservableObject
     public ICommand DeleteAccountCommand { get; }
     public event EventHandler<string> RequestErrorPopup;
     public event EventHandler<string> RequestSuccessPopup;
+    public event EventHandler RequestHomeWindow;
 
     private string _username;
     public string Username
@@ -40,11 +41,11 @@ public class DeleteAccountViewModel : ObservableObject
 
     public async void DeleteAccount()
     {
-        Console.WriteLine($"{Username} - {Password} - {ConfPassword}");
 
         if (Password != ConfPassword)
         {
             RequestErrorPopup?.Invoke(this, "Passwords don't match");
+            return;
         }
         
         var api = new ApiService();
@@ -53,6 +54,8 @@ public class DeleteAccountViewModel : ObservableObject
         if (deleteSuccess)
         { 
             RequestSuccessPopup?.Invoke(this, "Account deleted successfully");
+            RequestHomeWindow?.Invoke(this, EventArgs.Empty);
+            
         }
         else
         {
