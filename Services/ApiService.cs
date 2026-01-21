@@ -116,7 +116,7 @@ namespace ipgt_oop.Services
         }
 
         
-        public async Task CreateClient(string username, string password, int bankId, string cardNumber)
+        public async Task<bool> CreateClient(string username, string password, int bankId, string cardNumber)
         {
             string url = BaseUrl + "multibanco/client";
 
@@ -134,6 +134,7 @@ namespace ipgt_oop.Services
                 
                 if (response.IsSuccessStatusCode)
                 {
+                    return true;
                     // Aqui fazer o que der certo --  daqui vai pro ViewModel
                 
                 }
@@ -141,12 +142,14 @@ namespace ipgt_oop.Services
                 {
                     Console.WriteLine(response.StatusCode);
                     Console.WriteLine(await response.Content.ReadAsStringAsync());
+                    return false;
                     //Aqui fazer o que se der errado
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine($"Exception: {e.Message}");
+                return false;
             }
         }
         

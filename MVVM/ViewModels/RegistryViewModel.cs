@@ -8,8 +8,8 @@ using System.Windows;
 using System.Collections.ObjectModel;
 using System.Windows.Controls;
 using System.Windows.Input;
-using ipgt_oop.MVVM.Models;           
-using ipgt_oop.Services;              
+using ipgt_oop.MVVM.Models;
+using ipgt_oop.Services;
 
 namespace ipgt_oop.MVVM.ViewModels
 {
@@ -64,6 +64,7 @@ namespace ipgt_oop.MVVM.ViewModels
             
             var api = new ApiService();
             api.CreateClient(Username, Password, _selectedBank, CardNumber);
+            bool sucess;
         }
 
         private async void LoadBanks()
