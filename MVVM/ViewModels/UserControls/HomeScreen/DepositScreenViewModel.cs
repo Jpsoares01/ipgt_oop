@@ -70,7 +70,7 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
 
             var novaTransacao = new TransactionRequest
             {
-                scrId = 0,
+                scrId = -1,
                 dstCardNumber = SelectedCard.number, 
                 amount = Amount,
                 entity = 0,            

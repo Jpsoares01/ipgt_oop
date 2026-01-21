@@ -31,9 +31,10 @@
                 <TextBlock  Text="Select Card" 
                      Style="{StaticResource Caption}"
                      Margin="0,0,0,4"/>
-                <ComboBox x:Name="cmbWithdrawSelectCard"
-                          ItemsSource="{Binding ListaCartoes}"
+                
+                <ComboBox ItemsSource="{Binding ListaCartoes}"
                           DisplayMemberPath="number"
+                          SelectedItem="{Binding SelectedCard}"
                           Style="{StaticResource GeneralComboBoxStyle}"
                           Margin="0,0,0,32"
                           Width="890">
@@ -55,11 +56,12 @@
                   HorizontalAlignment="Left"
                   Margin="0,0,0,10">
 
-                    <TextBox x:Name="WithdrawAmount"
-                       Style="{StaticResource BodyTextBox}"
-                       Background="Transparent"
-                       BorderThickness="0"
-                       Padding="4"/>
+                    <TextBox Text="{Binding Amount, UpdateSourceTrigger=PropertyChanged}"
+                             x:Name="WithdrawAmount"
+                             Style="{StaticResource BodyTextBox}"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             Padding="4"/>
 
 
                 </Border>
@@ -80,7 +82,8 @@
                         Height="48"
                         Width="890"
                         HorizontalAlignment="Left"
-                        Content="Confirm Withdraw"/>
+                        Content="Confirm Withdraw"
+                        Command="{Binding LevantamentoCommand}"/>
 
             </StackPanel>
 

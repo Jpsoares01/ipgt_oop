@@ -61,7 +61,6 @@ namespace ipgt_oop.MVVM.ViewModels
         {
             var passwordBox = parameter as PasswordBox;
             
-            Console.WriteLine($"{Username} {Password} {_selectedBank} {CardNumber}");
             
             var api = new ApiService();
             api.CreateClient(Username, Password, _selectedBank, CardNumber);
