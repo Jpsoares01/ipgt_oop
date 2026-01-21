@@ -39,7 +39,6 @@ public class ChangePasswordViewModel : ObservableObject
 
     public async void ChangePassword()
     {
-        Console.WriteLine($"{Password} - {NewPassword}");
         
         var api = new ApiService();
         bool changePasswordSuccess =  await api.ChangeClientPassword(Username, Password,  NewPassword);

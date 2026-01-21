@@ -38,7 +38,6 @@ namespace ipgt_oop.Services
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show($"Erro na transação: {ex.Message}");
                 return false;
             }
         }
@@ -135,15 +134,11 @@ namespace ipgt_oop.Services
                 if (!response.IsSuccessStatusCode)
                 {
                     
-                    Console.WriteLine(response.StatusCode);
-                    Console.WriteLine(await response.Content.ReadAsStringAsync());
                     return false;
-                    //Aqui fazer o que se der errado
                 
                 }
                 
                 return true;
-                // Aqui fazer o que der certo --  daqui vai pro ViewModel
                 
             }
             catch (Exception e)
@@ -172,12 +167,10 @@ namespace ipgt_oop.Services
                     Console.WriteLine(response.StatusCode);
                     Console.WriteLine(await response.Content.ReadAsStringAsync());
                     return false;
-                    //Aqui fazer o que se der errado
 
                 }
 
                 return true;
-                // Aqui fazer o que der certo --  daqui vai pro ViewModel
             }
             catch (Exception e)
             {
@@ -203,11 +196,32 @@ namespace ipgt_oop.Services
 
                 if (!response.IsSuccessStatusCode)
                 {
-                    Console.WriteLine(response.StatusCode);
-                    Console.WriteLine(await response.Content.ReadAsStringAsync());
+                    //Se retornar um status de erro (400, 500...)
                     return false;
-                    
+                }
 
+                return true;
+                
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Exception: {e.Message}");
+                return false;
+            }
+        }
+        
+        public async Task<bool> DeleteAccount()
+        {
+            string url = "multibanco/client";
+
+            try
+            {
+                HttpResponseMessage response = await _client.DeleteAsync(url);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    //Se retornar um status de erro (400, 500...)
+                    return false;
                 }
 
                 return true;

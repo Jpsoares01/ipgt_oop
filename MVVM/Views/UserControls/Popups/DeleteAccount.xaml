@@ -64,6 +64,7 @@
                                 Height="41"
                                 HorizontalAlignment="Left">
                             <TextBox x:Name="CardNumber"
+                                     Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
                                      Style="{StaticResource BodyTextBox}"
                                      Background="Transparent"
                                      BorderThickness="0"
@@ -102,6 +103,7 @@
 
                                     <!-- PasswordBox-->
                                     <PasswordBox x:Name="PasswordBox"
+                                                 PasswordChanged="PasswordBox_PasswordChanged"
                                                  Style="{StaticResource BodyPasswordBox}"
                                                  Background="Transparent"
                                                  BorderThickness="0"
@@ -142,7 +144,7 @@
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0" 
-                                   Text="Password"
+                                   Text=" Confirm Password"
                                    Style="{StaticResource Caption}"
                                    Margin="0,0,0,4"/>
 
@@ -164,6 +166,7 @@
 
                                     <!-- PasswordBox-->
                                     <PasswordBox x:Name="ConfPasswordBox"
+                                                 PasswordChanged="ConfPasswordBox_PasswordChanged"
                                                  Style="{StaticResource BodyPasswordBox}"
                                                  Background="Transparent"
                                                  BorderThickness="0"
@@ -215,7 +218,7 @@
                                 Width="193"
                                 Height="48"
                                 Content="Delete Account"
-                                Command="{Binding OpenHomeWindowCommand}"/>
+                                Command="{Binding DeleteAccountCommand}"/>
 
                     </Grid>
 

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ipgt_oop.MVVM.ViewModels.UserControls.Popups;
 using YourApp.Helpers;
 
 namespace ipgt_oop.MVVM.Views.UserControls.Popups
@@ -23,6 +24,44 @@ namespace ipgt_oop.MVVM.Views.UserControls.Popups
         public DeleteAccount()
         {
             InitializeComponent();
+            
+            var vm  = new DeleteAccountViewModel();
+            DataContext = vm;
+            
+            vm.RequestErrorPopup += ShowErrorMyPopup;
+            vm.RequestSuccessPopup += ShowSucessMyPopup;
+        }
+        
+        private void ShowErrorMyPopup(object sender, string mensagemErro)
+        {
+            var popup = new ErrorPopup(mensagemErro);
+
+            popup.ShowDialog();
+        }
+
+        private void ShowSucessMyPopup(object sender, string mensagemErro)
+        {
+            var popup = new SucessPopup(mensagemErro);
+
+            popup.ShowDialog();
+        }
+        
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+
+            if (this.DataContext is DeleteAccountViewModel vm)
+            {
+                vm.Password = PasswordBox.Password;
+            }
+        }
+        
+        private void ConfPasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+
+            if (this.DataContext is DeleteAccountViewModel vm)
+            {
+                vm.ConfPassword = ConfPasswordBox.Password;
+            }
         }
 
         private void TogglePassword_Click(object sender, RoutedEventArgs e)
