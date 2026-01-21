@@ -1,4 +1,5 @@
 ﻿using ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen;
+using ipgt_oop.MVVM.Views.UserControls.Popups;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,18 @@ namespace ipgt_oop.MVVM.Views.UserControls.HomeScreen
         public DepositScreen()
         {
             InitializeComponent();
-            DataContext = new DepositScreenViewModel();
+
+            var vm = new DepositScreenViewModel();
+
+            vm.RequestPopup += ShowMyPopup;
+
+            DataContext = vm;
+        }
+        private void ShowMyPopup(object sender, string mensagemErro)
+        {
+            var popup = new ErrorPopup(mensagemErro);
+
+            popup.ShowDialog();
         }
 
         private void cmbDepositSelectCard_SelectionChanged(object sender, SelectionChangedEventArgs e)

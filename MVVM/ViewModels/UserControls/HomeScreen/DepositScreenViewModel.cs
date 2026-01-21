@@ -41,7 +41,8 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
         // comando para botao depositar
         public ICommand DepositCommand { get; set; }
 
-        
+        // para pop up
+        public event EventHandler<string> RequestPopup;
 
         public DepositScreenViewModel()
         {
@@ -57,14 +58,14 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
 
             if (SelectedCard == null)
             {
-                MessageBox.Show("ERRO: O programa acha que não escolheste cartão nenhum (SelectedCard está null)!");
+                RequestPopup?.Invoke(this, "Select Card is Null!");
                 return;
             }
 
             // 2. Verificar se o Valor falhou
             if (Amount <= 0)
             {
-                MessageBox.Show($"ERRO: O programa acha que o valor é {Amount} (Zero ou negativo)!");
+                RequestPopup?.Invoke(this, "Amount must be >0!");
                 return;
             }
 
@@ -91,7 +92,7 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
             else
             {
                 // colocar pop up
-                MessageBox.Show("Falha ao depositar. Tente novamente.");
+                RequestPopup?.Invoke(this, "Database Failed!");
             }
         }
 

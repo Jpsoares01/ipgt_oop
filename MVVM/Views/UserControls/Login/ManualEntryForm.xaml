@@ -100,7 +100,8 @@
             </Grid>
         </Grid>
 
-        <Button Style="{StaticResource GeneralButton}"
+        <Button IsDefault="True"
+                Style="{StaticResource GeneralButton}"
                 Width="410"
                 Height="48"
                 Content="Sign In"

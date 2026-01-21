@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ipgt_oop.MVVM.Views.UserControls.Login"
              mc:Ignorable="d">
-    
+
     <StackPanel>
 
         <Grid HorizontalAlignment="Center">
@@ -30,7 +30,7 @@
 
         <Grid HorizontalAlignment="Center"
               Margin="0,18,0,66">
-            
+
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -88,7 +88,8 @@
             </Grid>
         </Grid>
 
-        <Button Style="{StaticResource GeneralButton}"
+        <Button IsDefault="True"
+                Style="{StaticResource GeneralButton}"
                 Width="410"
                 Height="48"
                 Content="Sign In"
@@ -96,3 +97,4 @@
 
     </StackPanel>
 </UserControl>
+    
