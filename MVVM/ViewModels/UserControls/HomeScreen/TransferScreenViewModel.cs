@@ -14,6 +14,11 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
 {
     class TransferScreenViewModel : ObservableObject
     {
+        //para popup
+        public event EventHandler<string> RequestErrorPopup;
+        public event EventHandler<string> RequestSuccessPopup;
+
+
         public ObservableCollection<Card> ListaCartoes { get; set; }
         private Card _sourceCard;
         public Card SourceCard
@@ -48,50 +53,61 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
             ListaCartoes = new ObservableCollection<Card>();
             CarregarCartoes();
         }
-        
+
         private async void MakeTransfer(object obj)
         {
-
+            // Validações iniciais (Input)
             if (SourceCard == null)
             {
-                MessageBox.Show("ERRO: O programa acha que não escolheste cartão nenhum (SelectedCard está null)!");
+                RequestErrorPopup?.Invoke(this, "Card is Null!");
                 return;
             }
 
-            // 2. Verificar se o Valor falhou
             if (Amount <= 0)
             {
-                MessageBox.Show($"ERRO: O programa acha que o valor é {Amount} (Zero ou negativo)!");
+                RequestErrorPopup?.Invoke(this, "Amount must be >0 !");
                 return;
             }
 
-            var newTransaction = new TransactionRequest
+            // verifica tamanho do cartao
+            if (string.IsNullOrWhiteSpace(RecipientCard) || RecipientCard.Length != 12 || !long.TryParse(RecipientCard, out _))
             {
-                scrId = SourceCard.id,
-                dstCardNumber = RecipientCard, 
-                amount = Amount,
-                entity = 0,            
-                reference = "Transfer"
-            };
-
-            
-            var api = new ApiService();
-            bool success = await api.TransactionAsync(newTransaction);
-
-            // 4. Verificar o resultado
-            if (success)
-            {
-                // colocar popup
-                MessageBox.Show("Transferencia realizado com sucesso! 💰");
-                Amount = 0; // Limpar o campo do valor
+                RequestErrorPopup?.Invoke(this, "Recipient Card must have exactly 12 numbers!");
+                return;
             }
-            else
+
+            try
             {
-                // colocar pop up
-                MessageBox.Show("Falha ao transferir. Tente novamente (Provavelmente Recipient Card Number dont exist).");
+                var newTransaction = new TransactionRequest
+                {
+                    scrId = SourceCard.id,
+                    dstCardNumber = RecipientCard,
+                    amount = Amount,
+                    entity = 0,
+                    reference = "Transfer"
+                };
+
+                var api = new ApiService();
+
+                // await aqui pode lançar exceções de rede (Timeouts, DNS, etc)
+                bool success = await api.TransactionAsync(newTransaction);
+
+                if (success)
+                {
+                    RequestSuccessPopup?.Invoke(this, "Successful Transaction!");
+                    Amount = 0;
+                }
+                else
+                {
+                    RequestErrorPopup?.Invoke(this, "Database failled");
+                }
+            }
+            catch (Exception)
+            {
+                RequestErrorPopup?.Invoke(this, "An error occurred during the transfer request.");
             }
         }
-        
+
         private async void CarregarCartoes()
         {
             var api = new ApiService();

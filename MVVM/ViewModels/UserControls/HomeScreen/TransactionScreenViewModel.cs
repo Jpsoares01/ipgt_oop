@@ -8,5 +8,8 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
 {
     class TransactionScreenViewModel
     {
+        internal Action<object, string> RequestErrorPopup;
+
+        public Action<object, string> RequestSuccessPopup { get; internal set; }
     }
 }

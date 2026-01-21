@@ -1,4 +1,6 @@
 ﻿using ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen;
+using ipgt_oop.MVVM.ViewModels.UserControls.Popups;
+using ipgt_oop.MVVM.Views.UserControls.Popups;
 using System;
 using System.Collections.Generic;
 using System.Linq;

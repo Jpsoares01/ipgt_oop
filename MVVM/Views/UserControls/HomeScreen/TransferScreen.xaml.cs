@@ -1,4 +1,5 @@
 ﻿using ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen;
+using ipgt_oop.MVVM.Views.UserControls.Popups;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,27 @@ namespace ipgt_oop.MVVM.Views.UserControls.HomeScreen
         public TransferScreen()
         {
             InitializeComponent();
-            DataContext = new TransferScreenViewModel();
+
+            var vm = new TransferScreenViewModel();
+
+            vm.RequestErrorPopup += ShowErrorMyPopup;
+            vm.RequestSuccessPopup += ShowSucessMyPopup;
+
+            this.DataContext = vm;
+        }
+
+        private void ShowErrorMyPopup(object sender, string mensagemErro)
+        {
+            var popup = new ErrorPopup(mensagemErro);
+
+            popup.ShowDialog();
+        }
+
+        private void ShowSucessMyPopup(object sender, string mensagemErro)
+        {
+            var popup = new SucessPopup(mensagemErro);
+
+            popup.ShowDialog();
         }
     }
 }
