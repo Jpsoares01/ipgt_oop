@@ -40,7 +40,7 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
             {
                 var viewItem = new TransactionRecord
                 {
-                    Descricao = transaction.Description,
+                    Description = transaction.Description,
                     Type = transaction.Type,
                     Data = transaction.Date,
                     Amount = transaction.Amount
