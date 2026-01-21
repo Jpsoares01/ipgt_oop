@@ -83,7 +83,7 @@
                         Width="890"
                         HorizontalAlignment="Left"
                         Content="Confirm Withdraw"
-                        Command="{Binding LevantamentoCommand}"/>
+                        Command="{Binding WithdrawCommand}"/>
 
             </StackPanel>
 

@@ -33,6 +33,7 @@
                            Margin="0,0,0,4"/>
                 <ComboBox x:Name="cmbTransferSelectCard"
                           ItemsSource="{Binding ListaCartoes}"
+                          SelectedItem="{Binding SourceCard}"
                           DisplayMemberPath="number"        
                           Style="{StaticResource GeneralComboBoxStyle}"
                           Margin="0,0,0,16"
@@ -42,7 +43,7 @@
 
 
 
-                <TextBlock Text="Recipent Name" 
+                <TextBlock Text="Recipient Card Number"
                            Style="{StaticResource Caption}"
                            Margin="0,0,0,4"/>
 
@@ -56,6 +57,7 @@
                          Margin="0,0,0,16">
 
                     <TextBox x:Name="TransferRecipientName"
+                             Text="{Binding RecipientCard, UpdateSourceTrigger=PropertyChanged}"
                              Style="{StaticResource BodyTextBox}"
                              Background="Transparent"
                              BorderThickness="0"
@@ -64,7 +66,7 @@
 
 
 
-                <TextBlock Text="Account Number" 
+                <TextBlock Text="Amount"
                            Style="{StaticResource Caption}"
                            Margin="0,0,0,4"/>
 
@@ -78,34 +80,12 @@
                           Margin="0,0,0,16">
 
                     <TextBox x:Name="TransferAccountNumber"
-                               Style="{StaticResource BodyTextBox}"
-                               Background="Transparent"
-                               BorderThickness="0"
-                               Padding="4"/>
+                             Text="{Binding Amount, UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource BodyTextBox}"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             Padding="4"/>
                 </Border>
-
-
-                <TextBlock Text="Amount" 
-                           Style="{StaticResource Caption}"
-                           Margin="0,0,0,4"/>
-
-                <Border   CornerRadius="8"
-                          BorderBrush="{StaticResource LabelBorderdBrush}"
-                          BorderThickness="1"
-                          Background="Transparent"
-                          Width="890"
-                          Height="41"
-                          HorizontalAlignment="Left"
-                          Margin="0,0,0,0">
-
-                    <TextBox x:Name="TransferAmount"
-                               Style="{StaticResource BodyTextBox}"
-                               Background="Transparent"
-                               BorderThickness="0"
-                               Padding="4" Text=""/>
-                </Border>
-
-
 
                 <TextBlock HorizontalAlignment="Right"
                            Margin="0,4,0,32"

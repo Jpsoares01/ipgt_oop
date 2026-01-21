@@ -35,7 +35,7 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
             }
         }
         
-        public ICommand LevantamentoCommand { get; set; }
+        public ICommand WithdrawCommand { get; set; }
         
         
         public WithdrawScreenViewModel()
@@ -43,17 +43,18 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
             ListaCartoes = new ObservableCollection<Card>();
             CarregarCartoes();
             
-            LevantamentoCommand = new RelayCommand(FazerLevantamento, o => true);
+            WithdrawCommand = new RelayCommand(FazerLevantamento, o => true);
         }
         
         private async void CarregarCartoes()
         {
             var api = new ApiService();
 
-            var cartoes = await api.GetCardsAsync();
+            var cardList = await api.GetCardsAsync();
 
+            SelectedCard = cardList[0];
             ListaCartoes.Clear();
-            foreach (var cartao in cartoes)
+            foreach (var cartao in cardList)
             {
                 ListaCartoes.Add(cartao);
             }
@@ -99,7 +100,7 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
 
             
             var api = new ApiService();
-            bool sucesso = await api.RealizarTransacaoAsync(novaTransacao);
+            bool sucesso = await api.TransactionAsync(novaTransacao);
 
             // 4. Verificar o resultado
             if (sucesso)

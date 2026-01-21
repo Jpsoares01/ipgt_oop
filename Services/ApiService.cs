@@ -27,7 +27,7 @@ namespace ipgt_oop.Services
 
         // metodos api
 
-        public async Task<bool> RealizarTransacaoAsync(TransactionRequest transacao)
+        public async Task<bool> TransactionAsync(TransactionRequest transacao)
         {
             try
             {

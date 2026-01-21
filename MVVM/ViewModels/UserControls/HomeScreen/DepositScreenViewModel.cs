@@ -39,20 +39,20 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
         }
 
         // comando para botao depositar
-        public ICommand DepositarCommand { get; set; }
+        public ICommand DepositCommand { get; set; }
 
         
 
         public DepositScreenViewModel()
         {
             ListaCartoes = new ObservableCollection<Card>();
-            CarregarCartoes();
+            LoadCards();
 
             // Inicializa o comando (Assumindo que tens RelayCommand no teu Core)
-            DepositarCommand = new RelayCommand(FazerDeposito, o => true);
+            DepositCommand = new RelayCommand(MakeDeposit, o => true);
         }
 
-        private async void FazerDeposito(object obj)
+        private async void MakeDeposit(object obj)
         {
 
             if (SelectedCard == null)
@@ -68,21 +68,21 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
                 return;
             }
 
-            var novaTransacao = new TransactionRequest
+            var newTransaction = new TransactionRequest
             {
                 scrId = -1,
                 dstCardNumber = SelectedCard.number, 
                 amount = Amount,
                 entity = 0,            
-                reference = "Depósito"
+                reference = "Deposit"
             };
 
             
             var api = new ApiService();
-            bool sucesso = await api.RealizarTransacaoAsync(novaTransacao);
+            bool success = await api.TransactionAsync(newTransaction);
 
             // 4. Verificar o resultado
-            if (sucesso)
+            if (success)
             {
                 // colocar popup
                 MessageBox.Show("Depósito realizado com sucesso! 💰");
@@ -95,16 +95,17 @@ namespace ipgt_oop.MVVM.ViewModels.UserControls.HomeScreen
             }
         }
 
-        private async void CarregarCartoes()
+        private async void LoadCards()
         {
             var api = new ApiService();
 
-            var cartoes = await api.GetCardsAsync();
+            var cardList = await api.GetCardsAsync();
 
+            SelectedCard = cardList[0];
             ListaCartoes.Clear();
-            foreach (var cartao in cartoes)
+            foreach (var card in cardList)
             {
-                ListaCartoes.Add(cartao);
+                ListaCartoes.Add(card);
                 
             }
                     

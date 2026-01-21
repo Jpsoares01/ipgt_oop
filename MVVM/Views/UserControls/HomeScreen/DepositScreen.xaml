@@ -80,7 +80,7 @@
                         Width="890"
                         HorizontalAlignment="Left"
                         Content="Confirm Deposit"
-                        Command="{Binding DepositarCommand}"/>
+                        Command="{Binding DepositCommand}"/>
 
             </StackPanel>
 
