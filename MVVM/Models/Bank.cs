@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ipgt_oop.MVVM.Models
 {
-    class Bank
+    public class Bank
     {
 
         public int id { get; set; }

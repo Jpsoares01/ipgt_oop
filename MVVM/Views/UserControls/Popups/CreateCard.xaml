@@ -60,12 +60,14 @@
                           BorderBrush="{StaticResource LabelBorderdBrush}"
                           HorizontalAlignment="Left">
 
-                            <ComboBox Grid.Row="1"
-                                     Width="410"
-                                     Height="41"
-                                     ItemsSource="{Binding SavedUsers}" 
-                                     Style="{StaticResource GeneralComboBoxStyle}"
-                                     SelectedItem="{Binding SelectedUser}"/>
+                            <ComboBox 
+                                Grid.Row="1"
+                                Width="410"
+                                Height="41"
+                                ItemsSource="{Binding BankList}"
+                                DisplayMemberPath="name"
+                                SelectedItem="{Binding SelectedBank}"
+                                Style="{StaticResource GeneralComboBoxStyle}"/>
 
                         </Border>
                     </Grid>
@@ -95,12 +97,14 @@
 
                                 <Grid>
                                     
-                                    <TextBox x:Name="CardNumberTextBox"
-                                      Style="{StaticResource BodyTextBox}"
-                                      Background="Transparent"
-                                      BorderThickness="0"
-                                      Padding="4"
-                                      Visibility="Collapsed"/>
+                                    <TextBox 
+                                        x:Name="CardNumberTextBox"
+                                        Text="{Binding CardNumber, UpdateSourceTrigger=PropertyChanged}"
+                                        Style="{StaticResource BodyTextBox}"
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        Padding="4"
+                                        Visibility="Collapsed"/>
                                 </Grid>
                             </Border>
                         </Grid>
@@ -127,7 +131,7 @@
                        Width="193"
                        Height="48"
                        Content="Create Card"
-                       Command="{Binding OpenHomeWindowCommand}"/>
+                       Command="{Binding CreateCardCommand}"/>
                     </Grid>
                 </StackPanel>
             </StackPanel>

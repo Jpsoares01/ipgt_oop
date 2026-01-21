@@ -34,7 +34,7 @@ namespace ipgt_oop.MVVM.Views.UserControls.HomeScreen
             ChangePassword popup = new ChangePassword();
 
 
-            popup.Owner = Application.Current.MainWindow;
+            //popup.Owner = Application.Current.MainWindow;
             popup.WindowStartupLocation = WindowStartupLocation.CenterOwner;
 
             popup.ShowDialog();
@@ -46,7 +46,7 @@ namespace ipgt_oop.MVVM.Views.UserControls.HomeScreen
             CreateCard popup = new CreateCard();
 
 
-            popup.Owner = Application.Current.MainWindow;
+            //popup.Owner = Application.Current.MainWindow;
             popup.WindowStartupLocation = WindowStartupLocation.CenterOwner;
 
             popup.ShowDialog();

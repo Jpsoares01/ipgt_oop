@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ipgt_oop.MVVM.ViewModels.UserControls.Popups;
 
 namespace ipgt_oop.MVVM.Views.UserControls.Popups
 {
@@ -22,6 +23,7 @@ namespace ipgt_oop.MVVM.Views.UserControls.Popups
         public CreateCard()
         {
             InitializeComponent();
+            DataContext = new CreateCardViewModel();
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
