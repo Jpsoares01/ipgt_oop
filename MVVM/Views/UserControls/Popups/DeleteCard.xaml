@@ -63,9 +63,9 @@
                             <ComboBox Grid.Row="1"
                                       Width="410"
                                       Height="41"
-                                      ItemsSource="{Binding CardsList}"
-                                      DisplayMemberPath="number"
-                                      SelectedItem="{Binding SelectedCard}"
+                                      ItemsSource="{Binding BankList}"
+                                      DisplayMemberPath="name"
+                                      SelectedItem="{Binding SelectedBank}"
                                       Style="{StaticResource GeneralComboBoxStyle}"/>
 
                         </Border>
@@ -131,42 +131,6 @@
                                         </Button>
 
                                     </Grid>
-<<<<<<< Updated upstream
-                                </Border>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="18"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-
-
-                        <Button Grid.Column="0"
-                   Style="{StaticResource GeneralButton}"
-                   Width="193"
-                   Height="48"
-                   Content="Back"
-                   Command="{Binding OpenHomeWindowCommand}"
-                   Click="BtnBack_Click"/>
-
-                        <Button Grid.Column="2"
-                                Style="{StaticResource GeneralButton}"
-                                Width="193"
-                                Height="48"
-                                Content="Delete Card"
-                                Background="Red"
-                                Command="{Binding DeleteCardCommand}"/>
-                    </Grid>
-                </StackPanel>
-            </StackPanel>
-        </Grid>
-    </Border>
-</Window>
-=======
                                 </Border>
                             </Grid>
                         </Grid>
@@ -193,6 +157,7 @@
                                 Width="193"
                                 Height="48"
                                 Content="Delete Card"
+                                Background="Red"
                                 Command="{Binding CreateCardCommand}"/>
                     </Grid>
                 </StackPanel>
@@ -200,4 +165,3 @@
         </Grid>
     </Border>
 </Window>
->>>>>>> Stashed changes
